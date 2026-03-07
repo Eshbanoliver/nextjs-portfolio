@@ -80,10 +80,10 @@ export default function ToolkitPage() {
                                     >
                                         <Icon className="w-7 h-7" />
                                     </div>
-                                    <h3 className="text-white font-semibold text-lg mb-3 font-heading">
+                                    <h3 className="text-site-text font-semibold text-lg mb-3 font-heading">
                                         {service.title}
                                     </h3>
-                                    <p className="text-surface-400 text-sm leading-relaxed mb-6 flex-grow">
+                                    <p className="text-site-text-muted text-sm leading-relaxed mb-6 flex-grow">
                                         {service.shortDesc}
                                     </p>
                                     <Link
@@ -100,7 +100,7 @@ export default function ToolkitPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-24 bg-surface-900/30">
+            <section className="py-24 bg-surface-100/30">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -108,10 +108,10 @@ export default function ToolkitPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
+                        <h2 className="text-3xl md:text-4xl font-bold text-site-text mb-4 font-heading">
                             Not Sure What You Need?
                         </h2>
-                        <p className="text-surface-400 text-lg mb-8 leading-relaxed">
+                        <p className="text-site-text-muted text-lg mb-8 leading-relaxed">
                             Let&apos;s have a conversation about your goals and find the perfect
                             solution for your business.
                         </p>

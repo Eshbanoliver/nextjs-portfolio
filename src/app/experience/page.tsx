@@ -14,12 +14,11 @@ export default function ExperiencePage() {
         <PageTransition>
             {/* Hero */}
             <section className="pt-32 pb-16 relative overflow-hidden">
-                <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px]" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
                         label="Career"
-                        title="Professional Experience"
-                        subtitle="A timeline of my professional journey across leading technology companies"
+                        title="Professional Experience - Web Developer & UI/UX Designer"
+                        subtitle="My professional journey and career milestones."
                     />
                 </div>
             </section>
@@ -29,11 +28,11 @@ export default function ExperiencePage() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="relative">
                         {/* Vertical Line */}
-                        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500/50 via-surface-700/50 to-transparent md:-translate-x-px" />
+                        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500/50 via-surface-300 to-transparent md:-translate-x-px" />
 
                         {experiences.map((exp, i) => (
                             <motion.div
-                                key={exp.company}
+                                key={exp.role}
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
@@ -42,7 +41,7 @@ export default function ExperiencePage() {
                                     }`}
                             >
                                 {/* Timeline Node */}
-                                <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-teal-500 border-4 border-surface-950 -translate-x-[7px] md:-translate-x-[8px] z-10 shadow-lg shadow-teal-500/30" />
+                                <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-teal-500 border-4 border-site-bg -translate-x-[7px] md:-translate-x-[8px] z-10 shadow-lg shadow-teal-500/30" />
 
                                 {/* Content Card */}
                                 <div
@@ -55,32 +54,32 @@ export default function ExperiencePage() {
                                                 <HiOutlineBriefcase className="w-6 h-6" />
                                             </div>
                                             <div>
-                                                <h3 className="text-white font-semibold text-lg font-heading">
+                                                <h3 className="text-site-text font-semibold text-xl font-heading">
                                                     {exp.role}
                                                 </h3>
                                                 <p className="text-teal-400 text-sm font-medium">
                                                     {exp.company}
                                                 </p>
-                                                <p className="text-surface-500 text-xs mt-0.5">
+                                                <p className="text-site-text-muted text-xs mt-0.5">
                                                     {exp.period}
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <p className="text-surface-400 text-sm leading-relaxed mb-4">
+                                        <p className="text-site-text-muted text-sm leading-relaxed mb-4">
                                             {exp.description}
                                         </p>
 
                                         {/* Responsibilities */}
                                         <div className="mb-4">
-                                            <h4 className="text-surface-300 text-xs font-semibold uppercase tracking-wider mb-2">
+                                            <h4 className="text-site-text-muted text-xs font-semibold uppercase tracking-wider mb-2">
                                                 Key Responsibilities
                                             </h4>
                                             <ul className="space-y-2">
                                                 {exp.responsibilities.map((resp) => (
                                                     <li
                                                         key={resp}
-                                                        className="flex items-start gap-2 text-surface-400 text-sm"
+                                                        className="flex items-start gap-2 text-site-text-muted text-sm"
                                                     >
                                                         <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 shrink-0" />
                                                         {resp}
@@ -91,7 +90,7 @@ export default function ExperiencePage() {
 
                                         {/* Achievements */}
                                         <div className="mb-4">
-                                            <h4 className="text-surface-300 text-xs font-semibold uppercase tracking-wider mb-2">
+                                            <h4 className="text-site-text-muted text-xs font-semibold uppercase tracking-wider mb-2">
                                                 Achievements
                                             </h4>
                                             <div className="space-y-2">
@@ -101,18 +100,18 @@ export default function ExperiencePage() {
                                                         className="flex items-center gap-2 text-sm"
                                                     >
                                                         <HiOutlineCheckBadge className="w-4 h-4 text-accent-400 shrink-0" />
-                                                        <span className="text-surface-300">{ach}</span>
+                                                        <span className="text-site-text-muted">{ach}</span>
                                                     </div>
                                                 ))}
                                             </div>
                                         </div>
 
                                         {/* Technologies */}
-                                        <div className="flex flex-wrap gap-2 pt-2 border-t border-surface-700/30">
+                                        <div className="flex flex-wrap gap-2 pt-2 border-t border-surface-300">
                                             {exp.technologies.map((tech) => (
                                                 <span
                                                     key={tech}
-                                                    className="px-2.5 py-1 text-xs rounded-md bg-surface-800/50 text-surface-400 border border-surface-700/30"
+                                                    className="px-2.5 py-1 text-xs rounded-md bg-surface-200 text-site-text-muted border border-surface-300 hover:text-teal-400 hover:border-teal-500"
                                                 >
                                                     {tech}
                                                 </span>

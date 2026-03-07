@@ -5,6 +5,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
+import TechBackground from "@/components/TechBackground";
+import { siteConfig } from "@/data/site";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,32 +28,28 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arjun Mehta — Full Stack Developer & Digital Solutions Architect",
-  description:
-    "Frontend Developer specializing in high-performance websites, web applications, and modern UI systems. Building scalable digital solutions for businesses worldwide.",
+  title: siteConfig.title,
+  description: siteConfig.description,
   keywords: [
     "web developer",
     "frontend developer",
-    "full stack developer",
-    "react developer",
-    "next.js developer",
+    "react native developer",
+    "wordpress developer",
     "portfolio",
-    "web applications",
     "digital solutions",
+    "eshban oliver",
   ],
-  authors: [{ name: "Arjun Mehta" }],
+  authors: [{ name: siteConfig.name }],
   openGraph: {
-    title: "Arjun Mehta — Full Stack Developer",
-    description:
-      "Building modern web experiences and scalable digital solutions.",
+    title: siteConfig.title,
+    description: siteConfig.description,
     type: "website",
-    url: "https://arjunmehta.dev",
+    url: siteConfig.url,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arjun Mehta — Full Stack Developer",
-    description:
-      "Building modern web experiences and scalable digital solutions.",
+    title: siteConfig.title,
+    description: siteConfig.description,
   },
 };
 
@@ -63,13 +62,17 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-surface-950 text-surface-200 antialiased overflow-x-hidden">
-        <ScrollProgress />
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <BackToTop />
-        <Footer />
+      <body className="bg-site-bg text-site-text antialiased overflow-x-hidden transition-colors duration-300">
+        <ThemeProvider>
+          <TechBackground />
+          <ScrollProgress />
+          <Navbar />
+          <main className="min-h-screen relative z-10">{children}</main>
+          <BackToTop />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,11 +20,11 @@ const variants = {
     primary:
         "bg-gradient-to-r from-teal-500 to-teal-600 text-white hover:from-teal-400 hover:to-teal-500 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40",
     secondary:
-        "bg-surface-800 text-white hover:bg-surface-700 border border-surface-600 hover:border-surface-500",
+        "bg-surface-100 text-site-text hover:bg-surface-200 border border-surface-300 hover:border-teal-500/20",
     outline:
         "bg-transparent text-teal-400 border border-teal-500/30 hover:bg-teal-500/10 hover:border-teal-500/60",
     ghost:
-        "bg-transparent text-surface-300 hover:text-white hover:bg-surface-800/50",
+        "bg-transparent text-site-text-muted hover:text-site-text hover:bg-surface-200 transition-colors",
 };
 
 const sizes = {

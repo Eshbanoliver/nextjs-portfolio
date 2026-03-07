@@ -28,7 +28,7 @@ export default function SectionHeading({
                     {label}
                 </span>
             )}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-site-text mb-4 text-balance">
                 {title.split(" ").map((word, i, arr) =>
                     i >= arr.length - 2 ? (
                         <span key={i} className="gradient-text">

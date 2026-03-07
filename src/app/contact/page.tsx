@@ -45,8 +45,6 @@ export default function ContactPage() {
         <PageTransition>
             {/* Hero */}
             <section className="pt-32 pb-16 relative overflow-hidden">
-                <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px]" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-[128px]" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
                         label="Contact"
@@ -63,7 +61,7 @@ export default function ContactPage() {
                         {/* Contact Info */}
                         <div className="lg:col-span-2 space-y-8">
                             <Card delay={0.1} className="p-8">
-                                <h3 className="text-white font-semibold text-xl mb-6 font-heading">
+                                <h3 className="text-site-text font-semibold text-xl mb-6 font-heading">
                                     Get In Touch
                                 </h3>
 
@@ -79,7 +77,7 @@ export default function ContactPage() {
                                             <p className="text-surface-400 text-xs uppercase tracking-wider font-medium mb-0.5">
                                                 Email
                                             </p>
-                                            <p className="text-white text-sm group-hover:text-teal-400 transition-colors">
+                                            <p className="text-site-text text-sm group-hover:text-teal-400 transition-colors">
                                                 {siteConfig.email}
                                             </p>
                                         </div>
@@ -96,7 +94,7 @@ export default function ContactPage() {
                                             <p className="text-surface-400 text-xs uppercase tracking-wider font-medium mb-0.5">
                                                 Phone
                                             </p>
-                                            <p className="text-white text-sm group-hover:text-teal-400 transition-colors">
+                                            <p className="text-site-text text-sm group-hover:text-teal-400 transition-colors">
                                                 {siteConfig.phone}
                                             </p>
                                         </div>
@@ -110,7 +108,7 @@ export default function ContactPage() {
                                             <p className="text-surface-400 text-xs uppercase tracking-wider font-medium mb-0.5">
                                                 Location
                                             </p>
-                                            <p className="text-white text-sm">
+                                            <p className="text-site-text text-sm">
                                                 {siteConfig.location}
                                             </p>
                                         </div>
@@ -119,7 +117,7 @@ export default function ContactPage() {
                             </Card>
 
                             <Card delay={0.2} className="p-8">
-                                <h3 className="text-white font-semibold text-lg mb-4 font-heading">
+                                <h3 className="text-site-text font-semibold text-lg mb-4 font-heading">
                                     Follow Me
                                 </h3>
                                 <div className="grid grid-cols-2 gap-3">
@@ -160,7 +158,7 @@ export default function ContactPage() {
                                     </motion.div>
                                 ) : (
                                     <form onSubmit={handleSubmit} className="space-y-6">
-                                        <h3 className="text-white font-semibold text-xl mb-2 font-heading">
+                                        <h3 className="text-site-text font-semibold text-xl mb-2 font-heading">
                                             Send a Message
                                         </h3>
                                         <p className="text-surface-400 text-sm mb-6">
@@ -183,7 +181,7 @@ export default function ContactPage() {
                                                     onChange={(e) =>
                                                         setFormState({ ...formState, name: e.target.value })
                                                     }
-                                                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-white placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
+                                                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
                                                     placeholder="Your name"
                                                 />
                                             </div>
@@ -202,7 +200,7 @@ export default function ContactPage() {
                                                     onChange={(e) =>
                                                         setFormState({ ...formState, email: e.target.value })
                                                     }
-                                                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-white placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
+                                                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
                                                     placeholder="your@email.com"
                                                 />
                                             </div>
@@ -223,7 +221,7 @@ export default function ContactPage() {
                                                 onChange={(e) =>
                                                     setFormState({ ...formState, subject: e.target.value })
                                                 }
-                                                className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-white placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
+                                                className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
                                                 placeholder="Project inquiry"
                                             />
                                         </div>
@@ -243,7 +241,7 @@ export default function ContactPage() {
                                                 onChange={(e) =>
                                                     setFormState({ ...formState, message: e.target.value })
                                                 }
-                                                className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-white placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm resize-none"
+                                                className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm resize-none"
                                                 placeholder="Tell me about your project..."
                                             />
                                         </div>

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
 import { siteConfig } from "@/data/site";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,8 +41,8 @@ export default function Navbar() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                        ? "bg-surface-950/80 backdrop-blur-xl border-b border-surface-700/30 shadow-lg shadow-black/10"
-                        : "bg-transparent"
+                    ? "bg-site-bg/80 backdrop-blur-xl border-b border-surface-300 shadow-lg shadow-black/5"
+                    : "bg-transparent"
                     }`}
             >
                 <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,10 +50,10 @@ export default function Navbar() {
                         {/* Logo */}
                         <Link href="/" className="relative group flex items-center gap-2">
                             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm font-heading shadow-lg shadow-teal-500/20">
-                                AM
+                                EO
                             </div>
-                            <span className="text-lg font-bold text-white font-heading hidden sm:block">
-                                Arjun<span className="text-teal-400">.</span>dev
+                            <span className="text-lg font-bold text-site-text font-heading hidden sm:block">
+                                Eshban<span className="text-teal-400">.</span>dev
                             </span>
                         </Link>
 
@@ -67,8 +68,8 @@ export default function Navbar() {
                                         key={item.href}
                                         href={item.href}
                                         className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${isActive
-                                                ? "text-teal-400"
-                                                : "text-surface-400 hover:text-white"
+                                            ? "text-teal-400"
+                                            : "text-site-text-muted hover:text-site-text"
                                             }`}
                                     >
                                         {item.label}
@@ -95,7 +96,7 @@ export default function Navbar() {
 
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
-                                className="lg:hidden p-2 rounded-lg text-surface-300 hover:text-white hover:bg-surface-800/50 transition-colors"
+                                className="lg:hidden p-2 rounded-lg text-site-text-muted hover:text-site-text hover:bg-surface-200 transition-colors"
                                 aria-label="Toggle menu"
                             >
                                 {isOpen ? (
@@ -104,6 +105,9 @@ export default function Navbar() {
                                     <HiOutlineBars3 className="w-6 h-6" />
                                 )}
                             </button>
+                            <div className="hidden md:block">
+                                <ThemeToggle />
+                            </div>
                         </div>
                     </div>
                 </nav>
@@ -128,15 +132,18 @@ export default function Navbar() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-surface-900/95 backdrop-blur-xl border-l border-surface-700/30 shadow-2xl"
+                            className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-site-bg/95 backdrop-blur-xl border-l border-surface-300 shadow-2xl"
                         >
                             <div className="flex items-center justify-between p-4 border-b border-surface-700/30">
-                                <span className="text-lg font-bold text-white font-heading">
-                                    Menu
-                                </span>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-lg font-bold text-site-text font-heading">
+                                        Menu
+                                    </span>
+                                    <ThemeToggle />
+                                </div>
                                 <button
                                     onClick={() => setIsOpen(false)}
-                                    className="p-2 rounded-lg text-surface-400 hover:text-white hover:bg-surface-800 transition-colors"
+                                    className="p-2 rounded-lg text-site-text-muted hover:text-site-text hover:bg-surface-200 transition-colors"
                                 >
                                     <HiOutlineXMark className="w-5 h-5" />
                                 </button>
@@ -157,8 +164,8 @@ export default function Navbar() {
                                             <Link
                                                 href={item.href}
                                                 className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive
-                                                        ? "bg-teal-500/10 text-teal-400 border border-teal-500/20"
-                                                        : "text-surface-300 hover:text-white hover:bg-surface-800/50"
+                                                    ? "bg-teal-500/10 text-teal-400 border border-teal-500/20"
+                                                    : "text-site-text-muted hover:text-site-text hover:bg-surface-200"
                                                     }`}
                                             >
                                                 {item.label}
