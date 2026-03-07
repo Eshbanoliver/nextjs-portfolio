@@ -7,6 +7,7 @@ interface SectionHeadingProps {
     subtitle?: string;
     label?: string;
     align?: "left" | "center";
+    dark?: boolean;
 }
 
 export default function SectionHeading({
@@ -14,6 +15,7 @@ export default function SectionHeading({
     subtitle,
     label,
     align = "center",
+    dark = false,
 }: SectionHeadingProps) {
     return (
         <motion.div
@@ -24,14 +26,16 @@ export default function SectionHeading({
             className={`mb-16 ${align === "center" ? "text-center" : "text-left"}`}
         >
             {label && (
-                <span className="inline-block mb-4 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                <span className={`inline-block mb-4 px-4 py-1.5 text-xs font-bold tracking-[0.25em] uppercase rounded-full ${dark ? "bg-teal-500/20 text-teal-400 border-teal-500/30" : "bg-teal-500/10 text-teal-400 border-teal-500/20"
+                    } border`}>
                     {label}
                 </span>
             )}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-site-text mb-4 text-balance">
+            <h2 className={`text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-balance leading-[1.1] ${dark ? "text-site-bg" : "text-site-text"
+                }`}>
                 {title.split(" ").map((word, i, arr) =>
                     i >= arr.length - 2 ? (
-                        <span key={i} className="gradient-text">
+                        <span key={i} className="gradient-text transition-all duration-300">
                             {word}{" "}
                         </span>
                     ) : (
@@ -40,7 +44,8 @@ export default function SectionHeading({
                 )}
             </h2>
             {subtitle && (
-                <p className="text-surface-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                <p className={`text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium opacity-80 ${dark ? "text-site-bg/70" : "text-site-text-muted"
+                    }`}>
                     {subtitle}
                 </p>
             )}

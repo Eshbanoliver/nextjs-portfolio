@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
     HiOutlineTrophy,
     HiOutlineCheckBadge,
@@ -15,72 +14,73 @@ import { certifications } from "@/data/site";
 export default function CertificationsPage() {
     return (
         <PageTransition>
-            {/* Hero */}
+            {/* Hero Section */}
             <section className="pt-32 pb-16 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
-                        label="Credentials"
-                        title="Professional Certifications"
-                        subtitle="Recognized certifications that validate my expertise and commitment to continuous learning"
+                        label="Validated Expertise"
+                        title="Professional Credentials"
+                        subtitle="A comprehensive record of my commitment to continuous learning and mastery of modern software engineering and digital marketing."
                     />
                 </div>
             </section>
 
             {/* Certifications Grid */}
-            <section className="pb-24">
+            <section className="pb-32">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {certifications.map((cert, i) => (
                             <Card
                                 key={cert.title + i}
-                                delay={i * 0.05}
-                                className="group relative overflow-hidden flex flex-col h-full bg-surface-100 border border-surface-300 hover:border-teal-500/30 transition-all duration-300"
+                                delay={i * 0.04}
+                                className="group relative overflow-hidden flex flex-col h-full bg-surface-100/50 backdrop-blur-md border border-surface-300 hover:border-teal-500/40 hover:bg-surface-100 transition-all duration-500 p-0"
                             >
-                                {/* Certificate Preview Image */}
-                                <div className="relative h-40 overflow-hidden bg-surface-200 border-b border-surface-300 shrink-0">
+                                {/* Platform Badge */}
+                                <div className="absolute top-4 right-4 z-20">
+                                    <span className="px-3 py-1 text-[9px] font-black uppercase tracking-[0.1em] rounded-md bg-white/10 text-white border border-white/20 backdrop-blur-md shadow-xl">
+                                        {cert.year}
+                                    </span>
+                                </div>
+
+                                {/* Preview Image Container */}
+                                <div className="relative h-44 overflow-hidden bg-surface-200/50 shrink-0 group-hover:bg-surface-200 transition-colors">
                                     <Image
                                         src={cert.image}
                                         alt={cert.title}
                                         fill
-                                        className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                                        className="object-contain p-6 scale-95 group-hover:scale-110 transition-transform duration-700"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-surface-100 to-transparent opacity-60" />
                                 </div>
 
-                                {/* Main Content */}
-                                <div className="p-5 flex-grow">
-                                    <div className="flex items-center justify-between mb-3">
-                                        <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
+                                {/* Content Body */}
+                                <div className="p-6 flex-grow flex flex-col">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <div className="w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
                                             <HiOutlineTrophy className="w-4 h-4" />
                                         </div>
-                                        <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-md bg-teal-500/10 text-teal-400 border border-teal-500/20">
-                                            {cert.year}
-                                        </span>
+                                        <div className="flex items-center gap-1.5">
+                                            <HiOutlineCheckBadge className="w-4 h-4 text-teal-400" />
+                                            <span className="text-teal-400 text-[10px] font-black uppercase tracking-widest leading-none">
+                                                {cert.platform}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <h3 className="text-site-text font-semibold text-sm mb-1 line-clamp-2 font-heading h-10 group-hover:text-teal-400 transition-colors">
+                                    <h3 className="text-site-text font-bold text-base mb-3 leading-snug font-heading group-hover:text-teal-400 transition-colors line-clamp-2 min-h-[2.5rem]">
                                         {cert.title}
                                     </h3>
 
-                                    <div className="flex items-center gap-1.5 mb-3">
-                                        <HiOutlineCheckBadge className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                                        <p className="text-teal-400 text-xs font-medium">
-                                            {cert.platform}
-                                        </p>
-                                    </div>
-
-                                    <p className="text-site-text-muted text-[11px] leading-relaxed mb-4 line-clamp-3">
+                                    <p className="text-site-text-muted text-[11px] leading-relaxed font-medium line-clamp-3 mb-6">
                                         {cert.description}
                                     </p>
-                                </div>
 
-                                {/* Footer Data */}
-                                <div className="mt-auto px-5 pb-5 pt-4 border-t border-surface-300">
-                                    <div className="flex items-center gap-2">
-                                        <HiOutlineIdentification className="w-3.5 h-3.5 text-site-text-muted opacity-60" />
-                                        <span className="text-site-text-muted text-[9px] font-mono tracking-tight uppercase opacity-70">
-                                            {cert.credentialId}
+                                    {/* Credential Data Tag */}
+                                    <div className="mt-auto pt-4 border-t border-surface-300 flex items-center gap-2">
+                                        <HiOutlineIdentification className="w-3.5 h-3.5 text-site-text-muted opacity-50" />
+                                        <span className="text-site-text-muted text-[9px] font-mono tracking-tighter uppercase opacity-80">
+                                            ID: {cert.credentialId}
                                         </span>
                                     </div>
                                 </div>

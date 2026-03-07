@@ -171,34 +171,51 @@
 
   .glass {
     background: var(--surface-100);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--surface-300);
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
   }
 
   .glass-card {
     background: var(--surface-100);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
     border: 1px solid var(--surface-300);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: inherit;
+    z-index: 10;
+  }
+
+  [data-theme="light"] .glass-card::before {
+    border-top: 1px solid rgba(59, 130, 246, 0.05);
   }
 
   .glass-card:hover {
     background: var(--surface-200);
     border-color: var(--color-teal-500);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
   }
 
   .dark .glass-card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
   }
 
   .glow-teal {
-    box-shadow: 0 0 20px rgba(5, 200, 173, 0.15), 0 0 60px rgba(5, 200, 173, 0.05);
+    box-shadow: 0 0 20px rgba(5, 200, 173, 0.1), 0 0 60px rgba(5, 200, 173, 0.05);
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px rgba(255, 48, 77, 0.15), 0 0 60px rgba(255, 48, 77, 0.05);
+    box-shadow: 0 0 20px rgba(255, 48, 77, 0.1), 0 0 60px rgba(255, 48, 77, 0.05);
   }
 
   .text-balance {
@@ -227,21 +244,19 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg,
-        transparent 20%,
-        rgba(255, 255, 255, 0.05) 48%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.05) 52%,
-        transparent 80%);
+    background: linear-gradient(90deg,
+        transparent 25%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 75%);
     transform: translateX(-100%);
-    animation: shimmer 5s infinite;
+    animation: shimmer 4s infinite;
   }
 
   .tech-grid-subtle {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 20px 20px;
+      linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 }
 

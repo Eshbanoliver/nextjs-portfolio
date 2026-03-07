@@ -27,60 +27,57 @@ const iconMap: Record<string, React.ElementType> = {
     HiOutlineCalendarDays,
 };
 
-const colors = [
-    "teal", "accent", "navy", "teal", "accent", "navy", "teal", "accent",
-];
-
 export default function IndustriesPage() {
     return (
         <PageTransition>
-            {/* Hero */}
-            <section className="pt-32 pb-16 relative overflow-hidden">
-                <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-[128px]" />
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px]" />
+            {/* Hero Section */}
+            <section className="pt-40 pb-20 relative overflow-hidden">
+                {/* Decorative Blobs */}
+                <div className="absolute top-1/4 left-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px] animate-pulse-slow" />
+                <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-500/10 rounded-full blur-[128px]" />
+
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
-                        label="Industries"
-                        title="Industries I've Worked With"
-                        subtitle="Delivering tailored digital solutions across a wide range of business sectors and verticals"
+                        label="Expertise Verticals"
+                        title="Industries Served"
+                        subtitle="Tailored digital strategies and technical architectures for diverse business ecosystems."
                     />
                 </div>
             </section>
 
-            {/* Industry Cards */}
-            <section className="pb-24">
+            {/* Vertical Cards Grid */}
+            <section className="pb-32 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {industries.map((industry, i) => {
                             const Icon = iconMap[industry.icon] || HiOutlineBriefcase;
-                            const color = colors[i % colors.length];
-                            const colorClasses: Record<string, { bg: string; border: string; text: string }> = {
-                                teal: { bg: "bg-teal-500/10", border: "border-teal-500/20", text: "text-teal-400" },
-                                accent: { bg: "bg-accent-500/10", border: "border-accent-500/20", text: "text-accent-400" },
-                                navy: { bg: "bg-navy-500/10", border: "border-navy-500/20", text: "text-navy-400" },
-                            };
-                            const c = colorClasses[color];
 
                             return (
-                                <Card key={industry.name} delay={i * 0.1} className="group">
-                                    <div className="flex items-start gap-5">
-                                        <div
-                                            className={`w-14 h-14 shrink-0 rounded-xl ${c.bg} ${c.border} border flex items-center justify-center ${c.text} group-hover:scale-110 transition-transform duration-300`}
-                                        >
-                                            <Icon className="w-7 h-7" />
+                                <Card key={industry.name} delay={i * 0.1} className="group p-10 overflow-hidden relative border-surface-300/50 hover:bg-surface-100 transition-all">
+                                    {/* Decorative background number */}
+                                    <div className="absolute -right-4 -bottom-8 text-[12rem] font-black text-site-text opacity-[0.02] select-none group-hover:opacity-[0.05] transition-opacity">
+                                        0{i + 1}
+                                    </div>
+
+                                    <div className="flex flex-col sm:flex-row items-start gap-8 relative z-10">
+                                        <div className="w-20 h-20 shrink-0 rounded-2xl bg-surface-100 border border-surface-300 flex items-center justify-center text-teal-400 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                                            <Icon className="w-10 h-10" />
                                         </div>
+
                                         <div>
-                                            <h3 className="text-white font-semibold text-lg mb-2 font-heading">
+                                            <h3 className="text-3xl font-black text-site-text tracking-tighter mb-4 group-hover:text-teal-400 transition-colors">
                                                 {industry.name}
                                             </h3>
-                                            <p className="text-surface-400 text-sm leading-relaxed mb-3">
+                                            <p className="text-site-text-muted text-base leading-relaxed mb-6 font-medium">
                                                 {industry.description}
                                             </p>
-                                            <div className="flex items-start gap-2 p-3 rounded-lg bg-surface-800/30 border border-surface-700/20">
-                                                <span className="text-xs font-medium text-teal-400 shrink-0 mt-0.5">
-                                                    Solution:
+
+                                            {/* Solution Feature */}
+                                            <div className="flex flex-col gap-2 p-5 rounded-2xl bg-teal-500/5 border border-teal-500/10 group-hover:bg-teal-500/10 transition-colors">
+                                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-teal-400">
+                                                    Strategic Solution
                                                 </span>
-                                                <p className="text-surface-400 text-xs leading-relaxed">
+                                                <p className="text-site-text font-bold text-sm leading-snug">
                                                     {industry.solution}
                                                 </p>
                                             </div>
@@ -89,6 +86,26 @@ export default function IndustriesPage() {
                                 </Card>
                             );
                         })}
+                    </div>
+                </div>
+            </section>
+
+            {/* Bottom CTA for Industries */}
+            <section className="py-24 bg-surface-200/50 border-t border-surface-300/50">
+                <div className="max-w-4xl mx-auto px-4 text-center">
+                    <h2 className="text-3xl md:text-5xl font-black text-site-text tracking-tighter mb-6">
+                        Need a Specialized Industry Solution?
+                    </h2>
+                    <p className="text-site-text-muted text-lg mb-10 font-medium">
+                        I specialize in deep industry research to build solutions that solve specific vertical pain points.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-4">
+                        <a href="/contact" className="px-10 py-4 rounded-full bg-teal-500 text-site-bg font-black uppercase tracking-widest text-xs hover:opacity-90 transition-all shadow-xl shadow-teal-500/20">
+                            Book a Consultation
+                        </a>
+                        <a href="/projects" className="px-10 py-4 rounded-full bg-surface-300 text-site-text font-black uppercase tracking-widest text-xs border border-surface-400/50 hover:bg-surface-400 transition-all">
+                            Browse Case Studies
+                        </a>
                     </div>
                 </div>
             </section>

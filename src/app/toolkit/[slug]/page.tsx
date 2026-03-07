@@ -31,84 +31,87 @@ export default function ToolkitDetailPage({
 
     return (
         <PageTransition>
-            {/* Hero */}
-            <section className="pt-32 pb-20 relative overflow-hidden">
-                <div className="absolute top-1/4 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px]" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-500/10 rounded-full blur-[128px]" />
+            {/* Hero Section */}
+            <section className="pt-48 pb-24 relative overflow-hidden">
+                <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[128px] animate-pulse-slow" />
+                <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/10 rounded-full blur-[96px]" />
 
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
                     >
-                        <span className="inline-block mb-4 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
-                            Service
-                        </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading leading-tight">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/5 border border-teal-500/10 text-teal-400 text-[10px] font-black uppercase tracking-[0.3em] mb-8">
+                            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping" />
+                            Technical Vertical
+                        </div>
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-site-text mb-8 tracking-tighter leading-[0.9] !bg-clip-text">
                             {service.title}
                         </h1>
-                        <p className="text-surface-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-site-text-muted text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium">
                             {service.heroDesc}
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Features */}
-            <section className="py-24 bg-surface-900/30">
+            {/* Core Capabilities - Features */}
+            <section className="py-32 relative border-y border-surface-300/50 bg-surface-100/30">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
-                        label="Features"
-                        title="What This Service Includes"
-                        subtitle="A comprehensive set of features designed to deliver exceptional results"
+                        label="Capabilities"
+                        title="Technical Scope"
+                        subtitle="A deep dive into the specific engineering features and architectural patterns implemented in this vertical."
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {service.features.map((feature, i) => (
-                            <Card key={feature} delay={i * 0.08} className="flex items-start gap-4">
-                                <div className="w-8 h-8 shrink-0 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
-                                    <HiOutlineCheckCircle className="w-5 h-5" />
+                            <Card key={feature} delay={i * 0.05} className="group p-8 border-surface-300/50 hover:bg-surface-100 transition-all">
+                                <div className="flex items-start gap-5">
+                                    <div className="w-10 h-10 shrink-0 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform shadow-lg shadow-teal-500/5">
+                                        <HiOutlineCheckCircle className="w-6 h-6" />
+                                    </div>
+                                    <p className="text-site-text font-bold text-base leading-snug tracking-tight">{feature}</p>
                                 </div>
-                                <p className="text-surface-300 text-sm leading-relaxed">{feature}</p>
                             </Card>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Who Is This For + Benefits */}
-            <section className="py-24">
+            {/* Strategy & Outcomes */}
+            <section className="py-32 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Target Audience */}
-                        <Card delay={0.1} className="p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-lg bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400">
-                                    <HiOutlineUserGroup className="w-5 h-5" />
+                        <Card delay={0.1} className="p-10 border-surface-300/50 group bg-surface-100/50">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-14 h-14 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 shadow-xl shadow-rose-500/5 group-hover:rotate-6 transition-transform">
+                                    <HiOutlineUserGroup className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-white font-semibold text-xl font-heading">
-                                    Who Is This For?
+                                <h3 className="text-3xl font-black text-site-text tracking-tighter">
+                                    Strategic Fit
                                 </h3>
                             </div>
-                            <p className="text-surface-400 leading-relaxed">
+                            <p className="text-site-text-muted text-lg leading-relaxed font-medium">
                                 {service.targetAudience}
                             </p>
                         </Card>
 
                         {/* Benefits */}
-                        <Card delay={0.2} className="p-8">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
-                                    <HiOutlineSparkles className="w-5 h-5" />
+                        <Card delay={0.2} className="p-10 border-surface-300/50 group bg-teal-500/5">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 shadow-xl shadow-teal-500/5 group-hover:-rotate-6 transition-transform">
+                                    <HiOutlineSparkles className="w-8 h-8" />
                                 </div>
-                                <h3 className="text-white font-semibold text-xl font-heading">
-                                    Key Benefits
+                                <h3 className="text-3xl font-black text-site-text tracking-tighter">
+                                    KPI Impact
                                 </h3>
                             </div>
-                            <ul className="space-y-3">
+                            <ul className="space-y-4">
                                 {service.benefits.map((benefit) => (
-                                    <li key={benefit} className="flex items-start gap-3 text-surface-400 text-sm">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 shrink-0" />
+                                    <li key={benefit} className="flex items-start gap-4 text-site-text-muted font-bold text-base">
+                                        <span className="w-2 h-2 rounded-full bg-teal-400 mt-2 shrink-0 shadow-[0_0_8px_rgba(5,200,173,0.5)]" />
                                         {benefit}
                                     </li>
                                 ))}
@@ -118,25 +121,26 @@ export default function ToolkitDetailPage({
                 </div>
             </section>
 
-            {/* Development Process */}
-            <section className="py-24 bg-surface-900/30">
+            {/* The Forge - Process */}
+            <section className="py-32 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
-                        label="Process"
-                        title="Development Workflow"
-                        subtitle="A proven step-by-step process to ensure your project is delivered on time and on budget"
+                        label="The Forge"
+                        title="Engineering Pipeline"
+                        subtitle="A systematic, battle-tested workflow to ensure rapid development without compromising structural integrity."
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {service.process.map((step, i) => (
-                            <Card key={step} delay={i * 0.1} className="relative">
-                                <span className="absolute top-4 right-4 text-4xl font-bold text-surface-800/40 font-heading">
-                                    {String(i + 1).padStart(2, "0")}
+                            <Card key={step} delay={i * 0.1} className="relative p-10 hover:bg-surface-100 transition-all group overflow-hidden border-surface-300/50">
+                                <span className="absolute -right-4 -bottom-8 text-[10rem] font-black text-site-text opacity-[0.03] select-none group-hover:opacity-[0.06] transition-opacity">
+                                    0{i + 1}
                                 </span>
-                                <div className="relative">
-                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-navy-500/20 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-4">
-                                        <HiOutlineCog6Tooth className="w-5 h-5" />
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 rounded-xl bg-site-text text-site-bg flex items-center justify-center mb-6 shadow-xl">
+                                        <HiOutlineCog6Tooth className="w-6 h-6 animate-spin-slow" />
                                     </div>
-                                    <p className="text-surface-300 text-sm leading-relaxed">{step}</p>
+                                    <p className="text-site-text font-black text-lg leading-tight tracking-tight mb-4">{step}</p>
+                                    <div className="w-8 h-1 bg-teal-500/30 rounded-full" />
                                 </div>
                             </Card>
                         ))}
@@ -144,26 +148,26 @@ export default function ToolkitDetailPage({
                 </div>
             </section>
 
-            {/* Technologies */}
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Ecosystem - Technologies */}
+            <section className="py-32 border-y border-surface-300/50 bg-teal-500/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <SectionHeading
-                        label="Tech Stack"
-                        title="Technologies Used"
-                        subtitle="Industry-leading tools and frameworks for building robust solutions"
+                        label="Ecosystem"
+                        title="The Tech Stack"
+                        subtitle="Leveraging the latest production-grade frameworks and cloud infrastructure."
                     />
-                    <div className="flex flex-wrap items-center justify-center gap-4">
+                    <div className="flex flex-wrap items-center justify-center gap-6">
                         {service.technologies.map((tech, i) => (
                             <motion.div
                                 key={tech}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="px-6 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-surface-300 font-medium hover:border-teal-500/30 hover:text-teal-400 transition-all duration-300"
+                                transition={{ delay: i * 0.05 }}
+                                className="px-8 py-4 rounded-2xl bg-site-bg border border-surface-300 text-site-text font-black text-xs uppercase tracking-widest hover:border-teal-500/50 hover:-translate-y-1 transition-all shadow-xl shadow-teal-500/5"
                             >
-                                <div className="flex items-center gap-2">
-                                    <HiOutlineCpuChip className="w-4 h-4" />
+                                <div className="flex items-center gap-3">
+                                    <HiOutlineCpuChip className="w-5 h-5 text-teal-400" />
                                     {tech}
                                 </div>
                             </motion.div>
@@ -172,49 +176,49 @@ export default function ToolkitDetailPage({
                 </div>
             </section>
 
-            {/* Use Cases */}
-            <section className="py-24 bg-surface-900/30">
+            {/* Industrial Scenarios - Use Cases */}
+            <section className="py-32">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeading
-                        label="Examples"
-                        title="Example Use Cases"
-                        subtitle="Real-world scenarios where this service delivers exceptional value"
+                        label="Scenarios"
+                        title="Production Use Cases"
+                        subtitle="Applied engineering for real-world industrial and commercial challenges."
                     />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         {service.useCases.map((useCase, i) => (
-                            <Card key={useCase} delay={i * 0.1} className="flex items-center gap-4">
-                                <div className="w-8 h-8 shrink-0 rounded-lg bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400">
-                                    <HiOutlineCheckCircle className="w-5 h-5" />
+                            <Card key={useCase} delay={i * 0.1} className="flex items-center gap-6 p-8 border-surface-300/30 group hover:border-teal-500/20">
+                                <div className="w-12 h-12 shrink-0 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform shadow-inner">
+                                    <HiOutlineCheckCircle className="w-6 h-6" />
                                 </div>
-                                <p className="text-surface-300 text-sm">{useCase}</p>
+                                <p className="text-site-text font-bold text-lg tracking-tight">{useCase}</p>
                             </Card>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* CTA */}
-            <section className="py-24">
-                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {/* Bottom Final CTA */}
+            <section className="py-32 relative overflow-hidden">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">
-                            Ready to Get Started?
+                        <h2 className="text-5xl md:text-7xl font-black text-site-text tracking-tighter mb-8 leading-[0.9]">
+                            Scale Your <br />
+                            <span className="text-teal-400">Digital Engine.</span>
                         </h2>
-                        <p className="text-surface-400 text-lg mb-8 leading-relaxed">
-                            Let&apos;s discuss how {service.title.toLowerCase()} can help your
-                            business grow. Get in touch for a free consultation.
+                        <p className="text-site-text-muted text-xl md:text-2xl mb-12 font-medium leading-relaxed">
+                            Ready to implement this technical vertical for your specific project? Let&apos;s map out the architecture today.
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Button href="/contact" size="lg" icon={<HiOutlineArrowRight />}>
-                                Start a Project
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <Button href="/contact" size="lg" className="px-12 py-6 rounded-full bg-teal-500 text-site-bg border-none shadow-2xl shadow-teal-500/30">
+                                Initialize Project
                             </Button>
-                            <Button href="/toolkit" variant="secondary" size="lg">
-                                View All Services
+                            <Button href="/toolkit" variant="secondary" size="lg" className="rounded-full px-12 py-6 border-surface-400/50">
+                                Back to Toolkit
                             </Button>
                         </div>
                     </motion.div>

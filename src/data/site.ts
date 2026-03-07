@@ -9,9 +9,14 @@ export const siteConfig = {
   phone: "+91 91163 15152",
   socials: {
     github: "https://github.com/Eshbanoliver",
-    linkedin: "https://linkedin.com/in/eshban-oliver",
+    linkedin: "https://in.linkedin.com/in/eshban-oliver-757352372",
     twitter: "https://twitter.com/eshban_dev",
     dribbble: "https://dribbble.com/eshban",
+    googleDev: "https://g.dev/Eshbanoliver",
+    stackOverflow: "https://stackoverflow.com/users/32278850/eshban-official?tab=profile",
+    medium: "https://medium.com/@eshbanofficial",
+    devto: "https://dev.to/eshban_oliver",
+    render: "https://eshbanoliver.onrender.com/",
   },
   nav: [
     { label: "Home", href: "/" },
@@ -53,6 +58,15 @@ export const skills = {
     "Continuous Learner", "Persistence", "Self-Motivation",
   ],
 };
+
+export const futurePlans = [
+  "Advanced React Native expertise to build complex cross-platform ecosystems.",
+  "Expanding knowledge in Server-Side Rendering (SSR) and Edge Computing.",
+  "Contributing to high-impact open-source UI/UX and React libraries.",
+  "Building scalable AI-integrated tools for developer productivity.",
+];
+
+export const mission = "My mission is to engineer high-converting, SEO-optimized, and mobile-first digital solutions that transform standard business goals into exceptional digital results.";
 
 export const experiences = [
   {
@@ -294,6 +308,42 @@ export const education = [
       "Web Development (HTML/CSS)",
       "Database Management",
       "Operating Systems",
+    ],
+  },
+  {
+    degree: "Senior Secondary Education (Class XII)",
+    institution: "Science Stream (Computer Science Optional)",
+    year: "2018 – 2020",
+    grade: "First Division",
+    achievements: [
+      "Specialization in Computer Science and Mathematics",
+      "Advanced Physics and Chemistry fundamentals",
+      "Project work on C++ and Data Handling",
+    ],
+    coursework: [
+      "Computer Science (C++)",
+      "Mathematics",
+      "Physics",
+      "Chemistry",
+      "English",
+    ],
+  },
+  {
+    degree: "Secondary Education (Class X)",
+    institution: "General Science & Mathematics",
+    year: "2016 – 2017",
+    grade: "80% Marks",
+    achievements: [
+      "Excellence in Technical Drawings",
+      "Early Analytical Thinking & Problem Solving",
+      "Strong Foundation in General Science & Math",
+    ],
+    coursework: [
+      "General Science",
+      "Mathematics",
+      "Social Science",
+      "English",
+      "Technical Drawing",
     ],
   },
 ];

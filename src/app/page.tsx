@@ -82,86 +82,80 @@ export default function HomePage() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
           <div className="text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="mb-6"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+              className="mb-8"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-[0.15em] uppercase rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
-                <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full bg-surface-100/50 backdrop-blur-md border border-white/10 text-teal-400 shadow-2xl">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                </span>
                 Available for new projects
-              </span>
+              </div>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-site-text mb-6 leading-[1.1] font-heading"
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+              className="text-5xl md:text-7xl lg:text-9xl font-black text-site-text mb-8 tracking-tighter leading-[0.9] text-balance"
             >
-              Building Digital
+              Building digital{" "}
+              <span className="gradient-text italic px-2">masterpieces</span>
               <br />
-              <span className="gradient-text">Masterpieces</span> &{" "}
-              <br />
-              <span className="gradient-text-accent">Modern</span>
-              <br />
-              Web Solutions
+              for the modern web.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg md:text-xl text-site-text-muted max-w-3xl mx-auto mb-10 leading-relaxed"
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+              className="text-site-text-muted text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium"
             >
-              Senior Frontend Developer &amp; UI/UX Designer specializing in Responsive Website Design,
-              Interactive Web UI, and high-performance web experiences.
-              Transforming ideas into pixel-perfect, production-ready digital experiences.
+              {siteConfig.description}
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
+              className="flex flex-wrap items-center justify-center gap-4"
             >
-              <Button
-                href="/projects"
-                size="lg"
-                icon={<HiOutlineArrowRight />}
-              >
-                View Projects
+              <Button href="/projects" variant="primary" size="lg" icon={<HiOutlineArrowRight />}>
+                Explore My Work
               </Button>
-              <Button href="/contact" variant="secondary" size="lg">
-                Contact Me
+              <Button href="/contact" variant="outline" size="lg">
+                Get In Touch
               </Button>
-            </motion.div>
-
-            {/* Floating Tech Icons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 1 }}
-              className="mt-16 flex items-center justify-center gap-6 flex-wrap"
-            >
-              {["React", "Next.js", "JavaScript", "WordPress", "Tailwind"].map(
-                (tech, i) => (
-                  <motion.span
-                    key={tech}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9 + i * 0.1 }}
-                    className="px-4 py-2 text-xs font-medium rounded-full bg-surface-200 text-site-text-muted border border-surface-300"
-                  >
-                    {tech}
-                  </motion.span>
-                )
-              )}
             </motion.div>
           </div>
+
+          {/* Floating Tech Badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="mt-20 flex items-center justify-center gap-4 flex-wrap"
+          >
+            {["React", "Next.js", "JavaScript", "WordPress", "Tailwind"].map(
+              (tech, i) => (
+                <motion.span
+                  key={tech}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.9 + i * 0.1, type: "spring" }}
+                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-[0.1em] rounded-xl bg-surface-100 backdrop-blur-lg border border-surface-300 text-site-text-muted hover:text-teal-400 hover:border-teal-500/50 transition-all duration-300 shadow-sm"
+                >
+                  {tech}
+                </motion.span>
+              )
+            )}
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
@@ -169,12 +163,12 @@ export default function HomePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-6 h-10 rounded-full border-2 border-surface-300 flex items-start justify-center p-1.5"
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="w-7 h-12 rounded-full border-2 border-surface-300 flex items-start justify-center p-2"
           >
             <motion.div className="w-1.5 h-1.5 rounded-full bg-teal-400" />
           </motion.div>
@@ -182,91 +176,122 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 relative">
+      <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <Card key={stat.label} delay={i * 0.1} className="text-center py-8">
-                <div className="text-3xl md:text-4xl font-bold text-site-text mb-2 font-heading">
+              <Card key={stat.label} delay={i * 0.1} className="text-center py-10">
+                <div className="text-4xl md:text-5xl font-black text-site-text mb-3 tracking-tighter">
                   <AnimatedCounter
                     end={parseInt(stat.value)}
                     suffix={stat.value.includes("+") ? "+" : stat.value.includes("%") ? "%" : ""}
                   />
                 </div>
-                <p className="text-site-text-muted text-sm">{stat.label}</p>
+                <p className="text-site-text-muted text-xs font-bold uppercase tracking-widest">{stat.label}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Project Marquee / Portfolio Scroll */}
-      <section className="py-16 relative overflow-hidden bg-surface-100/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      {/* Project Marquee Section */}
+      <section className="py-24 relative overflow-hidden bg-surface-50/50 border-y border-surface-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <SectionHeading
-            label="Portfolio"
-            title="Professional Portfolio of Web Development Projects"
-            subtitle="A glimpse into my diverse Web Development Portfolio of digital innovations and creative solutions."
+            label="Ecosystem"
+            title="Professional Portfolio Showcase"
+            subtitle="A curated journey through high-performance web applications and creative digital strategies."
           />
         </div>
-        <div className="relative">
-          <div className="flex animate-marquee gap-6 px-4">
+        <div className="relative group">
+          <div className="flex animate-marquee gap-8 px-4">
             {[...projectMarquee, ...projectMarquee].map((item, i) => (
               <div
                 key={`${item.title}-${i}`}
-                className="flex-shrink-0 w-72 glass-card rounded-2xl p-6 border border-surface-300 hover:border-teal-500/30 transition-all duration-300"
+                className="flex-shrink-0 w-80 glass-card rounded-2xl p-8 border border-surface-300 hover:border-teal-500/40 transition-all duration-500"
               >
-                <h3 className="text-site-text font-semibold text-lg mb-2 font-heading group-hover:text-teal-400 transition-colors duration-300">{item.title}</h3>
-                <p className="text-site-text-muted text-sm leading-relaxed">{item.description}</p>
+                <h3 className="text-site-text font-bold text-xl mb-3 font-heading group-hover:text-teal-400 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-site-text-muted text-sm leading-relaxed font-medium">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
-        <div className="text-center mt-8">
-          <Button href="/projects" variant="outline" icon={<HiOutlineArrowRight />}>
-            Discover More Projects
+        <div className="text-center mt-12">
+          <Button href="/projects" variant="outline" size="lg" icon={<HiOutlineArrowRight />}>
+            Discover All Projects
           </Button>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-24 relative">
+      {/* Expertise Section */}
+      <section className="py-32 bg-site-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            label="Featured"
-            title="Featured Work"
-            subtitle="A selection of recent projects that showcase my expertise in building modern web applications"
+            label="Specialization"
+            title="Core Expertise & Tech Focus"
+            subtitle="Bridging the gap between complex logic and stunning visual experiences using modern technologies."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {expertise.map((item, i) => {
+              const Icon = expertiseIcons[i % expertiseIcons.length];
+              return (
+                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left p-8">
+                  <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-site-text font-bold text-xl mb-4 group-hover:text-teal-400 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-site-text-muted text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Grid */}
+      <section className="py-32 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Featured Work"
+            title="Selected Projects"
+            subtitle="A deep dive into complex web builds where performance meets pixel-perfect execution."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects
               .filter((p) => p.featured)
               .map((project, i) => (
-                <Card key={project.title} delay={i * 0.15} className="group overflow-hidden p-0">
-                  <div className="relative h-52 overflow-hidden">
+                <Card key={project.title} delay={i * 0.1} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100">
+                  <div className="relative h-60 overflow-hidden shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-80" />
-                    <span className="absolute top-4 left-4 px-3 py-1 text-xs font-medium rounded-full bg-teal-500/20 text-teal-400 border border-teal-500/20">
+                    <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-90" />
+                    <span className="absolute top-4 left-4 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-teal-500/20 text-teal-400 border border-teal-500/20 backdrop-blur-md">
                       {project.category}
                     </span>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-site-text mb-2 font-heading group-hover:text-teal-400 transition-colors duration-300">
+                  <div className="p-8 flex flex-col flex-grow">
+                    <h3 className="text-site-text font-bold text-2xl mb-3 group-hover:text-teal-400 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-site-text-muted text-sm leading-relaxed mb-4 line-clamp-2">
+                    <p className="text-site-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mt-auto">
                       {project.technologies.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 text-xs rounded-md bg-surface-200 text-site-text-muted border border-surface-300"
-                        >
+                        <span key={tech} className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest rounded-md bg-surface-200 text-site-text-muted border border-surface-300">
                           {tech}
                         </span>
                       ))}
@@ -275,431 +300,79 @@ export default function HomePage() {
                 </Card>
               ))}
           </div>
-          <div className="text-center mt-12">
-            <Button href="/projects" variant="outline" icon={<HiOutlineArrowRight />}>
-              View All Projects
+          <div className="text-center mt-16">
+            <Button href="/projects" size="lg" variant="primary" icon={<HiOutlineArrowRight />}>
+              View Comprehensive Portfolio
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Me Preview */}
-      <section className="py-24 relative bg-surface-100/30">
+      {/* Experience Section */}
+      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <span className="inline-block mb-4 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
-                About Me
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-site-text mb-6 font-heading">
-                Front-end Developer &{" "}
-                <span className="gradient-text">React Native Enthusiast</span>
-              </h2>
-              <p className="text-site-text-muted leading-relaxed mb-8">
-                I&apos;m a passionate Frontend Web Developer specializing in HTML, CSS, JavaScript
-                with a keen interest in React Native. I believe in writing clean, maintainable code
-                and creating UI/UX Design for Responsive and User-Friendly Websites that provide
-                AI-enhanced Digital Solutions for Modern Websites.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/about" icon={<HiOutlineArrowRight />}>
-                  About Me
-                </Button>
-                <Button
-                  href={siteConfig.socials.github}
-                  variant="outline"
-                  external
-                  icon={<FaGithub />}
-                >
-                  GitHub
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative w-full max-w-md mx-auto">
-                <div className="relative rounded-2xl overflow-hidden border border-surface-300 shadow-2xl">
-                  <Image
-                    src="/images/profile.png"
-                    alt={`${siteConfig.name} - Frontend Developer`}
-                    width={500}
-                    height={600}
-                    className="object-cover"
-                  />
+          <SectionHeading
+            label="Journey"
+            title="Professional Experience"
+            subtitle="Delivering high-value digital solutions across various industries and technological landscapes."
+          />
+          <div className="space-y-12">
+            {experiences.map((exp, i) => (
+              <Card key={exp.company + i} delay={i * 0.1} className="relative p-10 group overflow-hidden">
+                <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+                  <HiOutlineBriefcase className="w-48 h-48" />
                 </div>
-                {/* Floating Badge */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 border border-teal-500/20 shadow-xl"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400">
-                      <HiOutlineCodeBracket className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <p className="text-site-text text-sm font-semibold">{stats[0].value}</p>
-                      <p className="text-site-text-muted text-xs">{stats[0].label}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Soft Skills */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Skills"
-            title="Core Soft Skills"
-            subtitle="The professional qualities that drive exceptional project outcomes"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {softSkillsDetailed.map((skill, i) => {
-              const Icon = softSkillIcons[i % softSkillIcons.length];
-              return (
-                <Card key={skill.title} delay={i * 0.06} className="text-center group">
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:bg-teal-500/20 transition-all duration-300">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-site-text font-semibold text-sm mb-2 font-heading group-hover:text-teal-400 transition-colors">
-                    {skill.title}
-                  </h3>
-                  <p className="text-site-text-muted text-xs leading-relaxed">
-                    {skill.description}
-                  </p>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Achievements / Certifications Preview */}
-      <section className="py-24 relative bg-surface-100/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Achievements"
-            title="Professional Achievements"
-            subtitle="Verified certifications from industry-leading institutions and platforms."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.slice(0, 4).map((cert, i) => (
-              <Card key={cert.title} delay={i * 0.1} className="group">
-                <div className="w-10 h-10 rounded-lg bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <HiOutlineTrophy className="w-5 h-5" />
-                </div>
-                <h3 className="text-site-text font-semibold text-sm mb-1 font-heading group-hover:text-teal-400 transition-colors">
-                  {cert.title}
-                </h3>
-                <p className="text-teal-400 text-xs font-medium mb-1">{cert.platform}</p>
-                <p className="text-site-text-muted text-xs">{cert.year}</p>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button href="/certifications" variant="outline" icon={<HiOutlineArrowRight />}>
-              All Certifications
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* My Expertise */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Expertise"
-            title="My Expertise"
-            subtitle="Comprehensive skill set spanning the full development lifecycle"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {expertise.map((item, i) => {
-              const Icon = expertiseIcons[i % expertiseIcons.length];
-              return (
-                <Card key={item.title} delay={i * 0.1} className="group">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-teal-500/20 to-navy-500/20 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-site-text font-semibold text-lg mb-2 font-heading group-hover:text-teal-400 transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-site-text-muted text-sm leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="py-24 relative bg-surface-100/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Values"
-            title="My Core Values"
-            subtitle="Core principles that guide every project and relationship"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreValues.map((value, i) => {
-              const Icon = valueIcons[i % valueIcons.length];
-              return (
-                <Card key={value.title} delay={i * 0.1} className="text-center">
-                  <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
-                    <Icon className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-site-text font-semibold mb-2 font-heading">
-                    {value.title}
-                  </h3>
-                  <p className="text-site-text-muted text-sm leading-relaxed">
-                    {value.description}
-                  </p>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Technical Proficiency */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Proficiency"
-            title="Technical Proficiency"
-            subtitle="A quantitative overview of my technical skills and proficiency levels. I constantly strive to learn and improve."
-          />
-          <div className="max-w-3xl mx-auto space-y-6">
-            {technicalProficiency.map((item, i) => (
-              <motion.div
-                key={item.skill}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-site-text font-medium text-sm">{item.skill}</span>
-                  <span className="text-teal-400 text-sm font-semibold">{item.level}%</span>
-                </div>
-                <div className="h-2.5 bg-surface-200 rounded-full overflow-hidden border border-surface-300">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${item.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: i * 0.1, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-teal-500 to-teal-400 rounded-full"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Toolkit Preview */}
-      <section className="py-24 relative bg-surface-100/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Services"
-            title="Developer Toolkit"
-            subtitle="Comprehensive digital solutions tailored for your business needs"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {toolkitServices.slice(0, 4).map((service, i) => {
-              const icons = [
-                HiOutlineCodeBracket,
-                HiOutlineRocketLaunch,
-                HiOutlineCpuChip,
-                HiOutlineSquares2X2,
-              ];
-              const Icon = icons[i % icons.length];
-              return (
-                <Card key={service.slug} delay={i * 0.1} className="group text-center">
-                  <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:bg-teal-500/20 transition-all duration-300">
-                    <Icon className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-site-text font-semibold mb-2 font-heading group-hover:text-teal-400 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-site-text-muted text-sm leading-relaxed mb-4">
-                    {service.shortDesc.slice(0, 80)}...
-                  </p>
-                  <Link
-                    href={`/toolkit/${service.slug}`}
-                    className="inline-flex items-center gap-1 text-teal-400 text-sm font-medium hover:gap-2 transition-all duration-300"
-                  >
-                    Learn More <HiOutlineArrowRight className="w-4 h-4" />
-                  </Link>
-                </Card>
-              );
-            })}
-          </div>
-          <div className="text-center mt-12">
-            <Button href="/toolkit" variant="outline" icon={<HiOutlineArrowRight />}>
-              Explore Full Toolkit
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Industries"
-            title="Industries Served"
-            subtitle="Delivering tailored solutions across diverse business sectors"
-          />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {industries.slice(0, 8).map((industry, i) => (
-              <Card key={industry.name} delay={i * 0.08} className="text-center py-8 group">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 group-hover:bg-accent-500/20 transition-all duration-300">
-                  <HiOutlineSquares2X2 className="w-6 h-6" />
-                </div>
-                <h3 className="text-site-text font-semibold text-sm font-heading group-hover:text-teal-400 transition-colors">
-                  {industry.name}
-                </h3>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* My Working Process */}
-      <section className="py-24 relative bg-surface-100/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Process"
-            title="My Working Process"
-            subtitle="A proven methodology that ensures exceptional results every time"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {workingProcess.map((item, i) => (
-              <Card key={item.step} delay={i * 0.1} className="relative">
-                <span className="text-5xl font-bold text-surface-200 font-heading absolute top-4 right-4">
-                  {item.step}
-                </span>
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white mb-4 shadow-lg shadow-teal-500/20">
-                    <HiOutlineCheckCircle className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-site-text font-semibold text-lg mb-2 font-heading">
-                    {item.title}
-                  </h3>
-                  <p className="text-site-text-muted text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Highlights */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Career"
-            title="Experience Highlights"
-            subtitle="A track record of delivering exceptional results across leading tech companies"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {experiences.slice(0, 2).map((exp, i) => (
-              <Card key={exp.company + exp.role} delay={i * 0.15}>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-teal-500/20 to-navy-500/20 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-sm font-heading">
-                    {exp.company
-                      .split(" ")
-                      .map((w) => w[0])
-                      .join("")
-                      .slice(0, 2)}
-                  </div>
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div>
-                    <h3 className="text-site-text font-semibold text-lg font-heading group-hover:text-teal-400 transition-colors">
-                      {exp.role}
-                    </h3>
-                    <p className="text-teal-400 text-sm font-medium">
-                      {exp.company}
-                    </p>
-                    <p className="text-site-text-muted text-xs mt-1">{exp.period}</p>
-                    <p className="text-site-text-muted text-sm mt-3 leading-relaxed">
-                      {exp.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {exp.technologies.slice(0, 4).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 text-xs rounded-md bg-surface-200 text-site-text-muted border border-surface-300"
-                        >
+                    <h3 className="text-2xl font-bold text-site-text mb-2 group-hover:text-teal-400 transition-colors">{exp.role}</h3>
+                    <p className="text-teal-400 font-bold tracking-wider uppercase text-sm mb-4">{exp.company}</p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {exp.technologies.map((tech) => (
+                        <span key={tech} className="px-2.5 py-1 text-[10px] font-bold uppercase rounded bg-surface-200 text-site-text-muted border border-surface-300">
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
+                  <div className="text-left md:text-right">
+                    <span className="px-4 py-1.5 rounded-full bg-surface-300 text-site-text text-xs font-bold uppercase tracking-widest border border-surface-400/20">
+                      {exp.period}
+                    </span>
+                  </div>
                 </div>
+                <p className="text-site-text-muted text-base leading-relaxed max-w-4xl relative z-10">
+                  {exp.description}
+                </p>
               </Card>
             ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button href="/experience" variant="outline" icon={<HiOutlineArrowRight />}>
-              Full Experience
-            </Button>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-40 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-navy-500/5 -z-10" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-site-text mb-6 font-heading">
-              Ready to kickstart your next{" "}
-              <span className="gradient-text">digital project?</span>
+            <h2 className="text-4xl md:text-6xl font-black text-site-text mb-8 tracking-tighter leading-tight">
+              Ready to build something <br />
+              <span className="gradient-text italic">legendary?</span>
             </h2>
-            <p className="text-site-text-muted text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-              Have a project in mind or just want to say hi? Feel free to reach out for
-              Elementor Website Design, Graphic Design work, or Custom WordPress Development.
-              I&apos;m currently open to new opportunities.
+            <p className="text-site-text-muted text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
+              Whether you need a full-scale web application or a sleek business presence,
+              I am here to turn your vision into a digital reality.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" size="lg" icon={<HiOutlineArrowRight />}>
-                Contact Us
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button href="/contact" size="lg" variant="primary" icon={<HiOutlineArrowRight />}>
+                Start a Conversation
               </Button>
-              <Button
-                href={siteConfig.socials.github}
-                variant="secondary"
-                size="lg"
-                external
-                icon={<FaGithub />}
-              >
-                GitHub
+              <Button href={siteConfig.socials.github} variant="secondary" size="lg" external icon={<FaGithub />}>
+                View Source Code
               </Button>
             </div>
           </motion.div>
