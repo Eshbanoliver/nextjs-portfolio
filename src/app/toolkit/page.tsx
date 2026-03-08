@@ -16,6 +16,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import PageTransition from "@/components/ui/PageTransition";
+import CTASection from "@/components/ui/CTASection";
 import { toolkitServices } from "@/data/site";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -142,6 +143,7 @@ export default function ToolkitPage() {
                     </motion.div>
                 </div>
             </section>
+            <CTASection />
         </PageTransition>
     );
 }

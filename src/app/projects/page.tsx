@@ -10,6 +10,7 @@ import {
 import { FaGithub } from "react-icons/fa6";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PageTransition from "@/components/ui/PageTransition";
+import CTASection from "@/components/ui/CTASection";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import { projects, siteConfig } from "@/data/site";
@@ -173,6 +174,7 @@ export default function ProjectsPage() {
                     )}
                 </div>
             </section>
+            <CTASection />
         </PageTransition>
     );
 }

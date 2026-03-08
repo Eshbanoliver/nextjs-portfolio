@@ -7,6 +7,7 @@ import {
 } from "react-icons/hi2";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PageTransition from "@/components/ui/PageTransition";
+import CTASection from "@/components/ui/CTASection";
 import Card from "@/components/ui/Card";
 import { experiences } from "@/data/site";
 
@@ -118,6 +119,7 @@ export default function ExperiencePage() {
                     </div>
                 </div>
             </section>
+            <CTASection />
         </PageTransition>
     );
 }

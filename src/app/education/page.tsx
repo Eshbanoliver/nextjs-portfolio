@@ -9,6 +9,7 @@ import {
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import PageTransition from "@/components/ui/PageTransition";
+import CTASection from "@/components/ui/CTASection";
 import { education, certifications } from "@/data/site";
 
 export default function EducationPage() {
@@ -144,6 +145,7 @@ export default function EducationPage() {
                     </div>
                 </div>
             </section>
+            <CTASection />
         </PageTransition>
     );
 }

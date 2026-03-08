@@ -9,6 +9,7 @@ import {
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import PageTransition from "@/components/ui/PageTransition";
+import CTASection from "@/components/ui/CTASection";
 import { certifications } from "@/data/site";
 
 export default function CertificationsPage() {
@@ -89,6 +90,7 @@ export default function CertificationsPage() {
                     </div>
                 </div>
             </section>
+            <CTASection />
         </PageTransition>
     );
 }

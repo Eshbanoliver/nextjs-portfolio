@@ -38,6 +38,7 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import PageTransition from "@/components/ui/PageTransition";
+import CTASection from "@/components/ui/CTASection";
 import {
   siteConfig,
   stats,
@@ -725,34 +726,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 14. CTA SECTION ===================== */}
-      <section className="py-40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-navy-500/5 -z-10" />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          >
-            <h2 className="text-4xl md:text-6xl font-black text-site-text mb-8 tracking-tighter leading-tight">
-              Ready to kickstart your <br />
-              <span className="gradient-text italic">next digital project?</span>
-            </h2>
-            <p className="text-site-text-muted text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
-              Whether you need a full-scale web application or a sleek business presence,
-              I am here to turn your vision into a digital reality.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" size="lg" variant="primary" icon={<HiOutlineArrowRight />}>
-                Start a Conversation
-              </Button>
-              <Button href={siteConfig.socials.github} variant="secondary" size="lg" external icon={<FaGithub />}>
-                View Source Code
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection />
     </PageTransition>
   );
 }
