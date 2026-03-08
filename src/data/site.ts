@@ -10,9 +10,8 @@ export const siteConfig = {
   socials: {
     github: "https://github.com/Eshbanoliver",
     linkedin: "https://in.linkedin.com/in/eshban-oliver-757352372",
-    twitter: "https://twitter.com/eshban_dev",
-    dribbble: "https://dribbble.com/eshban",
     googleDev: "https://g.dev/Eshbanoliver",
+    uiverse: "https://uiverse.io/profile/eshban_8201",
     stackOverflow: "https://stackoverflow.com/users/32278850/eshban-official?tab=profile",
     medium: "https://medium.com/@eshbanofficial",
     devto: "https://dev.to/eshban_oliver",

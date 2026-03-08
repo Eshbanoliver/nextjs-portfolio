@@ -8,8 +8,9 @@ import {
     HiOutlinePhone,
     HiOutlinePaperAirplane,
     HiOutlineCheckCircle,
+    HiOutlineSquares2X2,
 } from "react-icons/hi2";
-import { FaGithub, FaLinkedinIn, FaXTwitter, FaDribbble } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -19,8 +20,7 @@ import { siteConfig } from "@/data/site";
 const socials = [
     { icon: FaGithub, href: siteConfig.socials.github, label: "GitHub", color: "hover:text-white" },
     { icon: FaLinkedinIn, href: siteConfig.socials.linkedin, label: "LinkedIn", color: "hover:text-blue-400" },
-    { icon: FaXTwitter, href: siteConfig.socials.twitter, label: "Twitter", color: "hover:text-white" },
-    { icon: FaDribbble, href: siteConfig.socials.dribbble, label: "Dribbble", color: "hover:text-pink-400" },
+    { icon: HiOutlineSquares2X2, href: siteConfig.socials.uiverse, label: "Uiverse", color: "hover:text-teal-400" },
 ];
 
 export default function ContactPage() {

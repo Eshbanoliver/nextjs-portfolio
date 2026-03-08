@@ -6,8 +6,9 @@ import {
     HiOutlineEnvelope,
     HiOutlineMapPin,
     HiOutlinePhone,
+    HiOutlineSquares2X2,
 } from "react-icons/hi2";
-import { FaGithub, FaLinkedinIn, FaXTwitter, FaDribbble, FaStackOverflow, FaMedium, FaDev, FaGoogle } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaStackOverflow, FaMedium, FaDev, FaGoogle } from "react-icons/fa6";
 import { siteConfig } from "@/data/site";
 
 const quickLinks = [
@@ -41,8 +42,7 @@ const projectLinks = [
 const socials = [
     { icon: FaGithub, href: siteConfig.socials.github, label: "GitHub" },
     { icon: FaLinkedinIn, href: siteConfig.socials.linkedin, label: "LinkedIn" },
-    { icon: FaXTwitter, href: siteConfig.socials.twitter, label: "Twitter" },
-    { icon: FaDribbble, href: siteConfig.socials.dribbble, label: "Dribbble" },
+    { icon: HiOutlineSquares2X2, href: siteConfig.socials.uiverse, label: "Uiverse" },
     { icon: FaGoogle, href: siteConfig.socials.googleDev, label: "Google Devs" },
     { icon: FaStackOverflow, href: siteConfig.socials.stackOverflow, label: "Stack Overflow" },
     { icon: FaMedium, href: siteConfig.socials.medium, label: "Medium" },
