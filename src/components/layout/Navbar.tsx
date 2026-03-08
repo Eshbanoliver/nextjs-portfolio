@@ -11,13 +11,27 @@ import ThemeToggle from "@/components/ThemeToggle";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const pathname = usePathname();
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll);
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            // Show/hide on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                setHidden(true);
+            } else {
+                setHidden(false);
+            }
+
+            setScrolled(currentScrollY > 20);
+            setLastScrollY(currentScrollY);
+        };
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     useEffect(() => {
         setIsOpen(false);
@@ -37,83 +51,118 @@ export default function Navbar() {
     return (
         <>
             <motion.header
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? "bg-site-bg/80 backdrop-blur-xl border-b border-surface-300 shadow-lg shadow-black/5"
-                    : "bg-transparent"
+                initial={{ y: -100, opacity: 0 }}
+                animate={{
+                    y: hidden && !isOpen ? -100 : 0,
+                    opacity: hidden && !isOpen ? 0 : 1,
+                }}
+                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "pt-3 px-4 md:px-6 lg:px-8" : "pt-4 px-4 md:px-6 lg:px-8"
                     }`}
             >
-                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16 md:h-20">
+                <nav
+                    className={`max-w-6xl mx-auto transition-all duration-500 ${scrolled
+                            ? "bg-site-bg/70 backdrop-blur-2xl border border-surface-300 shadow-2xl shadow-black/10 rounded-2xl"
+                            : "bg-transparent rounded-2xl"
+                        }`}
+                >
+                    <div className="flex items-center justify-between h-14 md:h-16 px-4 md:px-6">
                         {/* Logo */}
-                        <Link href="/" className="relative group flex items-center gap-2">
-                            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm font-heading shadow-lg shadow-teal-500/20">
+                        <Link href="/" className="relative group flex items-center gap-2.5 shrink-0">
+                            <motion.div
+                                whileHover={{ scale: 1.05, rotate: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm font-heading shadow-lg shadow-teal-500/25"
+                            >
                                 EO
-                            </div>
+                            </motion.div>
                             <span className="text-lg font-bold text-site-text font-heading hidden sm:block">
                                 Eshban<span className="text-teal-400">.</span>dev
                             </span>
                         </Link>
 
-                        {/* Desktop Navigation */}
-                        <div className="hidden lg:flex items-center gap-1">
-                            {siteConfig.nav.map((item) => {
-                                const isActive =
-                                    pathname === item.href ||
-                                    (item.href !== "/" && pathname.startsWith(item.href));
-                                return (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${isActive
-                                            ? "text-teal-400"
-                                            : "text-site-text-muted hover:text-site-text"
-                                            }`}
-                                    >
-                                        {item.label}
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="navbar-indicator"
-                                                className="absolute inset-0 bg-teal-500/10 rounded-lg border border-teal-500/20"
-                                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                            />
-                                        )}
-                                    </Link>
-                                );
-                            })}
+                        {/* Desktop Navigation — Centered Pill */}
+                        <div className="hidden lg:flex items-center">
+                            <div className="flex items-center gap-0.5 px-1.5 py-1 rounded-xl bg-surface-100/60 backdrop-blur-md border border-surface-300/50">
+                                {siteConfig.nav.map((item) => {
+                                    const isActive =
+                                        pathname === item.href ||
+                                        (item.href !== "/" && pathname.startsWith(item.href));
+                                    return (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            className={`relative px-3 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-300 ${isActive
+                                                    ? "text-teal-400"
+                                                    : "text-site-text-muted hover:text-site-text"
+                                                }`}
+                                        >
+                                            <span className="relative z-10">{item.label}</span>
+                                            {isActive && (
+                                                <motion.div
+                                                    layoutId="floating-nav-indicator"
+                                                    className="absolute inset-0 bg-teal-500/10 rounded-lg border border-teal-500/20"
+                                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                                />
+                                            )}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
                         </div>
 
-                        {/* CTA + Mobile Toggle */}
-                        <div className="flex items-center gap-3">
-                            <Link
-                                href="/contact"
-                                className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40"
-                            >
-                                Let&apos;s Talk
-                            </Link>
+                        {/* Right Side: CTA + Theme + Mobile Toggle */}
+                        <div className="flex items-center gap-2.5 shrink-0">
+                            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                                <Link
+                                    href="/contact"
+                                    className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white hover:from-teal-400 hover:to-teal-500 transition-all duration-300 shadow-lg shadow-teal-500/20 hover:shadow-teal-500/40"
+                                >
+                                    Let&apos;s Talk
+                                </Link>
+                            </motion.div>
 
-                            <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="lg:hidden p-2 rounded-lg text-site-text-muted hover:text-site-text hover:bg-surface-200 transition-colors"
-                                aria-label="Toggle menu"
-                            >
-                                {isOpen ? (
-                                    <HiOutlineXMark className="w-6 h-6" />
-                                ) : (
-                                    <HiOutlineBars3 className="w-6 h-6" />
-                                )}
-                            </button>
                             <div className="hidden md:block">
                                 <ThemeToggle />
                             </div>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.9 }}
+                                onClick={() => setIsOpen(!isOpen)}
+                                className="lg:hidden p-2 rounded-xl text-site-text-muted hover:text-site-text hover:bg-surface-200 transition-colors border border-transparent hover:border-surface-300"
+                                aria-label="Toggle menu"
+                            >
+                                <AnimatePresence mode="wait" initial={false}>
+                                    {isOpen ? (
+                                        <motion.div
+                                            key="close"
+                                            initial={{ rotate: -90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: 90, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <HiOutlineXMark className="w-5 h-5" />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="open"
+                                            initial={{ rotate: 90, opacity: 0 }}
+                                            animate={{ rotate: 0, opacity: 1 }}
+                                            exit={{ rotate: -90, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <HiOutlineBars3 className="w-5 h-5" />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.button>
                         </div>
                     </div>
                 </nav>
             </motion.header>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu — Floating Panel */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -124,32 +173,17 @@ export default function Navbar() {
                         className="fixed inset-0 z-40 lg:hidden"
                     >
                         <div
-                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
                             onClick={() => setIsOpen(false)}
                         />
                         <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-site-bg/95 backdrop-blur-xl border-l border-surface-300 shadow-2xl"
+                            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                            className="absolute top-20 left-4 right-4 mx-auto max-w-md bg-site-bg/95 backdrop-blur-2xl border border-surface-300 shadow-2xl shadow-black/20 rounded-2xl overflow-hidden"
                         >
-                            <div className="flex items-center justify-between p-4 border-b border-surface-700/30">
-                                <div className="flex items-center gap-3">
-                                    <span className="text-lg font-bold text-site-text font-heading">
-                                        Menu
-                                    </span>
-                                    <ThemeToggle />
-                                </div>
-                                <button
-                                    onClick={() => setIsOpen(false)}
-                                    className="p-2 rounded-lg text-site-text-muted hover:text-site-text hover:bg-surface-200 transition-colors"
-                                >
-                                    <HiOutlineXMark className="w-5 h-5" />
-                                </button>
-                            </div>
-
-                            <div className="p-4 space-y-1 overflow-y-auto max-h-[calc(100vh-80px)]">
+                            <div className="p-4 space-y-1">
                                 {siteConfig.nav.map((item, i) => {
                                     const isActive =
                                         pathname === item.href ||
@@ -157,35 +191,47 @@ export default function Navbar() {
                                     return (
                                         <motion.div
                                             key={item.href}
-                                            initial={{ opacity: 0, x: 20 }}
+                                            initial={{ opacity: 0, x: -20 }}
                                             animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: i * 0.05 }}
+                                            transition={{ delay: i * 0.04 }}
                                         >
                                             <Link
                                                 href={item.href}
-                                                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${isActive
-                                                    ? "bg-teal-500/10 text-teal-400 border border-teal-500/20"
-                                                    : "text-site-text-muted hover:text-site-text hover:bg-surface-200"
+                                                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
+                                                        ? "bg-teal-500/10 text-teal-400 border border-teal-500/20"
+                                                        : "text-site-text-muted hover:text-site-text hover:bg-surface-200"
                                                     }`}
                                             >
+                                                {isActive && (
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
+                                                )}
                                                 {item.label}
                                             </Link>
                                         </motion.div>
                                     );
                                 })}
+                            </div>
 
+                            <div className="p-4 pt-2 border-t border-surface-300 flex items-center gap-3">
                                 <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.5 }}
-                                    className="pt-4"
+                                    transition={{ delay: 0.4 }}
+                                    className="flex-1"
                                 >
                                     <Link
                                         href="/contact"
-                                        className="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white font-medium shadow-lg shadow-teal-500/20"
+                                        className="block text-center px-6 py-3 rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold shadow-lg shadow-teal-500/20 text-sm"
                                     >
                                         Let&apos;s Talk
                                     </Link>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.45 }}
+                                >
+                                    <ThemeToggle />
                                 </motion.div>
                             </div>
                         </motion.div>
