@@ -324,25 +324,25 @@ export default function HomePage() {
                       {project.category}
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-site-text font-bold text-lg mb-2 group-hover:text-teal-400 transition-colors line-clamp-1">
+                  <div className="p-5 flex flex-col flex-grow">
+                    <h3 className="text-site-text font-bold text-base mb-2 group-hover:text-teal-400 transition-colors line-clamp-2 min-h-[3rem]">
                       {project.title}
                     </h3>
-                    <p className="text-site-text-muted text-xs leading-relaxed mb-4 line-clamp-3 h-12">
+                    <p className="text-site-text-muted text-[11px] leading-relaxed mb-4 line-clamp-3 h-14">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-1.5 mb-6">
                       {project.technologies.map((tech) => (
-                        <span key={tech} className="px-2 py-0.5 text-[9px] uppercase font-bold tracking-widest rounded-md bg-surface-200/50 text-site-text-muted border border-surface-300/30">
+                        <span key={tech} className="px-2 py-0.5 text-[8px] uppercase font-bold tracking-widest rounded-md bg-surface-200/50 text-site-text-muted border border-surface-300/30">
                           {tech}
                         </span>
                       ))}
                     </div>
-                    <div className="grid grid-cols-1 gap-2 mt-auto">
-                      <Button href={project.liveUrl} variant="primary" size="sm" external className="w-full text-[11px] py-2">
+                    <div className="flex flex-col gap-2 mt-auto">
+                      <Button href={project.liveUrl} variant="primary" size="sm" external className="w-full text-[10px] py-1.5 px-0">
                         Live Preview
                       </Button>
-                      <Button href={project.githubUrl} variant="secondary" size="sm" external icon={<FaGithub />} className="w-full text-[11px] py-2">
+                      <Button href={project.githubUrl} variant="secondary" size="sm" external icon={<FaGithub className="w-3 h-3" />} className="w-full text-[10px] py-1.5 px-0">
                         View on GitHub
                       </Button>
                     </div>
