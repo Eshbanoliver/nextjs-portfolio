@@ -56,7 +56,7 @@ export default function Footer() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -143,33 +143,6 @@ export default function Footer() {
                         </ul>
                     </motion.div>
 
-                    {/* Featured Projects */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.25 }}
-                    >
-                        <h3 className="text-site-text font-semibold text-sm mb-4 uppercase tracking-wider">
-                            Featured Projects
-                        </h3>
-                        <ul className="space-y-3">
-                            {projectLinks.map((link) => (
-                                <li key={link.href}>
-                                    <a
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-site-text-muted hover:text-teal-400 text-sm transition-colors duration-300 flex items-center gap-2 group"
-                                    >
-                                        <span className="w-1 h-1 rounded-full bg-surface-300 group-hover:bg-teal-400 transition-colors" />
-                                        {link.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-
                     {/* Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -190,15 +163,6 @@ export default function Footer() {
                                     {siteConfig.email}
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href={`tel:${siteConfig.phone}`}
-                                    className="flex items-start gap-3 text-site-text-muted hover:text-teal-400 text-sm transition-colors group"
-                                >
-                                    <HiOutlinePhone className="w-4 h-4 mt-0.5 shrink-0 group-hover:text-teal-400" />
-                                    {siteConfig.phone}
-                                </a>
-                            </li>
                             <li className="flex items-start gap-3 text-site-text-muted text-sm">
                                 <HiOutlineMapPin className="w-4 h-4 mt-0.5 shrink-0" />
                                 {siteConfig.location}
@@ -208,24 +172,10 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-8 border-t border-surface-300 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-site-text-muted text-sm">
-                        © Copyright | {siteConfig.name} | All Rights Reserved |
+                <div className="pt-8 border-t border-surface-300 flex items-center justify-center">
+                    <p className="text-site-text-muted text-sm text-center">
+                        © Copyright | <Link href="/" className="hover:text-teal-400 transition-colors">{siteConfig.name}</Link> | All Rights Reserved
                     </p>
-                    <div className="flex items-center gap-6">
-                        <Link
-                            href="/about"
-                            className="text-site-text-muted hover:text-teal-400 text-sm transition-colors"
-                        >
-                            Privacy Policy
-                        </Link>
-                        <Link
-                            href="/about"
-                            className="text-site-text-muted hover:text-teal-400 text-sm transition-colors"
-                        >
-                            Terms of Use
-                        </Link>
-                    </div>
                 </div>
             </div>
         </footer>
