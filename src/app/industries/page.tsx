@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
     HiOutlineHomeModern,
     HiOutlineHeart,
@@ -10,6 +11,7 @@ import {
     HiOutlineBriefcase,
     HiOutlineStar,
     HiOutlineCalendarDays,
+    HiOutlineArrowRight,
 } from "react-icons/hi2";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
@@ -54,7 +56,7 @@ export default function IndustriesPage() {
                             const Icon = iconMap[industry.icon] || HiOutlineBriefcase;
 
                             return (
-                                <Card key={industry.name} delay={i * 0.1} className="group p-10 overflow-hidden relative border-surface-300/50 hover:bg-surface-100 transition-all">
+                                <Card key={industry.name} delay={i * 0.1} className="group h-full p-10 overflow-hidden relative border-surface-300/50 hover:bg-surface-100 transition-all flex flex-col">
                                     {/* Decorative background number */}
                                     <div className="absolute -right-4 -bottom-8 text-[12rem] font-black text-site-text opacity-[0.02] select-none group-hover:opacity-[0.05] transition-opacity">
                                         0{i + 1}
@@ -74,7 +76,7 @@ export default function IndustriesPage() {
                                             </p>
 
                                             {/* Solution Feature */}
-                                            <div className="flex flex-col gap-2 p-5 rounded-2xl bg-teal-500/5 border border-teal-500/10 group-hover:bg-teal-500/10 transition-colors">
+                                            <div className="flex flex-col gap-2 p-5 rounded-2xl bg-teal-500/5 border border-teal-500/10 group-hover:bg-teal-500/10 transition-colors mt-auto mb-6">
                                                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-teal-400">
                                                     Strategic Solution
                                                 </span>
@@ -82,6 +84,10 @@ export default function IndustriesPage() {
                                                     {industry.solution}
                                                 </p>
                                             </div>
+
+                                            <Link href={`/industries/${industry.slug}`} className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-teal-400 hover:text-site-text transition-colors mt-auto pt-4 border-t border-surface-300 w-full cursor-pointer">
+                                                DISCOVER MORE <HiOutlineArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                                            </Link>
                                         </div>
                                     </div>
                                 </Card>

@@ -152,36 +152,42 @@ export const experiences = [
 export const industries = [
   {
     name: "Interior & Architecture",
+    slug: "interior-architecture",
     icon: "HiOutlineHomeModern",
     description: "Crafting digital portfolios for architects and interior designers, showcasing high-end finishes and architectural designs.",
     solution: "Built architectural finishes portfolios like India Decor Plaster with interactive galleries.",
   },
   {
     name: "E-commerce",
+    slug: "ecommerce",
     icon: "HiOutlineShoppingCart",
     description: "Developing robust online sports portals and marketplaces with seamless checkout and inventory management.",
     solution: "Created Apex Sports India, a comprehensive e-commerce platform for sports equipment.",
   },
   {
     name: "Healthcare",
+    slug: "healthcare",
     icon: "HiOutlineHeart",
     description: "Modern healthcare portals focusing on patient management and medical resource accessibility.",
     solution: "Developed interactive healthcare management interfaces for clinics and spas.",
   },
   {
     name: "Education",
+    slug: "education",
     icon: "HiOutlineAcademicCap",
     description: "Digital learning platforms and school portals for streamlined student-teacher interactions and resource sharing.",
     solution: "Built Blossom Buds School portal with student resources and notice boards.",
   },
   {
     name: "Business Marketing",
+    slug: "business-marketing",
     icon: "HiOutlineBriefcase",
     description: "Data-driven marketing platforms and business analytics dashboards for growth-focused companies.",
     solution: "Developed Cloudtail Marketing dashboard for business funnel analytics.",
   },
   {
     name: "Hospitality & Wellness",
+    slug: "hospitality-wellness",
     icon: "HiOutlineStar",
     description: "Booking platforms for luxury spas and wellness centers with intuitive scheduling and service menus.",
     solution: "Created Lifecare Ayurvedic Spa booking system with serene UI/UX.",
