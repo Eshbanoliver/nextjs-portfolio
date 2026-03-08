@@ -173,13 +173,23 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-site-text mb-8 tracking-tighter leading-[1] md:leading-[0.9] text-balance"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-site-text mb-4 tracking-tighter leading-[1] md:leading-[0.9] text-balance"
             >
               Building digital{" "}
               <span className="gradient-text italic px-2">masterpieces</span>
               <br />
               for the modern web.
             </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.23, 1, 0.32, 1] }}
+              className="text-xl md:text-2xl font-bold text-teal-400 mb-8 tracking-wide"
+            >
+              #1 Freelance Web Developer in Udaipur, Rajasthan
+            </motion.h2>
+
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -308,7 +318,7 @@ export default function HomePage() {
             title="Selected Projects"
             subtitle="A deep dive into complex web builds where performance meets pixel-perfect execution."
           />
-          <div className="grid grid-flow-col auto-cols-fr gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-flow-col lg:auto-cols-fr gap-6">
             {projects
               .filter((p) => p.featured)
               .map((project, i) => (
@@ -379,7 +389,7 @@ export default function HomePage() {
                   <HiOutlineCodeBracket className="w-40 h-40" />
                 </div>
                 <p className="text-site-text-muted text-lg leading-relaxed mb-6 relative z-10">
-                  I&apos;m a passionate Frontend Web Developer specializing in HTML, CSS, JavaScript 👋 with a keen interest in React Native 📱. I believe in writing clean, maintainable code 🧼 and creating UI/UX Design for Responsive and User-Friendly Websites 😊 that provide AI-enhanced Digital Solutions for Modern Websites 🌍.
+                  I&apos;m a passionate Frontend Web Developer specializing in HTML, CSS, JavaScript 👋 with a keen interest in React Native 📱. I believe in writing clean, maintainable code 🧼 and creating UI/UX Design for Responsive and User-Friendly Websites 😊. Additionally, as an experienced WordPress Developer in Udaipur and a certified Digital Marketing Expert in Udaipur, I help businesses scale through holistic, AI-enhanced Digital Solutions 🌍.
                 </p>
                 <div className="flex flex-wrap gap-3 relative z-10">
                   <Button href="/about" variant="primary" size="md" icon={<HiOutlineArrowRight />}>

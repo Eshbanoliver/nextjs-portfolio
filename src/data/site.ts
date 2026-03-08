@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Eshban Oliver",
-  title: "Eshban Oliver — Front-end Developer & React Native Specialist",
+  title: "Eshban Oliver — Web Developer in Udaipur | Frontend & WordPress Developer",
   description:
-    "Senior Frontend Developer & UI/UX Designer specializing in Responsive Website Design, Interactive Web UI, and high-performance web experiences.",
+    "Eshban Oliver is a Web Developer in Udaipur, Rajasthan specializing in Responsive Website Design, WordPress Development, and Frontend Development. Freelance Web Developer offering high-performance, SEO-optimized websites and Digital Marketing solutions across Udaipur and Rajasthan.",
   url: "https://eshban.netlify.app",
   email: "eshbanoliver@gmail.com",
   location: "Udaipur, Rajasthan, India",
@@ -70,12 +70,12 @@ export const mission = "My mission is to engineer high-converting, SEO-optimized
 export const aboutHero = {
   title: "Meet Eshban Oliver — Best Web Developer in Udaipur 👋",
   subtitle: "Senior Frontend Developer & React Native Specialist specializing in Responsive Website Design, Interactive Web UI, and high-performance cross-platform platforms.",
-  description: "Hello! I am Eshban Oliver, a senior frontend developer and professional web UI designer based in the beautiful lake city of Udaipur, Rajasthan. With over 60 successful projects delivered globally, I specialize in engineering high-converting, SEO-optimized, and mobile-first digital solutions."
+  description: "Hello! I am Eshban Oliver, a professional Web Developer and Freelance Frontend Developer in Udaipur, Rajasthan. With 60+ successful projects delivered globally, I specialize in engineering high-converting, SEO-optimized, and mobile-first digital solutions. As an experienced WordPress Developer in Udaipur and a certified Digital Marketing Expert in Udaipur, I help businesses grow their online presence across Rajasthan and beyond."
 };
 
 export const aboutStory = {
   title: "About Eshban Oliver",
-  description: "I started my development journey back in 2020, driven by a fascination for how code can translate complex ideas into interactive digital experiences. Over the years, I've evolved from a local frontend developer into a professional architect of modern web ecosystems, focusing on React and Next.js performance and cross-platform synergy with React Native."
+  description: "I started my development journey back in 2020, driven by a fascination for how code can translate complex ideas into interactive digital experiences. Over the years, I've grown from a local Frontend Developer in Udaipur into a full professional — a Software Developer in Udaipur delivering responsive website design, React and Next.js applications, and WordPress solutions for businesses across Rajasthan. I also work as a Freelance Web Developer in Udaipur, helping startups and established brands build scalable digital ecosystems and improve their online visibility through targeted digital marketing strategies."
 };
 
 export const expectFromMe = [
@@ -846,7 +846,7 @@ export const certifications = [
     year: "Oct 2024",
     credentialId: "LT-HTML-2024",
     description: "Foundational course on HTML5 structure, semantic elements, and web accessibility basics.",
-    image: "/images/projects/education.png", 
+    image: "/images/projects/education.png",
     detailUrl: "/certifications/cert-04.html"
   },
   {

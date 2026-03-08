@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             "Web Developer in Rajasthan",
             "Best Web Developer in Udaipur",
             "Digital Marketing Expert in Udaipur",
+            "Digital Marketing Expert in Rajasthan",
             "Responsive Website Design",
             data.name
         ],

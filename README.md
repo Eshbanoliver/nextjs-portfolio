@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Professional Next.js Portfolio Website
 
-## Getting Started
+A high-performance, responsive portfolio website built with a modern tech stack. This project showcases web development, mobile app expertise, and digital solutions with a focus on premium UI/UX design.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment**: Optimized for production environments
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 Pages (Total: 20+)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The website consists of multiple high-intent pages designed for conversion and search visibility:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Home**: Hero section, stats, featured work, and brand introduction.
+2. **About**: In-depth look at professional background and mission.
+3. **Experience**: Professional timeline and key responsibilities.
+4. **Industries**: Overview of sectors served (Interior, E-commerce, Healthcare, Education, Business, Hospitality).
+5. **Toolkit**: Detailed breakdown of technical stacks and services offered.
+6. **Education**: Academic background and qualifications.
+7. **Projects**: Full portfolio with filtering and project details.
+8. **Certifications**: Gallery of professional certifications and achievements.
+9. **Contact**: Lead generation and social connectivity.
+10. **Brand Identity**: Visual assets and brand guidelines.
+11. **Dynamic Routes**: Specialized sub-pages for specific Industries and Toolsets.
 
-## Learn More
+## ⚙️ Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Responsive Design**: Mobile-first architecture that scales beautifully across all devices.
+- **Micro-Animations**: Smooth transitions and hover effects using Framer Motion.
+- **Dark/Light Mode**: Full theme customization support.
+- **AI Chatbot**: Integrated AI assistant for answering user queries.
+- **SEO Optimized**: Advanced metadata, JSON-LD structured data, and semantic HTML.
+- **Fast Performance**: Optimized image handling and lightweight CSS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛡️ Copyright & Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**© [Current Year] Portfolio Project. All Rights Reserved.**
 
-## Deploy on Vercel
+This website and its content are the intellectual property of the owner. Unauthorized copying, distribution, or reproduction of the design, source code, or content is strictly prohibited. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Do not attempt to copy or clone this website without explicit permission.**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built with ❤️ using the latest web technologies.*

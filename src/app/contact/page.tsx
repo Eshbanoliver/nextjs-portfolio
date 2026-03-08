@@ -49,7 +49,7 @@ export default function ContactPage() {
                     <SectionHeading
                         label="Contact"
                         title="Let's Build Something Amazing Together"
-                        subtitle="Have a project in mind? I'd love to hear about it. Let's discuss how we can work together to bring your vision to life."
+                        subtitle="Looking to hire a Freelance Web Developer in Udaipur? As the Best Web Developer in Udaipur, I'd love to hear about your project and discuss how we can bring your digital vision to life."
                     />
                 </div>
             </section>
