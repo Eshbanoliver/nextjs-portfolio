@@ -11,21 +11,12 @@ import ThemeToggle from "@/components/ThemeToggle";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [hidden, setHidden] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-
-            // Show/hide on scroll direction
-            if (currentScrollY > lastScrollY && currentScrollY > 200) {
-                setHidden(true);
-            } else {
-                setHidden(false);
-            }
-
             setScrolled(currentScrollY > 20);
             setLastScrollY(currentScrollY);
         };
@@ -53,8 +44,8 @@ export default function Navbar() {
             <motion.header
                 initial={{ y: -100, opacity: 0 }}
                 animate={{
-                    y: hidden && !isOpen ? -100 : 0,
-                    opacity: hidden && !isOpen ? 0 : 1,
+                    y: 0,
+                    opacity: 1,
                 }}
                 transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "pt-3 px-4 md:px-6 lg:px-8" : "pt-4 px-4 md:px-6 lg:px-8"
@@ -62,8 +53,8 @@ export default function Navbar() {
             >
                 <nav
                     className={`max-w-6xl mx-auto transition-all duration-500 ${scrolled
-                            ? "bg-site-bg/70 backdrop-blur-2xl border border-surface-300 shadow-2xl shadow-black/10 rounded-2xl"
-                            : "bg-transparent rounded-2xl"
+                        ? "bg-site-bg/70 backdrop-blur-2xl border border-surface-300 shadow-2xl shadow-black/10 rounded-2xl"
+                        : "bg-transparent rounded-2xl"
                         }`}
                 >
                     <div className="flex items-center justify-between h-14 md:h-16 px-4 md:px-6">
@@ -93,8 +84,8 @@ export default function Navbar() {
                                             key={item.href}
                                             href={item.href}
                                             className={`relative px-3 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-300 ${isActive
-                                                    ? "text-teal-400"
-                                                    : "text-site-text-muted hover:text-site-text"
+                                                ? "text-teal-400"
+                                                : "text-site-text-muted hover:text-site-text"
                                                 }`}
                                         >
                                             <span className="relative z-10">{item.label}</span>
@@ -198,8 +189,8 @@ export default function Navbar() {
                                             <Link
                                                 href={item.href}
                                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
-                                                        ? "bg-teal-500/10 text-teal-400 border border-teal-500/20"
-                                                        : "text-site-text-muted hover:text-site-text hover:bg-surface-200"
+                                                    ? "bg-teal-500/10 text-teal-400 border border-teal-500/20"
+                                                    : "text-site-text-muted hover:text-site-text hover:bg-surface-200"
                                                     }`}
                                             >
                                                 {isActive && (

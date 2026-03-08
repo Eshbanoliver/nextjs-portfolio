@@ -264,7 +264,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 3. PROJECT MARQUEE SECTION ===================== */}
-      <section className="py-24 relative overflow-hidden bg-surface-50/50 border-y border-surface-300">
+      <section className="py-24 relative overflow-hidden bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <SectionHeading
             label="Ecosystem"
@@ -351,7 +351,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 5. ABOUT ME SECTION ===================== */}
-      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+      <section className="py-32 bg-white/[0.01] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Introduction"
@@ -410,7 +410,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 6. TECHNOLOGIES & CREATIVE TOOLS ===================== */}
-      <section className="py-32 bg-site-bg">
+      <section className="py-32 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Tech Stack"
@@ -445,7 +445,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 7. CORE SOFT SKILLS ===================== */}
-      <section className="py-32 relative bg-surface-50/30 border-y border-surface-300">
+      <section className="py-32 relative bg-white/[0.01] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Strengths"
@@ -476,7 +476,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 8. PROFESSIONAL ACHIEVEMENTS (CERTIFICATIONS PREVIEW) ===================== */}
-      <section className="py-32 bg-site-bg">
+      <section className="py-32 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Credentials"
@@ -525,7 +525,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 9. EXPERTISE SECTION ===================== */}
-      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+      <section className="py-32 bg-white/[0.01] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Specialization"
@@ -556,7 +556,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 10. CORE VALUES ===================== */}
-      <section className="py-32 bg-site-bg">
+      <section className="py-32 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Philosophy"
@@ -589,7 +589,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 11. TECHNICAL PROFICIENCY ===================== */}
-      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+      <section className="py-32 bg-white/[0.01] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Proficiency"
@@ -636,7 +636,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 12. WORKING PROCESS ===================== */}
-      <section className="py-32 bg-site-bg">
+      <section className="py-32 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Workflow"
@@ -676,7 +676,7 @@ export default function HomePage() {
       </section>
 
       {/* ===================== 13. EXPERIENCE SECTION ===================== */}
-      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+      <section className="py-32 bg-white/[0.01] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             label="Journey"
