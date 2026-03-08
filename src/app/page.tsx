@@ -293,7 +293,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="text-center mt-12">
-          <Button href="/projects" variant="outline" size="lg" icon={<HiOutlineArrowRight />}>
+          <Button href="/projects" variant="primary" size="lg" icon={<HiOutlineArrowRight />}>
             Discover All Projects
           </Button>
         </div>
