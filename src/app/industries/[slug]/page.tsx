@@ -8,13 +8,14 @@ import {
     HiOutlineArrowRight,
     HiOutlineCheckCircle,
 } from "react-icons/hi2";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import PageTransition from "@/components/ui/PageTransition";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { industryDetails } from "@/data/industryDetails";
 import { siteConfig } from "@/data/site";
+import CTASection from "@/components/ui/CTASection";
 
 interface PageProps {
     params: Promise<{
@@ -48,6 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function IndustrySubpage({ params }: PageProps) {
     const { slug } = await params;
     const data = industryDetails[slug];
+    const cardColors = ["#10b981", "#6366f1", "#f43f5e", "#f59e0b", "#a855f7", "#0ea5e9"];
 
     if (!data) {
         notFound();
@@ -58,7 +60,7 @@ export default async function IndustrySubpage({ params }: PageProps) {
             <article className="pt-32 pb-24 relative">
                 {/* Hero Header */}
                 <header className="py-20 bg-surface-100/30 border-b border-surface-300 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[100px] pointer-events-none" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[120px] pointer-events-none" />
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <SectionHeading
                             label={data.name}
@@ -85,38 +87,47 @@ export default async function IndustrySubpage({ params }: PageProps) {
                             <section>
                                 <h2 className="text-3xl font-black text-site-text mb-8">Business Benefits</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {data.benefits.map((benefit, idx) => (
-                                        <Card key={idx} className="p-6 border-surface-300">
-                                            <div className="flex items-start gap-4">
-                                                <div className="w-10 h-10 mt-1 shrink-0 bg-teal-500/10 rounded-full flex items-center justify-center text-teal-400">
-                                                    <HiOutlineCheckCircle className="w-6 h-6" />
+                                    {data.benefits.map((benefit, idx) => {
+                                        const color = cardColors[idx % cardColors.length];
+                                        return (
+                                            <Card key={idx} className="p-6 border shadow-2xl bg-surface-100/50 transition-all hover:bg-surface-100" accentColor={color} style={{ borderColor: `${color}40`, boxShadow: `0 20px 40px -15px ${color}15` }}>
+                                                <div className="flex items-start gap-4">
+                                                    <div className="w-10 h-10 mt-1 shrink-0 rounded-full flex items-center justify-center border" style={{ backgroundColor: `${color}1a`, color: color, borderColor: `${color}33` }}>
+                                                        <HiOutlineCheckCircle className="w-6 h-6" />
+                                                    </div>
+                                                    <div>
+                                                        <h3 className="font-bold text-site-text text-lg mb-2">{benefit.title}</h3>
+                                                        <p className="text-site-text-muted text-sm leading-relaxed">{benefit.description}</p>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <h3 className="font-bold text-site-text text-lg mb-2">{benefit.title}</h3>
-                                                    <p className="text-site-text-muted text-sm leading-relaxed">{benefit.description}</p>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    ))}
+                                            </Card>
+                                        );
+                                    })}
                                 </div>
                             </section>
 
                             {/* What Makes Me Better Section */}
-                            <section className="bg-surface-200/50 rounded-3xl p-8 md:p-12 border border-surface-300 relative overflow-hidden">
-                                <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-accent-500/10 rounded-full blur-[80px]" />
-                                <h2 className="text-3xl font-black text-site-text mb-8 relative z-10">What Makes Me Better?</h2>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
-                                    {data.whatMakesMeBetter.map((item, idx) => (
-                                        <div key={idx}>
-                                            <h3 className="text-teal-400 font-bold mb-2 flex items-center gap-2">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-teal-500" />
-                                                {item.title}
-                                            </h3>
-                                            <p className="text-site-text-muted text-sm leading-relaxed pl-3.5">
-                                                {item.description}
-                                            </p>
-                                        </div>
-                                    ))}
+                            <section>
+                                <SectionHeading
+                                    title="What Makes Me Better?"
+                                    subtitle="Expert technical depth and strategic research specifically tailored to your industry."
+                                    align="left"
+                                />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                                    {data.whatMakesMeBetter.map((item, idx) => {
+                                        const color = cardColors[(idx + 2) % cardColors.length];
+                                        return (
+                                            <Card key={idx} className="p-8 border shadow-2xl bg-surface-100/50 transition-all hover:bg-surface-100" accentColor={color} style={{ borderColor: `${color}40`, boxShadow: `0 20px 40px -15px ${color}15` }}>
+                                                <h3 className="text-xl font-bold mb-3 flex items-center gap-2" style={{ color: color }}>
+                                                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color }} />
+                                                    {item.title}
+                                                </h3>
+                                                <p className="text-site-text-muted text-base leading-relaxed pl-4">
+                                                    {item.description}
+                                                </p>
+                                            </Card>
+                                        );
+                                    })}
                                 </div>
                             </section>
                         </div>
@@ -125,7 +136,7 @@ export default async function IndustrySubpage({ params }: PageProps) {
                         <aside className="xl:col-span-1 space-y-8">
 
                             {/* Contact Card */}
-                            <Card className="p-8 border-teal-500/20 shadow-2xl shadow-teal-500/5 bg-surface-100" accentColor="#2dd4bf">
+                            <Card className="p-8 border shadow-2xl bg-surface-100/50" accentColor="#14b8a6" style={{ borderColor: `#14b8a640`, boxShadow: `0 20px 40px -15px #14b8a615` }}>
                                 <h3 className="text-2xl font-black text-site-text tracking-tight mb-6 relative">
                                     Let's Work Together
                                 </h3>
@@ -155,14 +166,14 @@ export default async function IndustrySubpage({ params }: PageProps) {
                                     <Button href={`mailto:${siteConfig.email}`} className="w-full justify-center">
                                         <HiOutlineEnvelope className="w-5 h-5 mr-2" /> Email Me
                                     </Button>
-                                    <Button href={`https://wa.me/91${siteConfig.phone.replace(/[^0-9]/g, '')}`} external variant="outline" className="w-full justify-center border-green-500/30 text-green-500 hover:bg-green-500/10 hover:border-green-500">
-                                        <FaWhatsapp className="w-5 h-5 mr-2" /> WhatsApp Me
+                                    <Button href={siteConfig.socials.github} external variant="outline" className="w-full justify-center border-surface-400/50 hover:border-teal-400 hover:text-teal-400 transition-colors">
+                                        <FaGithub className="w-5 h-5 mr-2" /> View GitHub
                                     </Button>
                                 </div>
                             </Card>
 
                             {/* FAQ Section */}
-                            <Card className="p-8 border-surface-300 bg-surface-100/50">
+                            <Card className="p-8 border shadow-2xl bg-surface-100/50" accentColor="#eab308" style={{ borderColor: `#eab30840`, boxShadow: `0 20px 40px -15px #eab30815` }}>
                                 <h3 className="text-xl font-black text-site-text mb-6">Frequently Asked Questions</h3>
                                 <div className="space-y-6">
                                     {data.faqs.map((faq, idx) => (
@@ -186,6 +197,7 @@ export default async function IndustrySubpage({ params }: PageProps) {
                     </div>
                 </div>
             </article>
+            <CTASection />
         </PageTransition>
     );
 }

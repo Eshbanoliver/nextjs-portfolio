@@ -9,6 +9,7 @@ interface CardProps {
     hover?: boolean;
     delay?: number;
     accentColor?: string;
+    style?: React.CSSProperties;
 }
 
 export default function Card({
@@ -17,6 +18,7 @@ export default function Card({
     hover = true,
     delay = 0,
     accentColor,
+    style = {},
 }: CardProps) {
     const colorStyle = accentColor
         ? {
@@ -25,8 +27,9 @@ export default function Card({
             "--card-accent-20": `${accentColor}33`,
             "--card-accent-30": `${accentColor}4d`,
             "--card-accent-40": `${accentColor}66`,
+            ...style,
         } as React.CSSProperties
-        : {};
+        : style;
 
     return (
         <motion.div

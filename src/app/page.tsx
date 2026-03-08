@@ -196,11 +196,11 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
               className="flex flex-wrap items-center justify-center gap-4"
             >
-              <Button href="/projects" variant="primary" size="lg" icon={<HiOutlineArrowRight />}>
-                Explore My Work
+              <Button href="/industries" variant="primary" size="lg" icon={<HiOutlineArrowRight />}>
+                Browse Industries
               </Button>
-              <Button href="/contact" variant="outline" size="lg">
-                Get In Touch
+              <Button href="/toolkit" variant="outline" size="lg">
+                View My Toolkit
               </Button>
             </motion.div>
           </div>

@@ -71,13 +71,14 @@ export default function ToolkitPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {toolkitServices.map((service, i) => {
                             const Icon = iconMap[service.icon] || HiOutlineGlobeAlt;
-                            const c = colorMap[service.color] || colorMap.teal;
+                            const cardColors = ["#10b981", "#6366f1", "#f43f5e", "#f59e0b", "#a855f7", "#0ea5e9"];
+                            const color = cardColors[i % cardColors.length];
 
                             return (
-                                <Card key={service.slug} delay={i * 0.1} className="group p-0 overflow-hidden border-surface-300/50 hover:bg-surface-100 transition-all flex flex-col md:flex-row">
+                                <Card key={service.slug} delay={i * 0.1} className="group p-0 overflow-hidden border shadow-2xl transition-all flex flex-col md:flex-row" accentColor={color} style={{ borderColor: `${color}40`, boxShadow: `0 20px 40px -15px ${color}15` }}>
                                     {/* Icon Column */}
-                                    <div className={`md:w-32 py-10 flex items-center justify-center ${c.light} border-b md:border-b-0 md:border-r border-surface-300/50 group-hover:bg-transparent transition-colors`}>
-                                        <div className={`w-16 h-16 rounded-2xl ${c.bg} ${c.border} border flex items-center justify-center ${c.text} shadow-xl group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500`}>
+                                    <div className="md:w-32 py-10 flex items-center justify-center border-b md:border-b-0 md:border-r transition-colors" style={{ backgroundColor: `${color}08`, borderColor: `${color}26` }}>
+                                        <div className="w-16 h-16 rounded-2xl border flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                                             <Icon className="w-8 h-8" />
                                         </div>
                                     </div>
@@ -85,7 +86,7 @@ export default function ToolkitPage() {
                                     {/* Content Column */}
                                     <div className="flex-1 p-8 lg:p-10 flex flex-col justify-between">
                                         <div>
-                                            <h3 className="text-3xl font-black text-site-text tracking-tighter mb-4 group-hover:text-teal-400 transition-colors">
+                                            <h3 className="text-3xl font-black text-site-text tracking-tighter mb-4 transition-colors" style={{ color: color }}>
                                                 {service.title}
                                             </h3>
                                             <p className="text-site-text-muted text-lg leading-relaxed mb-8 font-medium italic opacity-80 underline decoration-teal-500/10 underline-offset-8">
@@ -96,7 +97,8 @@ export default function ToolkitPage() {
                                         <div className="flex items-center justify-between mt-auto pt-6 border-t border-surface-300/30">
                                             <Link
                                                 href={`/toolkit/${service.slug}`}
-                                                className={`group/btn inline-flex items-center gap-3 ${c.text} text-xs font-black uppercase tracking-[0.2em] transition-all`}
+                                                className="group/btn inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] transition-all hover:text-site-text"
+                                                style={{ color: color }}
                                             >
                                                 Explore Service <HiOutlineArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
                                             </Link>

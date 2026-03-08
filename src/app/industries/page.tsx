@@ -54,21 +54,23 @@ export default function IndustriesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {industries.map((industry, i) => {
                             const Icon = iconMap[industry.icon] || HiOutlineBriefcase;
+                            const cardColors = ["#10b981", "#6366f1", "#f43f5e", "#f59e0b", "#a855f7", "#0ea5e9"];
+                            const color = cardColors[i % cardColors.length];
 
                             return (
-                                <Card key={industry.name} delay={i * 0.1} className="group h-full p-10 overflow-hidden relative border-surface-300/50 hover:bg-surface-100 transition-all flex flex-col">
+                                <Card key={industry.name} delay={i * 0.1} className="group h-full p-10 overflow-hidden relative border shadow-2xl transition-all flex flex-col" accentColor={color} style={{ borderColor: `${color}40`, boxShadow: `0 20px 40px -15px ${color}15` }}>
                                     {/* Decorative background number */}
                                     <div className="absolute -right-4 -bottom-8 text-[12rem] font-black text-site-text opacity-[0.02] select-none group-hover:opacity-[0.05] transition-opacity">
                                         0{i + 1}
                                     </div>
 
                                     <div className="flex flex-col sm:flex-row items-start gap-8 relative z-10">
-                                        <div className="w-20 h-20 shrink-0 rounded-2xl bg-surface-100 border border-surface-300 flex items-center justify-center text-teal-400 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                                        <div className="w-20 h-20 shrink-0 rounded-2xl bg-surface-100 border flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500" style={{ color: color, borderColor: `${color}33`, backgroundColor: `${color}08` }}>
                                             <Icon className="w-10 h-10" />
                                         </div>
 
                                         <div>
-                                            <h3 className="text-3xl font-black text-site-text tracking-tighter mb-4 group-hover:text-teal-400 transition-colors">
+                                            <h3 className="text-3xl font-black text-site-text tracking-tighter mb-4 transition-colors" style={{ color: color }}>
                                                 {industry.name}
                                             </h3>
                                             <p className="text-site-text-muted text-base leading-relaxed mb-6 font-medium">
@@ -76,8 +78,8 @@ export default function IndustriesPage() {
                                             </p>
 
                                             {/* Solution Feature */}
-                                            <div className="flex flex-col gap-2 p-5 rounded-2xl bg-teal-500/5 border border-teal-500/10 group-hover:bg-teal-500/10 transition-colors mt-auto mb-6">
-                                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-teal-400">
+                                            <div className="flex flex-col gap-2 p-5 rounded-2xl border transition-colors mt-auto mb-6" style={{ backgroundColor: `${color}08`, borderColor: `${color}1a` }}>
+                                                <span className="text-[10px] font-black uppercase tracking-[0.2em]" style={{ color: color }}>
                                                     Strategic Solution
                                                 </span>
                                                 <p className="text-site-text font-bold text-sm leading-snug">
@@ -85,7 +87,7 @@ export default function IndustriesPage() {
                                                 </p>
                                             </div>
 
-                                            <Link href={`/industries/${industry.slug}`} className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] text-teal-400 hover:text-site-text transition-colors mt-auto pt-4 border-t border-surface-300 w-full cursor-pointer">
+                                            <Link href={`/industries/${industry.slug}`} className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.3em] transition-colors mt-auto pt-4 border-t w-full cursor-pointer hover:text-site-text" style={{ color: color, borderColor: `${color}26` }}>
                                                 DISCOVER MORE <HiOutlineArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                                             </Link>
                                         </div>
