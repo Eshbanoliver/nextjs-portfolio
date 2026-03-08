@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
 import { siteConfig } from "@/data/site";
 import ThemeToggle from "@/components/ThemeToggle";
+import Logo from "@/components/ui/Logo";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -59,17 +60,8 @@ export default function Navbar() {
                 >
                     <div className="flex items-center justify-between h-14 md:h-16 px-4 md:px-6">
                         {/* Logo */}
-                        <Link href="/" className="relative group flex items-center gap-2.5 shrink-0">
-                            <motion.div
-                                whileHover={{ scale: 1.05, rotate: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm font-heading shadow-lg shadow-teal-500/25"
-                            >
-                                EO
-                            </motion.div>
-                            <span className="text-lg font-bold text-site-text font-heading hidden sm:block">
-                                Eshban<span className="text-teal-400">.</span>dev
-                            </span>
+                        <Link href="/" className="shrink-0">
+                            <Logo />
                         </Link>
 
                         {/* Desktop Navigation — Centered Pill */}

@@ -30,78 +30,87 @@ export default function EducationPage() {
             <section className="pb-32 relative">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 gap-12">
-                        {education.map((edu, i) => (
-                            <motion.div
-                                key={edu.degree + i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: i * 0.1 }}
-                            >
-                                <Card className="p-0 overflow-hidden border-surface-300/50 hover:bg-surface-100 transition-colors">
-                                    <div className="flex flex-col md:flex-row">
-                                        {/* Status Sidebar */}
-                                        <div className="md:w-1/4 bg-surface-200/50 p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-surface-300/50">
-                                            <div className="w-16 h-16 rounded-2xl bg-teal-500/10 text-teal-400 flex items-center justify-center mb-4 shadow-inner">
-                                                <HiOutlineAcademicCap className="w-8 h-8" />
-                                            </div>
-                                            <span className="text-teal-400 font-black text-sm uppercase tracking-widest">{edu.year}</span>
-                                            <div className="mt-2 px-3 py-1 rounded-full bg-surface-300 text-site-text-muted text-[10px] font-bold uppercase tracking-widest border border-surface-400/30">
-                                                {edu.grade}
-                                            </div>
-                                        </div>
-
-                                        {/* Main Content */}
-                                        <div className="md:w-3/4 p-8 md:p-12">
-                                            <div className="mb-8">
-                                                <h3 className="text-2xl md:text-3xl font-black text-site-text tracking-tighter mb-2">
-                                                    {edu.degree}
-                                                </h3>
-                                                <p className="text-teal-400 font-bold uppercase tracking-widest text-sm">
-                                                    {edu.institution}
-                                                </p>
+                        {education.map((edu, i) => {
+                            const cardColors = ["#10b981", "#6366f1", "#f43f5e", "#f59e0b", "#a855f7", "#0ea5e9"];
+                            const color = cardColors[i % cardColors.length];
+                            return (
+                                <motion.div
+                                    key={edu.degree + i}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.8, delay: i * 0.1 }}
+                                >
+                                    <Card
+                                        accentColor={color}
+                                        className="p-0 overflow-hidden border transition-all duration-500 shadow-2xl"
+                                        style={{ borderColor: `${color}40`, boxShadow: `0 20px 40px -15px ${color}15` }}
+                                    >
+                                        <div className="flex flex-col md:flex-row h-full">
+                                            {/* Status Sidebar */}
+                                            <div className="md:w-1/4 p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r transition-colors" style={{ backgroundColor: `${color}08`, borderColor: `${color}26` }}>
+                                                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-xl group-hover:scale-110 transition-transform" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
+                                                    <HiOutlineAcademicCap className="w-8 h-8" />
+                                                </div>
+                                                <span className="font-black text-sm uppercase tracking-[0.2em] mb-3" style={{ color: color }}>{edu.year}</span>
+                                                <div className="px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all" style={{ backgroundColor: `${color}0d`, color: color, borderColor: `${color}26` }}>
+                                                    {edu.grade}
+                                                </div>
                                             </div>
 
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                                {/* Achievements */}
-                                                <div>
-                                                    <h4 className="text-xs font-black text-site-text uppercase tracking-[0.2em] mb-4 opacity-50 flex items-center gap-2">
-                                                        <HiOutlineTrophy className="w-4 h-4 text-teal-400" />
-                                                        Distinctions
-                                                    </h4>
-                                                    <ul className="space-y-3">
-                                                        {edu.achievements.map((ach) => (
-                                                            <li key={ach} className="flex items-start gap-3 text-site-text-muted text-sm font-medium leading-snug">
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 mt-1.5 shrink-0 shadow-[0_0_8px_rgba(5,200,173,0.5)]" />
-                                                                {ach}
-                                                            </li>
-                                                        ))}
-                                                    </ul>
+                                            {/* Main Content */}
+                                            <div className="md:w-3/4 p-8 md:p-12 flex flex-col justify-center">
+                                                <div className="mb-10">
+                                                    <h3 className="text-3xl font-black text-site-text tracking-tighter mb-3 leading-tight transition-colors group-hover:text-teal-400" style={{ color: color }}>
+                                                        {edu.degree}
+                                                    </h3>
+                                                    <p className="font-bold uppercase tracking-[0.2em] text-xs opacity-70">
+                                                        {edu.institution}
+                                                    </p>
                                                 </div>
 
-                                                {/* Coursework */}
-                                                <div>
-                                                    <h4 className="text-xs font-black text-site-text uppercase tracking-[0.2em] mb-4 opacity-50 flex items-center gap-2">
-                                                        <HiOutlineBookOpen className="w-4 h-4 text-teal-400" />
-                                                        Key Curriculum
-                                                    </h4>
-                                                    <div className="flex flex-wrap gap-2">
-                                                        {edu.coursework.map((course) => (
-                                                            <span
-                                                                key={course}
-                                                                className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest rounded-md bg-surface-200 text-site-text-muted border border-surface-300"
-                                                            >
-                                                                {course}
-                                                            </span>
-                                                        ))}
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                                    {/* Achievements */}
+                                                    <div>
+                                                        <h4 className="text-[10px] font-black text-site-text uppercase tracking-[0.3em] mb-6 opacity-40 flex items-center gap-3">
+                                                            <HiOutlineTrophy className="w-4 h-4" style={{ color: color }} />
+                                                            Academic Distinction
+                                                        </h4>
+                                                        <ul className="space-y-4">
+                                                            {edu.achievements.map((ach) => (
+                                                                <li key={ach} className="flex items-start gap-4 text-site-text-muted text-sm font-medium leading-relaxed">
+                                                                    <span className="w-2 h-2 rounded-full mt-1.5 shrink-0 shadow-lg" style={{ backgroundColor: color, boxShadow: `0 0 12px ${color}80` }} />
+                                                                    {ach}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+
+                                                    {/* Coursework */}
+                                                    <div>
+                                                        <h4 className="text-[10px] font-black text-site-text uppercase tracking-[0.3em] mb-6 opacity-40 flex items-center gap-3">
+                                                            <HiOutlineBookOpen className="w-4 h-4" style={{ color: color }} />
+                                                            Advanced Curriculum
+                                                        </h4>
+                                                        <div className="flex flex-wrap gap-2">
+                                                            {edu.coursework.map((course) => (
+                                                                <span
+                                                                    key={course}
+                                                                    className="px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-widest rounded-lg transition-all"
+                                                                    style={{ backgroundColor: `${color}0d`, color: color, border: `1px solid ${color}26` }}
+                                                                >
+                                                                    {course}
+                                                                </span>
+                                                            ))}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </Card>
-                            </motion.div>
-                        ))}
+                                    </Card>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

@@ -10,6 +10,7 @@ import {
 } from "react-icons/hi2";
 import { FaGithub, FaLinkedinIn, FaStackOverflow, FaMedium, FaDev, FaGoogle } from "react-icons/fa6";
 import { siteConfig } from "@/data/site";
+import Logo from "@/components/ui/Logo";
 
 const quickLinks = [
     { label: "Home", href: "/" },
@@ -65,13 +66,8 @@ export default function Footer() {
                         transition={{ duration: 0.5 }}
                         className="lg:col-span-1"
                     >
-                        <Link href="/" className="flex items-center gap-2 mb-4">
-                            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm font-heading shadow-lg shadow-teal-500/20">
-                                EO
-                            </div>
-                            <span className="text-lg font-bold text-site-text font-heading">
-                                Eshban<span className="text-teal-400">.</span>dev
-                            </span>
+                        <Link href="/" className="mb-4 inline-block">
+                            <Logo />
                         </Link>
                         <p className="text-site-text-muted text-sm leading-relaxed mb-6">
                             Building digital masterpieces and modern web solutions.

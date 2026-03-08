@@ -38,7 +38,7 @@ export default function Card({
             whileHover={hover ? { y: -8, transition: { duration: 0.3 } } : {}}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1], delay }}
-            className={`glass-card rounded-2xl p-6 glass-shimmer ${accentColor ? "vibrant-card" : ""} ${className}`}
+            className={`glass-card rounded-2xl p-4 md:p-6 glass-shimmer ${accentColor ? "vibrant-card" : ""} ${className}`}
             style={colorStyle}
         >
             {children}

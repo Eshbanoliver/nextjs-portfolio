@@ -14,6 +14,7 @@ interface ButtonProps {
     onClick?: () => void;
     type?: "button" | "submit";
     external?: boolean;
+    style?: React.CSSProperties;
 }
 
 const variants = {
@@ -43,8 +44,14 @@ export default function Button({
     onClick,
     type = "button",
     external,
+    style = {},
 }: ButtonProps) {
     const baseClasses = `inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-all duration-300 cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`;
+
+    const finalStyle = {
+        ...style,
+        ...(style.backgroundColor ? { backgroundImage: "none" } : {}),
+    };
 
     const content = (
         <>
@@ -61,6 +68,7 @@ export default function Button({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={baseClasses}
+                    style={finalStyle}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                 >
@@ -72,6 +80,7 @@ export default function Button({
             <Link href={href}>
                 <motion.span
                     className={baseClasses}
+                    style={finalStyle}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                 >
@@ -86,6 +95,7 @@ export default function Button({
             type={type}
             onClick={onClick}
             className={baseClasses}
+            style={finalStyle}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
         >

@@ -1,0 +1,19 @@
+<svg width="500" height="150" viewBox="0 0 500 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#2dd4bf" />
+      <stop offset="100%" stopColor="#6366f1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon Symbol -->
+  <g transform="translate(25, 25)">
+    <path d="M35 30H65M35 50H55M35 70H65" stroke="url(#logo-gradient)" stroke-width="8" stroke-linecap="round" />
+    <path d="M50 15C69.33 15 85 30.67 85 50C85 69.33 69.33 85 50 85C30.67 85 15 69.33 15 50" stroke="url(#logo-gradient)" stroke-width="8" stroke-linecap="round" />
+    <circle cx="15" cy="50" r="4" fill="#2dd4bf" />
+  </g>
+
+  <!-- Wordmark Text -->
+  <text x="140" y="75" fill="#FFFFFF" style="font-family: 'Outfit', sans-serif; font-size: 48px; font-weight: 800; letter-spacing: -0.02em;">ESHBAN<tspan fill="#2dd4bf">OLIVER</tspan></text>
+  <text x="140" y="105" fill="#A0A0A0" style="font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;">Digital Solutionist</text>
+</svg>

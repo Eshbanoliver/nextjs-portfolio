@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
 import TechBackground from "@/components/TechBackground";
+import AIChatbot from "@/components/AIChatbot";
 import { siteConfig } from "@/data/site";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -51,6 +52,14 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
   },
+  icons: {
+    icon: "/brand/logo-icon.svg",
+    apple: "/brand/logo-icon.svg",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#05c8ad", // Primary Brand Teal/Green
 };
 
 export default function RootLayout({
@@ -71,6 +80,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-screen relative z-10">{children}</main>
           <BackToTop />
+          <AIChatbot />
           <Footer />
         </ThemeProvider>
       </body>

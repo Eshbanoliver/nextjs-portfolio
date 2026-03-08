@@ -817,65 +817,73 @@ export const certifications = [
     title: "Digital Marketing Certified",
     platform: "HubSpot Academy",
     year: "Oct 2024",
-    credentialId: "HUB-DM-2024-EO",
-    description: "Expertise in SEO, content marketing, and lead generation strategies for digital presence.",
-    image: "https://eshban.netlify.app/assets/img/certifications/hubspot-digital-marketing.png",
+    credentialId: "HS-DM-2024",
+    description: "In-depth certification covering SEO, content marketing, email marketing, and social media strategy.",
+    image: "/certifications/assets/digital_marketing_certified_by_hubspot_academy.png",
+    detailUrl: "/certifications/cert-01.html"
   },
   {
     title: "Android Application Development",
     platform: "Great Learning Academy",
     year: "Dec 2023",
-    credentialId: "GL-AND-2023-EO",
-    description: "Knowledge in building native Android applications and mobile UI/UX patterns.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-android-development.png",
+    credentialId: "GL-AND-2023",
+    description: "Fundamentals of building Android apps using Java and XML, covering UI design and lifecycle management.",
+    image: "/certifications/assets/great_learning/android_application_development.png",
+    detailUrl: "/certifications/cert-02.html"
   },
   {
     title: "AWS For Beginners",
     platform: "Great Learning Academy",
     year: "Nov 2023",
-    credentialId: "GL-AWS-2023-EO",
-    description: "Foundational understanding of cloud infrastructure, S3 buckets, and EC2 instances.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-aws-beginners.png",
+    credentialId: "GL-AWS-2023",
+    description: "Introduction to cloud computing concepts and core Amazon Web Services like EC2, S3, and RDS.",
+    image: "/certifications/assets/great_learning/aws_for_beginners.png",
+    detailUrl: "/certifications/cert-03.html"
   },
   {
     title: "HTML Introduction",
     platform: "LearnTube.ai",
     year: "Oct 2024",
-    credentialId: "LT-HTML-2024-EO",
-    description: "Core HTML fundamentals and semantic web markup for accessible websites.",
-    image: "https://eshban.netlify.app/assets/img/certifications/learntube-html.jpg",
+    credentialId: "LT-HTML-2024",
+    description: "Foundational course on HTML5 structure, semantic elements, and web accessibility basics.",
+    image: "/images/projects/education.png", 
+    detailUrl: "/certifications/cert-04.html"
   },
   {
     title: "Data Science Foundations",
     platform: "Great Learning Academy",
     year: "Nov 2023",
-    credentialId: "GL-DS-2023-EO",
-    description: "Foundations in data science, statistical analysis, and data-driven insights.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-data-science.png",
+    credentialId: "GL-DS-2023",
+    description: "Core concepts of data science, ranging from statistical analysis to machine learning basics.",
+    image: "/certifications/assets/great_learning/data_science_foundations.png",
+    detailUrl: "/certifications/cert-05.html"
   },
   {
     title: "Front End Development - CSS",
     platform: "Great Learning Academy",
     year: "Nov 2023",
-    credentialId: "GL-CSS-2023-EO",
-    description: "Advanced CSS techniques including Flexbox, Grid, and responsive design patterns.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-css.png",
+    credentialId: "GL-CSS-2023",
+    description: "Mastering CSS3 layout techniques, Flexbox, Grid, and responsive design principles.",
+    image: "/certifications/assets/great_learning/front_end_development_-_css.png",
+    detailUrl: "/certifications/cert-06.html"
   },
   {
     title: "Front End Development - HTML",
     platform: "Great Learning Academy",
     year: "Nov 2023",
-    credentialId: "GL-HTML-2023-EO",
-    description: "Comprehensive HTML markup, semantic elements, and accessibility best practices.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-html.png",
+    credentialId: "GL-HTML-2023",
+    description: "Advanced HTML5 semantics and best practices for SEO-friendly web structure.",
+    image: "/certifications/assets/great_learning/front_end_development_html.png",
+    detailUrl: "/certifications/cert-07.html"
   },
   {
     title: "Introduction to Artificial Intelligence",
     platform: "Great Learning Academy",
     year: "Nov 2023",
-    credentialId: "GL-AI-2023-EO",
-    description: "Core concepts of AI including machine learning, neural networks, and AI applications.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-ai.png",
+    credentialId: "GL-AI-2023",
+    description: "Exploring the history and applications of AI, including neural networks and ethical considerations.",
+    image: "/certifications/assets/great_learning/introduction_to_artificial_intelligence.png",
+    detailUrl: "/certifications/cert-08.html"
   },
   {
     title: "Introduction to Cyber Security",
@@ -883,7 +891,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-CS-2023-EO",
     description: "Fundamental cybersecurity concepts, threat analysis, and security best practices.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-cyber-security.png",
+    image: "/certifications/assets/great_learning/introduction_to_cyber_security.png",
+    detailUrl: "/certifications/cert-09.html"
   },
   {
     title: "Introduction to Digital Marketing",
@@ -891,7 +900,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-DM-2023-EO",
     description: "Digital marketing strategies, social media, and online brand building fundamentals.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-digital-marketing.png",
+    image: "/certifications/assets/great_learning/introduction_to_digital_marketing.png",
+    detailUrl: "/certifications/cert-10.html"
   },
   {
     title: "Introduction to Management",
@@ -899,7 +909,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-MGM-2023-EO",
     description: "Core management principles, leadership, and organizational behavior concepts.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-management.png",
+    image: "/certifications/assets/great_learning/introduction_to_management.png",
+    detailUrl: "/certifications/cert-11.html"
   },
   {
     title: "Introduction to Natural Language Processing",
@@ -907,7 +918,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-NLP-2023-EO",
     description: "NLP fundamentals, text processing, and language model basics for AI applications.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-nlp.png",
+    image: "/certifications/assets/great_learning/introduction_to_natural_language_processing.png",
+    detailUrl: "/certifications/cert-12.html"
   },
   {
     title: "Java Programming",
@@ -915,7 +927,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-JAVA-2023-EO",
     description: "Object-oriented Java programming, data structures, and application development.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-java.png",
+    image: "/certifications/assets/great_learning/java_programming.png",
+    detailUrl: "/certifications/cert-13.html"
   },
   {
     title: "Python Fundamentals for Beginners",
@@ -923,7 +936,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-PY-2023-EO",
     description: "Python programming basics, data types, functions, and scripting fundamentals.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-python.png",
+    image: "/certifications/assets/great_learning/python_fundamentals_for_beginners.png",
+    detailUrl: "/certifications/cert-14.html"
   },
   {
     title: "SQL for Data Science",
@@ -931,7 +945,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "GL-SQL-2023-EO",
     description: "SQL querying, database management, and data analysis for data science workflows.",
-    image: "https://eshban.netlify.app/assets/img/certifications/gl-sql.png",
+    image: "/certifications/assets/great_learning/sql_for_data_science.png",
+    detailUrl: "/certifications/cert-15.html"
   },
   {
     title: "Web Development Masterclass",
@@ -939,7 +954,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "UC-WD-2023-EO",
     description: "Complete bootcamp covering full-stack development from frontend to database management.",
-    image: "https://eshban.netlify.app/assets/img/certifications/udemy-web-development.png",
+    image: "/certifications/assets/certificate.jpg",
+    detailUrl: "/certifications/cert-16.html"
   },
   {
     title: "21 Days Masterclass on Data Science",
@@ -947,7 +963,8 @@ export const certifications = [
     year: "Dec 2023",
     credentialId: "PT-DS21-2023-EO",
     description: "Intensive data science bootcamp covering Python, ML algorithms, and data visualization.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-data-science.png",
+    image: "/certifications/assets/masterclass_participation_certificate.pdf",
+    detailUrl: "/certifications/cert-17.html"
   },
   {
     title: "Network Security & Defensive Hacking",
@@ -955,7 +972,8 @@ export const certifications = [
     year: "Jan 2024",
     credentialId: "TDA-NSH-2024-EO",
     description: "Network security protocols, ethical hacking techniques, and defensive strategies.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-hacking.png",
+    image: "/certifications/assets/network_security_by_digital_adda_.pdf",
+    detailUrl: "/certifications/cert-18.html"
   },
   {
     title: "21 Days Masterclass on Generative AI",
@@ -963,7 +981,8 @@ export const certifications = [
     year: "Jan 2024",
     credentialId: "PT-GAI-2024-EO",
     description: "Generative AI concepts, prompt engineering, and AI content generation models.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-gen-ai.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-19.html"
   },
   {
     title: "Workshop on Artificial Intelligence",
@@ -971,7 +990,8 @@ export const certifications = [
     year: "Oct 2023",
     credentialId: "PT-AI-2023-EO",
     description: "Hands-on AI workshop covering neural networks, deep learning, and real-world applications.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-ai-workshop.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-20.html"
   },
   {
     title: "Web Development Full Stack Masterclass",
@@ -979,7 +999,8 @@ export const certifications = [
     year: "Jan 2024",
     credentialId: "PT-FS-2024-EO",
     description: "Full-stack web development including frontend, backend, databases, and deployment.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-fullstack.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-21.html"
   },
   {
     title: "Introduction to Cybersecurity Awareness",
@@ -987,7 +1008,8 @@ export const certifications = [
     year: "Oct 2024",
     credentialId: "HP-CSA-2024-EO",
     description: "Cybersecurity awareness, digital safety practices, and phishing prevention.",
-    image: "https://eshban.netlify.app/assets/img/certifications/hp-cyber-awareness.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-22.html"
   },
   {
     title: "Computer Hardware & Networking",
@@ -995,7 +1017,8 @@ export const certifications = [
     year: "Oct 2024",
     credentialId: "TDA-CHN-2024-EO",
     description: "Computer hardware fundamentals, networking protocols, and system administration.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-hardware.png",
+    image: "/certifications/assets/new_folder/10816fab11e34e6994fd7cc0b2b75da9.png",
+    detailUrl: "/certifications/cert-23.html"
   },
   {
     title: "Introduction to Digital Marketing Fundamentals",
@@ -1003,7 +1026,8 @@ export const certifications = [
     year: "Oct 2024",
     credentialId: "SR-DMF-2024-EO",
     description: "Digital marketing fundamentals, SEO strategies, and campaign management.",
-    image: "https://eshban.netlify.app/assets/img/certifications/simplilearn-digital-marketing.png",
+    image: "/certifications/assets/introduction_to_digital_marketing_fundamentals_course_by_simplilearn_skillup.pdf",
+    detailUrl: "/certifications/cert-24.html"
   },
   {
     title: "WordPress Website Development & SEO",
@@ -1011,7 +1035,8 @@ export const certifications = [
     year: "Jun 2025",
     credentialId: "TDA-WPSEO-2025-EO",
     description: "WordPress development, theme customization, plugin integration, and SEO optimization.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-wordpress.png",
+    image: "/images/projects/ecommerce.png",
+    detailUrl: "/certifications/cert-25.html"
   },
   {
     title: "21 Days Masterclass on Natural Language Processing",
@@ -1019,7 +1044,8 @@ export const certifications = [
     year: "Apr 2024",
     credentialId: "PT-NLP21-2024-EO",
     description: "Advanced NLP techniques, text classification, and sentiment analysis.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-nlp.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-26.html"
   },
   {
     title: "Project Management for Software Development",
@@ -1027,7 +1053,8 @@ export const certifications = [
     year: "Nov 2025",
     credentialId: "TDA-PM-2025-EO",
     description: "Software project management, Agile methodologies, and team collaboration.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-pm.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-27.html"
   },
   {
     title: "1 Week Bootcamp on C Programming",
@@ -1035,7 +1062,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "PT-C-2023-EO",
     description: "Intensive C programming bootcamp covering pointers, structures, and file handling.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-c-programming.png",
+    image: "/certifications/assets/eshban_oliver-_c_programming_certificate.pdf",
+    detailUrl: "/certifications/cert-28.html"
   },
   {
     title: "Software Design and Architecture",
@@ -1043,7 +1071,8 @@ export const certifications = [
     year: "Dec 2025",
     credentialId: "TDA-SDA-2025-EO",
     description: "Software architecture patterns, design principles, and scalable system design.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-architecture.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-29.html"
   },
   {
     title: "Web Development Certification",
@@ -1051,7 +1080,8 @@ export const certifications = [
     year: "Jan 2025",
     credentialId: "TDA-WD-2025-EO",
     description: "Comprehensive web development certification covering modern frameworks and methodologies.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-web.png",
+    image: "/images/projects/ecommerce.png",
+    detailUrl: "/certifications/cert-30.html"
   },
   {
     title: "1 Week Bootcamp on Internet of Things",
@@ -1059,7 +1089,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "PT-IOT-2023-EO",
     description: "IoT fundamentals, sensor integration, and connected device programming.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-iot.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-31.html"
   },
   {
     title: "Cybersecurity for Business",
@@ -1067,7 +1098,8 @@ export const certifications = [
     year: "Nov 2024",
     credentialId: "TDA-CSB-2024-EO",
     description: "Business cybersecurity practices, risk management, and data protection strategies.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-cyber-business.png",
+    image: "/certifications/assets/cybersecurity_by_digital_adda.pdf",
+    detailUrl: "/certifications/cert-32.html"
   },
   {
     title: "Agile with Scrum",
@@ -1075,7 +1107,8 @@ export const certifications = [
     year: "Nov 2024",
     credentialId: "TDA-AS-2024-EO",
     description: "Agile/Scrum methodology, sprint planning, and team velocity metrics.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-adda-scrum.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-33.html"
   },
   {
     title: "Agile Project Management",
@@ -1083,7 +1116,8 @@ export const certifications = [
     year: "Oct 2024",
     credentialId: "HP-APM-2024-EO",
     description: "Agile project management principles, iterative development, and stakeholder management.",
-    image: "https://eshban.netlify.app/assets/img/certifications/hp-agile-pm.png",
+    image: "/certifications/assets/agile_project_management_by_hp_life.pdf",
+    detailUrl: "/certifications/cert-34.html"
   },
   {
     title: "Data Science & Analytics",
@@ -1091,7 +1125,8 @@ export const certifications = [
     year: "Nov 2024",
     credentialId: "HP-DSA-2024-EO",
     description: "Data analytics, business intelligence, and data-driven decision making.",
-    image: "https://eshban.netlify.app/assets/img/certifications/hp-data-science.png",
+    image: "/certifications/assets/data_science_&_analytics_by_hp_life.pdf",
+    detailUrl: "/certifications/cert-35.html"
   },
   {
     title: "Digital Marketing Fundamentals",
@@ -1099,7 +1134,8 @@ export const certifications = [
     year: "Oct 2024",
     credentialId: "IIDE-DMF-2024-EO",
     description: "Digital marketing channels, performance marketing, and conversion optimization.",
-    image: "https://eshban.netlify.app/assets/img/certifications/iide-digital-marketing.png",
+    image: "/certifications/assets/digital_marketing_fundamentals_masterclass_certificate___iide.pdf",
+    detailUrl: "/certifications/cert-36.html"
   },
   {
     title: "Workshop on Data Science & Analytics",
@@ -1107,7 +1143,8 @@ export const certifications = [
     year: "Nov 2023",
     credentialId: "PT-DSA-2023-EO",
     description: "Practical data science workshop with Python, Pandas, and data visualization tools.",
-    image: "https://eshban.netlify.app/assets/img/certifications/pantech-ds-workshop.png",
+    image: "/images/projects/education.png",
+    detailUrl: "/certifications/cert-37.html"
   },
   {
     title: "Digital Marketing Professional Certification",
@@ -1115,8 +1152,9 @@ export const certifications = [
     year: "Jan 2026",
     credentialId: "TDA-DMP-2026-EO",
     description: "Professional digital marketing certification covering advanced SEO, SEM, and social media strategies.",
-    image: "https://eshban.netlify.app/assets/img/certifications/digital-marketing-professional.png",
-  },
+    image: "/certifications/assets/digital_marketing_certified_by_hubspot_academy.png",
+    detailUrl: "/certifications/cert-38.html"
+  }
 ];
 
 export const expertise = [

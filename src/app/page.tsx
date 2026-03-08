@@ -173,7 +173,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
-              className="text-5xl md:text-7xl lg:text-9xl font-black text-site-text mb-8 tracking-tighter leading-[0.9] text-balance"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-site-text mb-8 tracking-tighter leading-[1] md:leading-[0.9] text-balance"
             >
               Building digital{" "}
               <span className="gradient-text italic px-2">masterpieces</span>
@@ -194,12 +194,12 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
-              className="flex flex-wrap items-center justify-center gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0"
             >
-              <Button href="/industries" variant="primary" size="lg" icon={<HiOutlineArrowRight />}>
+              <Button href="/industries" variant="primary" size="lg" icon={<HiOutlineArrowRight />} className="w-full sm:w-auto">
                 Browse Industries
               </Button>
-              <Button href="/toolkit" variant="outline" size="lg">
+              <Button href="/toolkit" variant="outline" size="lg" className="w-full sm:w-auto">
                 View My Toolkit
               </Button>
             </motion.div>
@@ -248,7 +248,7 @@ export default function HomePage() {
       {/* ===================== 2. STATS SECTION ===================== */}
       <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, i) => (
               <Card key={stat.label} delay={i * 0.1} className="text-center py-10" accentColor={statColors[i % statColors.length]}>
                 <div className="text-4xl md:text-5xl font-black text-site-text mb-3 tracking-tighter">
@@ -308,12 +308,12 @@ export default function HomePage() {
             title="Selected Projects"
             subtitle="A deep dive into complex web builds where performance meets pixel-perfect execution."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-flow-col auto-cols-fr gap-6">
             {projects
               .filter((p) => p.featured)
               .map((project, i) => (
                 <Card key={project.title} delay={i * 0.1} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100/50 backdrop-blur-sm border-white/5" accentColor={vibrantColors[i % vibrantColors.length]}>
-                  <div className="relative h-48 overflow-hidden shrink-0">
+                  <div className="relative h-52 overflow-hidden shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -321,30 +321,30 @@ export default function HomePage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-90" />
-                    <span className="absolute top-3 left-3 px-3 py-1 text-[9px] font-bold uppercase tracking-widest rounded-full bg-teal-500/20 text-teal-400 border border-teal-500/20 backdrop-blur-md">
+                    <span className="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-teal-500/20 text-teal-400 border border-teal-500/20 backdrop-blur-md">
                       {project.category}
                     </span>
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
-                    <h3 className="text-site-text font-bold text-base mb-2 group-hover:text-teal-400 transition-colors line-clamp-2 min-h-[3rem]">
+                    <h3 className="text-site-text font-black text-lg mb-2 group-hover:text-teal-400 transition-colors line-clamp-2 min-h-[3rem]">
                       {project.title}
                     </h3>
-                    <p className="text-site-text-muted text-[11px] leading-relaxed mb-4 line-clamp-3 h-14">
+                    <p className="text-site-text-muted text-xs leading-relaxed mb-4 line-clamp-3">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-1.5 mb-6">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="px-2 py-0.5 text-[8px] uppercase font-bold tracking-widest rounded-md bg-surface-200/50 text-site-text-muted border border-surface-300/30">
+                    <div className="flex flex-wrap gap-1.5 mb-5">
+                      {project.technologies.slice(0, 4).map((tech) => (
+                        <span key={tech} className="px-2.5 py-1 text-[9px] uppercase font-bold tracking-widest rounded-md bg-surface-200/50 text-site-text-muted border border-surface-300/30">
                           {tech}
                         </span>
                       ))}
                     </div>
                     <div className="flex flex-col gap-2 mt-auto">
-                      <Button href={project.liveUrl} variant="primary" size="sm" external className="w-full text-[10px] py-1.5 px-0">
+                      <Button href={project.liveUrl} variant="primary" size="sm" external className="text-[10px] py-2.5 shadow-lg" style={{ backgroundColor: vibrantColors[i % vibrantColors.length], boxShadow: `0 8px 16px -4px ${vibrantColors[i % vibrantColors.length]}40` }}>
                         Live Preview
                       </Button>
-                      <Button href={project.githubUrl} variant="secondary" size="sm" external icon={<FaGithub className="w-3 h-3" />} className="w-full text-[10px] py-1.5 px-0">
-                        View on GitHub
+                      <Button href={project.githubUrl === "#" ? siteConfig.socials.github : project.githubUrl} variant="secondary" size="sm" external icon={<FaGithub className="w-4 h-4 ml-1" />} className="text-[10px] py-2.5 border-surface-300">
+                        GitHub
                       </Button>
                     </div>
                   </div>
@@ -374,7 +374,7 @@ export default function HomePage() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
             >
-              <div className="glass-card rounded-3xl p-10 border border-surface-300 relative overflow-hidden">
+              <div className="glass-card rounded-3xl p-6 md:p-10 border border-surface-300 relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-6 opacity-[0.03]">
                   <HiOutlineCodeBracket className="w-40 h-40" />
                 </div>
@@ -427,7 +427,7 @@ export default function HomePage() {
             subtitle="A comprehensive toolkit spanning frontend, backend, mobile, and design technologies."
           />
 
-          <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4 md:gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-4 md:gap-6">
             {techTools.map((tool, i) => {
               const Icon = tool.icon;
               return (
@@ -547,7 +547,7 @@ export default function HomePage() {
               const Icon = expertiseIcons[i % expertiseIcons.length];
               const color = expertiseColors[i % expertiseColors.length];
               return (
-                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left p-8" accentColor={color}>
+                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left !p-6 md:!p-8" accentColor={color}>
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 border" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                     <Icon className="w-7 h-7" />
                   </div>
@@ -578,7 +578,7 @@ export default function HomePage() {
               const Icon = valueIcons[i % valueIcons.length];
               const color = valueColors[i % valueColors.length];
               return (
-                <Card key={value.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8" accentColor={color}>
+                <Card key={value.title} delay={i * 0.1} className="group relative overflow-hidden h-full !p-6 md:!p-8" accentColor={color}>
                   <div className="relative z-10">
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 border" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                       <Icon className="w-7 h-7" />
@@ -658,7 +658,7 @@ export default function HomePage() {
               const Icon = processIcons[i % processIcons.length];
               const color = processColors[i % processColors.length];
               return (
-                <Card key={process.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8" accentColor={color}>
+                <Card key={process.title} delay={i * 0.1} className="group relative overflow-hidden h-full !p-6 md:!p-8" accentColor={color}>
                   {/* Step number background */}
                   <div className="absolute top-4 right-4 text-7xl font-black transition-colors duration-500 select-none leading-none" style={{ color: `${color}15` }}>
                     {process.step}
@@ -694,7 +694,7 @@ export default function HomePage() {
           />
           <div className="space-y-12">
             {experiences.map((exp, i) => (
-              <Card key={exp.company + i} delay={i * 0.1} className="relative p-10 group overflow-hidden" accentColor={expColors[i % expColors.length]}>
+              <Card key={exp.company + i} delay={i * 0.1} className="relative p-6 md:p-10 group overflow-hidden" accentColor={expColors[i % expColors.length]}>
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
                   <HiOutlineBriefcase className="w-48 h-48" />
                 </div>
