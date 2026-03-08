@@ -95,6 +95,34 @@ const processIcons = [
   HiOutlineRocketLaunch,
 ];
 
+// Vibrant color palette for cards
+const vibrantColors = [
+  "#06b6d4", // cyan
+  "#8b5cf6", // violet
+  "#f43f5e", // rose
+  "#f59e0b", // amber
+  "#10b981", // emerald
+  "#3b82f6", // blue
+  "#ec4899", // pink
+  "#14b8a6", // teal
+  "#f97316", // orange
+  "#6366f1", // indigo
+  "#84cc16", // lime
+  "#ef4444", // red
+  "#a855f7", // purple
+  "#22d3ee", // sky
+  "#eab308", // yellow
+  "#2dd4bf", // teal-light
+];
+
+const statColors = ["#06b6d4", "#8b5cf6", "#f59e0b", "#10b981"];
+const expertiseColors = ["#3b82f6", "#8b5cf6", "#f59e0b", "#ec4899", "#06b6d4", "#10b981"];
+const valueColors = ["#f43f5e", "#3b82f6", "#f59e0b", "#10b981", "#8b5cf6", "#06b6d4"];
+const processColors = ["#06b6d4", "#8b5cf6", "#ec4899", "#f59e0b", "#10b981", "#3b82f6"];
+const aboutColors = ["#06b6d4", "#8b5cf6", "#f59e0b", "#10b981"];
+const certColors = ["#f43f5e", "#3b82f6", "#10b981", "#8b5cf6", "#f59e0b", "#06b6d4", "#ec4899", "#6366f1"];
+const expColors = ["#06b6d4", "#8b5cf6"];
+
 const techTools = [
   { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
   { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
@@ -221,7 +249,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <Card key={stat.label} delay={i * 0.1} className="text-center py-10">
+              <Card key={stat.label} delay={i * 0.1} className="text-center py-10" accentColor={statColors[i % statColors.length]}>
                 <div className="text-4xl md:text-5xl font-black text-site-text mb-3 tracking-tighter">
                   <AnimatedCounter
                     end={parseInt(stat.value)}
@@ -246,19 +274,22 @@ export default function HomePage() {
         </div>
         <div className="relative group">
           <div className="flex animate-marquee gap-8 px-4">
-            {[...projectMarquee, ...projectMarquee].map((item, i) => (
-              <div
-                key={`${item.title}-${i}`}
-                className="flex-shrink-0 w-80 glass-card rounded-2xl p-8 border border-surface-300 hover:border-teal-500/40 transition-all duration-500"
-              >
-                <h3 className="text-site-text font-bold text-xl mb-3 font-heading group-hover:text-teal-400 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-site-text-muted text-sm leading-relaxed font-medium">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+            {[...projectMarquee, ...projectMarquee].map((item, i) => {
+              const color = vibrantColors[i % vibrantColors.length];
+              return (
+                <div
+                  key={`${item.title}-${i}`}
+                  className="flex-shrink-0 w-80 glass-card vibrant-card rounded-2xl p-8 transition-all duration-500"
+                  style={{ '--card-accent': color, '--card-accent-10': `${color}1a`, '--card-accent-20': `${color}33`, '--card-accent-30': `${color}4d`, '--card-accent-40': `${color}66` } as React.CSSProperties}
+                >
+                  <h3 className="text-site-text font-bold text-xl mb-3 font-heading transition-colors" style={{ color: color }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-site-text-muted text-sm leading-relaxed font-medium">
+                    {item.description}
+                  </p>
+                </div>);
+            })}
           </div>
         </div>
         <div className="text-center mt-12">
@@ -365,10 +396,10 @@ export default function HomePage() {
                 { label: "Technologies", value: "React, Next.js, JavaScript, WordPress" },
                 { label: "Location", value: siteConfig.location },
               ].map((item, i) => (
-                <div key={item.label} className="glass-card rounded-xl p-5 border border-surface-300 flex items-center gap-4 group hover:border-teal-500/30 transition-all duration-300">
-                  <div className="w-2 h-2 rounded-full bg-teal-400 shrink-0 group-hover:scale-150 transition-transform" />
+                <div key={item.label} className="glass-card vibrant-card rounded-xl p-5 flex items-center gap-4 group transition-all duration-300" style={{ '--card-accent': aboutColors[i], '--card-accent-10': `${aboutColors[i]}1a`, '--card-accent-20': `${aboutColors[i]}33`, '--card-accent-30': `${aboutColors[i]}4d`, '--card-accent-40': `${aboutColors[i]}66` } as React.CSSProperties}>
+                  <div className="w-2 h-2 rounded-full shrink-0 group-hover:scale-150 transition-transform" style={{ backgroundColor: aboutColors[i] }} />
                   <div>
-                    <span className="text-teal-400 text-xs font-bold uppercase tracking-widest">{item.label}</span>
+                    <span className="text-xs font-bold uppercase tracking-widest" style={{ color: aboutColors[i] }}>{item.label}</span>
                     <p className="text-site-text font-semibold text-sm mt-1">{item.value}</p>
                   </div>
                 </div>
@@ -400,10 +431,10 @@ export default function HomePage() {
                   whileHover={{ y: -8, scale: 1.1 }}
                   className="flex flex-col items-center gap-3 group cursor-pointer"
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl glass-card border border-surface-300 flex items-center justify-center group-hover:border-teal-500/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-teal-500/10">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl glass-card vibrant-card border flex items-center justify-center transition-all duration-300" style={{ '--card-accent': tool.color, '--card-accent-10': `${tool.color}1a`, '--card-accent-20': `${tool.color}33`, '--card-accent-30': `${tool.color}4d`, '--card-accent-40': `${tool.color}66` } as React.CSSProperties}>
                     <Icon className="w-8 h-8 md:w-10 md:h-10 transition-colors duration-300" style={{ color: tool.color }} />
                   </div>
-                  <span className="text-site-text-muted text-[10px] md:text-xs font-bold uppercase tracking-wider text-center group-hover:text-teal-400 transition-colors">
+                  <span className="text-site-text-muted text-[10px] md:text-xs font-bold uppercase tracking-wider text-center transition-colors" style={{ '--hover-color': tool.color } as React.CSSProperties}>
                     {tool.name}
                   </span>
                 </motion.div>
@@ -425,12 +456,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {softSkillsDetailed.map((skill, i) => {
               const Icon = softSkillIcons[i % softSkillIcons.length];
+              const color = vibrantColors[i % vibrantColors.length];
               return (
-                <Card key={skill.title} delay={i * 0.05} className="group h-full flex flex-col items-center text-center p-6">
-                  <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-4 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                <Card key={skill.title} delay={i * 0.05} className="group h-full flex flex-col items-center text-center p-6" accentColor={color}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-500 border" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-site-text font-bold text-sm mb-2 group-hover:text-teal-400 transition-colors">
+                  <h3 className="text-site-text font-bold text-sm mb-2 group-hover:transition-colors" style={{ '--hover-color': color } as React.CSSProperties}>
                     {skill.title}
                   </h3>
                   <p className="text-site-text-muted text-xs leading-relaxed">
@@ -453,33 +485,35 @@ export default function HomePage() {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.slice(0, 8).map((cert, i) => (
-              <Card key={cert.title} delay={i * 0.08} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100">
-                <div className="relative h-44 overflow-hidden shrink-0 bg-surface-200 flex items-center justify-center">
-                  <Image
-                    src={cert.image}
-                    alt={cert.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-60" />
-                </div>
-                <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-site-text font-bold text-sm mb-1.5 group-hover:text-teal-400 transition-colors line-clamp-2">
-                    {cert.title}
-                  </h3>
-                  <p className="text-teal-400 text-xs font-bold tracking-wider uppercase mb-2">
-                    {cert.platform}
-                  </p>
-                  <p className="text-site-text-muted text-xs leading-relaxed line-clamp-2 mt-auto">
-                    {cert.description}
-                  </p>
-                  <span className="inline-block mt-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest rounded bg-surface-200 text-site-text-muted border border-surface-300 w-fit">
-                    {cert.year}
-                  </span>
-                </div>
-              </Card>
-            ))}
+            {certifications.slice(0, 8).map((cert, i) => {
+              const color = certColors[i % certColors.length];
+              return (
+                <Card key={cert.title} delay={i * 0.08} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100" accentColor={color}>
+                  <div className="relative h-44 overflow-hidden shrink-0 bg-surface-200 flex items-center justify-center">
+                    <Image
+                      src={cert.image}
+                      alt={cert.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-60" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <h3 className="text-site-text font-bold text-sm mb-1.5 transition-colors line-clamp-2">
+                      {cert.title}
+                    </h3>
+                    <p className="text-xs font-bold tracking-wider uppercase mb-2" style={{ color: color }}>
+                      {cert.platform}
+                    </p>
+                    <p className="text-site-text-muted text-xs leading-relaxed line-clamp-2 mt-auto">
+                      {cert.description}
+                    </p>
+                    <span className="inline-block mt-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest rounded w-fit" style={{ backgroundColor: `${color}1a`, color: color, border: `1px solid ${color}33` }}>
+                      {cert.year}
+                    </span>
+                  </div>
+                </Card>);
+            })}
           </div>
 
           <div className="text-center mt-16">
@@ -502,12 +536,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {expertise.map((item, i) => {
               const Icon = expertiseIcons[i % expertiseIcons.length];
+              const color = expertiseColors[i % expertiseColors.length];
               return (
-                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left p-8" accentColor={color}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 border" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                     <Icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-site-text font-bold text-xl mb-4 group-hover:text-teal-400 transition-colors">
+                  <h3 className="text-site-text font-bold text-xl mb-4 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-site-text-muted text-sm leading-relaxed">
@@ -532,22 +567,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreValues.map((value, i) => {
               const Icon = valueIcons[i % valueIcons.length];
-              const gradients = [
-                "from-teal-500/20 to-cyan-500/10",
-                "from-blue-500/20 to-indigo-500/10",
-                "from-purple-500/20 to-pink-500/10",
-                "from-emerald-500/20 to-teal-500/10",
-                "from-amber-500/20 to-orange-500/10",
-                "from-rose-500/20 to-red-500/10",
-              ];
+              const color = valueColors[i % valueColors.length];
               return (
-                <Card key={value.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${gradients[i % gradients.length]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <Card key={value.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8" accentColor={color}>
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 border" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                       <Icon className="w-7 h-7" />
                     </div>
-                    <h3 className="text-site-text font-bold text-xl mb-4 group-hover:text-teal-400 transition-colors">
+                    <h3 className="text-site-text font-bold text-xl mb-4 transition-colors">
                       {value.title}
                     </h3>
                     <p className="text-site-text-muted text-sm leading-relaxed">
@@ -571,36 +598,39 @@ export default function HomePage() {
           />
 
           <div className="max-w-4xl mx-auto space-y-8">
-            {technicalProficiency.map((item, i) => (
-              <motion.div
-                key={item.skill}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="group"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-site-text font-bold text-sm uppercase tracking-wider group-hover:text-teal-400 transition-colors">
-                    {item.skill}
-                  </span>
-                  <span className="text-teal-400 font-black text-lg tabular-nums">
-                    {item.level}%
-                  </span>
-                </div>
-                <div className="w-full h-3 rounded-full bg-surface-200 border border-surface-300 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${item.level}%` }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 1.2, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] }}
-                    className="h-full rounded-full bg-gradient-to-r from-teal-500 to-cyan-400 relative"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 rounded-full" />
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
+            {technicalProficiency.map((item, i) => {
+              const color = vibrantColors[i % vibrantColors.length];
+              return (
+                <motion.div
+                  key={item.skill}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="group"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-site-text font-bold text-sm uppercase tracking-wider transition-colors" style={{ '--hover-color': color } as React.CSSProperties}>
+                      {item.skill}
+                    </span>
+                    <span className="font-black text-lg tabular-nums" style={{ color: color }}>
+                      {item.level}%
+                    </span>
+                  </div>
+                  <div className="w-full h-3 rounded-full bg-surface-200 border border-surface-300 overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${item.level}%` }}
+                      viewport={{ once: true, margin: "-30px" }}
+                      transition={{ duration: 1.2, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] }}
+                      className="h-full rounded-full relative"
+                      style={{ background: `linear-gradient(90deg, ${color}, ${color}99)` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 rounded-full" />
+                    </motion.div>
+                  </div>
+                </motion.div>);
+            })}
           </div>
         </div>
       </section>
@@ -617,20 +647,21 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {workingProcess.map((process, i) => {
               const Icon = processIcons[i % processIcons.length];
+              const color = processColors[i % processColors.length];
               return (
-                <Card key={process.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8">
+                <Card key={process.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8" accentColor={color}>
                   {/* Step number background */}
-                  <div className="absolute top-4 right-4 text-7xl font-black text-surface-300/30 group-hover:text-teal-500/10 transition-colors duration-500 select-none leading-none">
+                  <div className="absolute top-4 right-4 text-7xl font-black transition-colors duration-500 select-none leading-none" style={{ color: `${color}15` }}>
                     {process.step}
                   </div>
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 border" style={{ backgroundColor: `${color}1a`, borderColor: `${color}33`, color: color }}>
                       <Icon className="w-7 h-7" />
                     </div>
-                    <div className="inline-block mb-3 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                    <div className="inline-block mb-3 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full border" style={{ backgroundColor: `${color}1a`, color: color, borderColor: `${color}33` }}>
                       Step {process.step}
                     </div>
-                    <h3 className="text-site-text font-bold text-xl mb-3 group-hover:text-teal-400 transition-colors">
+                    <h3 className="text-site-text font-bold text-xl mb-3 transition-colors">
                       {process.title}
                     </h3>
                     <p className="text-site-text-muted text-sm leading-relaxed">
@@ -654,7 +685,7 @@ export default function HomePage() {
           />
           <div className="space-y-12">
             {experiences.map((exp, i) => (
-              <Card key={exp.company + i} delay={i * 0.1} className="relative p-10 group overflow-hidden">
+              <Card key={exp.company + i} delay={i * 0.1} className="relative p-10 group overflow-hidden" accentColor={expColors[i % expColors.length]}>
                 <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
                   <HiOutlineBriefcase className="w-48 h-48" />
                 </div>

@@ -258,6 +258,22 @@
       linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
     background-size: 40px 40px;
   }
+
+  .vibrant-card {
+    border-color: var(--card-accent-20) !important;
+    box-shadow: 0 4px 24px -4px var(--card-accent-10), 0 0 0 1px var(--card-accent-10);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .vibrant-card:hover {
+    border-color: var(--card-accent-40) !important;
+    box-shadow: 0 20px 50px -12px var(--card-accent-30), 0 0 0 1px var(--card-accent-30);
+    background: var(--card-accent-10) !important;
+  }
+
+  .vibrant-card::before {
+    border-top-color: var(--card-accent-20) !important;
+  }
 }
 
 @keyframes float {
