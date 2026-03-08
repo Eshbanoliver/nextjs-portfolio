@@ -23,8 +23,16 @@ import {
   HiOutlinePuzzlePiece,
   HiOutlineBriefcase,
   HiOutlineTrophy,
+  HiOutlineDocumentCheck,
+  HiOutlineWrenchScrewdriver,
+  HiOutlineClipboardDocumentCheck,
+  HiOutlineBeaker,
+  HiOutlineCommandLine,
+  HiOutlinePaintBrush,
+  HiOutlineGlobeAlt,
 } from "react-icons/hi2";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaWordpress, FaPhp, FaDatabase, FaBootstrap } from "react-icons/fa6";
+import { SiTailwindcss, SiNextdotjs, SiFirebase, SiMysql, SiFlutter, SiExpress, SiCanva, SiFramer } from "react-icons/si";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import Card from "@/components/ui/Card";
@@ -44,6 +52,7 @@ import {
   expertise,
   coreValues,
   workingProcess,
+  skills,
 } from "@/data/site";
 
 const softSkillIcons = [
@@ -77,10 +86,42 @@ const valueIcons = [
   HiOutlineArrowPath,
 ];
 
+const processIcons = [
+  HiOutlineClipboardDocumentCheck,
+  HiOutlineDocumentCheck,
+  HiOutlinePaintBrush,
+  HiOutlineCommandLine,
+  HiOutlineBeaker,
+  HiOutlineRocketLaunch,
+];
+
+const techTools = [
+  { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
+  { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+  { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
+  { name: "React", icon: FaReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Node.js", icon: FaNodeJs, color: "#339933" },
+  { name: "PHP", icon: FaPhp, color: "#777BB4" },
+  { name: "WordPress", icon: FaWordpress, color: "#21759B" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+  { name: "Python", icon: FaPython, color: "#3776AB" },
+  { name: "React Native", icon: FaReact, color: "#61DAFB" },
+  { name: "Flutter", icon: SiFlutter, color: "#02569B" },
+  { name: "Bootstrap", icon: FaBootstrap, color: "#7952B3" },
+  { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
+  { name: "Express", icon: SiExpress, color: "#ffffff" },
+  { name: "Canva", icon: SiCanva, color: "#00C4CC" },
+  { name: "VS Code", icon: HiOutlineCodeBracket, color: "#007ACC" },
+  { name: "Git", icon: HiOutlineCommandLine, color: "#F05032" },
+];
+
 export default function HomePage() {
   return (
     <PageTransition>
-      {/* Hero Section */}
+      {/* ===================== 1. HERO SECTION ===================== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-10">
           <div className="text-center">
@@ -175,7 +216,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Stats Section */}
+      {/* ===================== 2. STATS SECTION ===================== */}
       <section className="py-24 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -194,7 +235,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Project Marquee Section */}
+      {/* ===================== 3. PROJECT MARQUEE SECTION ===================== */}
       <section className="py-24 relative overflow-hidden bg-surface-50/50 border-y border-surface-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <SectionHeading
@@ -227,37 +268,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Expertise Section */}
-      <section className="py-32 bg-site-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            label="Specialization"
-            title="Core Expertise & Tech Focus"
-            subtitle="Bridging the gap between complex logic and stunning visual experiences using modern technologies."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {expertise.map((item, i) => {
-              const Icon = expertiseIcons[i % expertiseIcons.length];
-              return (
-                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left p-8">
-                  <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
-                    <Icon className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-site-text font-bold text-xl mb-4 group-hover:text-teal-400 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-site-text-muted text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Grid */}
+      {/* ===================== 4. FEATURED WORK / SELECTED PROJECTS ===================== */}
       <section className="py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -308,7 +319,332 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* ===================== 5. ABOUT ME SECTION ===================== */}
+      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Introduction"
+            title="About Me"
+            subtitle="Front-end Developer & React Native Enthusiast"
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <div className="glass-card rounded-3xl p-10 border border-surface-300 relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-6 opacity-[0.03]">
+                  <HiOutlineCodeBracket className="w-40 h-40" />
+                </div>
+                <p className="text-site-text-muted text-lg leading-relaxed mb-6 relative z-10">
+                  I&apos;m a passionate Frontend Web Developer specializing in HTML, CSS, JavaScript 👋 with a keen interest in React Native 📱. I believe in writing clean, maintainable code 🧼 and creating UI/UX Design for Responsive and User-Friendly Websites 😊 that provide AI-enhanced Digital Solutions for Modern Websites 🌍.
+                </p>
+                <div className="flex flex-wrap gap-3 relative z-10">
+                  <Button href="/about" variant="primary" size="md" icon={<HiOutlineArrowRight />}>
+                    About Me
+                  </Button>
+                  <Button href={siteConfig.socials.github} variant="outline" size="md" external icon={<FaGithub />}>
+                    GitHub
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+              className="space-y-6"
+            >
+              {[
+                { label: "Specialization", value: "Frontend Development & UI/UX Design" },
+                { label: "Focus", value: "Responsive Website Design & Interactive Web UI" },
+                { label: "Technologies", value: "React, Next.js, JavaScript, WordPress" },
+                { label: "Location", value: siteConfig.location },
+              ].map((item, i) => (
+                <div key={item.label} className="glass-card rounded-xl p-5 border border-surface-300 flex items-center gap-4 group hover:border-teal-500/30 transition-all duration-300">
+                  <div className="w-2 h-2 rounded-full bg-teal-400 shrink-0 group-hover:scale-150 transition-transform" />
+                  <div>
+                    <span className="text-teal-400 text-xs font-bold uppercase tracking-widest">{item.label}</span>
+                    <p className="text-site-text font-semibold text-sm mt-1">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 6. TECHNOLOGIES & CREATIVE TOOLS ===================== */}
+      <section className="py-32 bg-site-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Tech Stack"
+            title="Technologies & Creative Tools"
+            subtitle="A comprehensive toolkit spanning frontend, backend, mobile, and design technologies."
+          />
+
+          <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4 md:gap-6">
+            {techTools.map((tool, i) => {
+              const Icon = tool.icon;
+              return (
+                <motion.div
+                  key={tool.name}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.4, delay: i * 0.03, type: "spring", stiffness: 200 }}
+                  whileHover={{ y: -8, scale: 1.1 }}
+                  className="flex flex-col items-center gap-3 group cursor-pointer"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl glass-card border border-surface-300 flex items-center justify-center group-hover:border-teal-500/40 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-teal-500/10">
+                    <Icon className="w-8 h-8 md:w-10 md:h-10 transition-colors duration-300" style={{ color: tool.color }} />
+                  </div>
+                  <span className="text-site-text-muted text-[10px] md:text-xs font-bold uppercase tracking-wider text-center group-hover:text-teal-400 transition-colors">
+                    {tool.name}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 7. CORE SOFT SKILLS ===================== */}
+      <section className="py-32 relative bg-surface-50/30 border-y border-surface-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Strengths"
+            title="Core Soft Skills"
+            subtitle="Beyond technical expertise — the professional qualities that drive impactful digital experiences."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {softSkillsDetailed.map((skill, i) => {
+              const Icon = softSkillIcons[i % softSkillIcons.length];
+              return (
+                <Card key={skill.title} delay={i * 0.05} className="group h-full flex flex-col items-center text-center p-6">
+                  <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-4 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-site-text font-bold text-sm mb-2 group-hover:text-teal-400 transition-colors">
+                    {skill.title}
+                  </h3>
+                  <p className="text-site-text-muted text-xs leading-relaxed">
+                    {skill.description}
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 8. PROFESSIONAL ACHIEVEMENTS (CERTIFICATIONS PREVIEW) ===================== */}
+      <section className="py-32 bg-site-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Credentials"
+            title="Professional Achievements"
+            subtitle="Verified certifications from industry-leading institutions and platforms."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {certifications.slice(0, 8).map((cert, i) => (
+              <Card key={cert.title} delay={i * 0.08} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100">
+                <div className="relative h-44 overflow-hidden shrink-0 bg-surface-200 flex items-center justify-center">
+                  <Image
+                    src={cert.image}
+                    alt={cert.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-60" />
+                </div>
+                <div className="p-5 flex flex-col flex-grow">
+                  <h3 className="text-site-text font-bold text-sm mb-1.5 group-hover:text-teal-400 transition-colors line-clamp-2">
+                    {cert.title}
+                  </h3>
+                  <p className="text-teal-400 text-xs font-bold tracking-wider uppercase mb-2">
+                    {cert.platform}
+                  </p>
+                  <p className="text-site-text-muted text-xs leading-relaxed line-clamp-2 mt-auto">
+                    {cert.description}
+                  </p>
+                  <span className="inline-block mt-3 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest rounded bg-surface-200 text-site-text-muted border border-surface-300 w-fit">
+                    {cert.year}
+                  </span>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <Button href="/certifications" size="lg" variant="primary" icon={<HiOutlineArrowRight />}>
+              All Certifications
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 9. EXPERTISE SECTION ===================== */}
+      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Specialization"
+            title="Core Expertise & Tech Focus"
+            subtitle="Bridging the gap between complex logic and stunning visual experiences using modern technologies."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {expertise.map((item, i) => {
+              const Icon = expertiseIcons[i % expertiseIcons.length];
+              return (
+                <Card key={item.title} delay={i * 0.1} className="group h-full flex flex-col items-start text-left p-8">
+                  <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-site-text font-bold text-xl mb-4 group-hover:text-teal-400 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-site-text-muted text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 10. CORE VALUES ===================== */}
+      <section className="py-32 bg-site-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Philosophy"
+            title="My Core Values"
+            subtitle="The guiding principles that define my approach to every project and professional relationship."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreValues.map((value, i) => {
+              const Icon = valueIcons[i % valueIcons.length];
+              const gradients = [
+                "from-teal-500/20 to-cyan-500/10",
+                "from-blue-500/20 to-indigo-500/10",
+                "from-purple-500/20 to-pink-500/10",
+                "from-emerald-500/20 to-teal-500/10",
+                "from-amber-500/20 to-orange-500/10",
+                "from-rose-500/20 to-red-500/10",
+              ];
+              return (
+                <Card key={value.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${gradients[i % gradients.length]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-site-text font-bold text-xl mb-4 group-hover:text-teal-400 transition-colors">
+                      {value.title}
+                    </h3>
+                    <p className="text-site-text-muted text-sm leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 11. TECHNICAL PROFICIENCY ===================== */}
+      <section className="py-32 bg-surface-50/30 border-y border-surface-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Proficiency"
+            title="Technical Proficiency"
+            subtitle="A quantitative overview of my technical skills and proficiency levels. I constantly strive to learn and improve."
+          />
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            {technicalProficiency.map((item, i) => (
+              <motion.div
+                key={item.skill}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="group"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-site-text font-bold text-sm uppercase tracking-wider group-hover:text-teal-400 transition-colors">
+                    {item.skill}
+                  </span>
+                  <span className="text-teal-400 font-black text-lg tabular-nums">
+                    {item.level}%
+                  </span>
+                </div>
+                <div className="w-full h-3 rounded-full bg-surface-200 border border-surface-300 overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${item.level}%` }}
+                    viewport={{ once: true, margin: "-30px" }}
+                    transition={{ duration: 1.2, delay: i * 0.1, ease: [0.23, 1, 0.32, 1] }}
+                    className="h-full rounded-full bg-gradient-to-r from-teal-500 to-cyan-400 relative"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 rounded-full" />
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 12. WORKING PROCESS ===================== */}
+      <section className="py-32 bg-site-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            label="Workflow"
+            title="My Working Process"
+            subtitle="A structured, systematic approach to delivering exceptional digital products from concept to deployment."
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {workingProcess.map((process, i) => {
+              const Icon = processIcons[i % processIcons.length];
+              return (
+                <Card key={process.title} delay={i * 0.1} className="group relative overflow-hidden h-full p-8">
+                  {/* Step number background */}
+                  <div className="absolute top-4 right-4 text-7xl font-black text-surface-300/30 group-hover:text-teal-500/10 transition-colors duration-500 select-none leading-none">
+                    {process.step}
+                  </div>
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-6 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all duration-500 border border-teal-500/20">
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <div className="inline-block mb-3 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20">
+                      Step {process.step}
+                    </div>
+                    <h3 className="text-site-text font-bold text-xl mb-3 group-hover:text-teal-400 transition-colors">
+                      {process.title}
+                    </h3>
+                    <p className="text-site-text-muted text-sm leading-relaxed">
+                      {process.description}
+                    </p>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== 13. EXPERIENCE SECTION ===================== */}
       <section className="py-32 bg-surface-50/30 border-y border-surface-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -349,7 +685,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* ===================== 14. CTA SECTION ===================== */}
       <section className="py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-navy-500/5 -z-10" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -360,8 +696,8 @@ export default function HomePage() {
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
           >
             <h2 className="text-4xl md:text-6xl font-black text-site-text mb-8 tracking-tighter leading-tight">
-              Ready to build something <br />
-              <span className="gradient-text italic">legendary?</span>
+              Ready to kickstart your <br />
+              <span className="gradient-text italic">next digital project?</span>
             </h2>
             <p className="text-site-text-muted text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
               Whether you need a full-scale web application or a sleek business presence,
