@@ -67,6 +67,55 @@ export const futurePlans = [
 
 export const mission = "My mission is to engineer high-converting, SEO-optimized, and mobile-first digital solutions that transform standard business goals into exceptional digital results.";
 
+export const aboutHero = {
+  title: "Meet Eshban Oliver — Best Web Developer in Udaipur 👋",
+  subtitle: "Senior Frontend Developer & React Native Specialist specializing in Responsive Website Design, Interactive Web UI, and high-performance cross-platform platforms.",
+  description: "Hello! I am Eshban Oliver, a senior frontend developer and professional web UI designer based in the beautiful lake city of Udaipur, Rajasthan. With over 60 successful projects delivered globally, I specialize in engineering high-converting, SEO-optimized, and mobile-first digital solutions."
+};
+
+export const aboutStory = {
+  title: "About Eshban Oliver",
+  description: "I started my development journey back in 2020, driven by a fascination for how code can translate complex ideas into interactive digital experiences. Over the years, I've evolved from a local frontend developer into a professional architect of modern web ecosystems, focusing on React and Next.js performance and cross-platform synergy with React Native."
+};
+
+export const expectFromMe = [
+  {
+    title: "Professional Standards",
+    description: "I follow industry-best practices for clean code, performance, accessibility, and high-quality UI/UX for all projects."
+  },
+  {
+    title: "Cross-Platform Ecosystems",
+    description: "Multi-platform expertise in building unified digital experiences across web, mobile, and desktop environments using React Native."
+  },
+  {
+    title: "Learning Journey",
+    description: "Constant evolution in SSR, Edge Computing, and AI-integrated developer tools to ensure cutting-edge solutions for my clients."
+  }
+];
+
+export const professionalSkills = [
+  {
+    title: "Problem-Solving",
+    description: "Analytical thinking to tackle complex challenges and engineer efficient, scalable software solutions.",
+    icon: "HiOutlineLightBulb"
+  },
+  {
+    title: "Attention to Detail",
+    description: "Meticulous focus on UI/UX precision, pixel-perfect design, and code quality in every production sprint.",
+    icon: "HiOutlineEye"
+  },
+  {
+    title: "Clear Communication",
+    description: "Transparent and professional communication with clients and teams to ensure project alignment and success.",
+    icon: "HiOutlineChatBubbleLeftRight"
+  },
+  {
+    title: "Adaptability",
+    description: "Rapidly mastering new frameworks and technologies to keep up with the ever-evolving tech landscape.",
+    icon: "HiOutlineArrowPath"
+  }
+];
+
 export const experiences = [
   {
     company: "Shapesway Technologies Pvt. Ltd.",
