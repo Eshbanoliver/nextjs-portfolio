@@ -358,7 +358,7 @@ export const projects = [
     category: "Interior & Architecture",
     liveUrl: "https://indiadecorplaster.com/",
     githubUrl: "#",
-    featured: true,
+    featured: false,
   },
   {
     title: "ND Production",
@@ -380,7 +380,7 @@ export const projects = [
     category: "Business & Corporate",
     liveUrl: "https://cloudtailmarketing.in/",
     githubUrl: "#",
-    featured: true,
+    featured: false,
   },
   {
     title: "Shree Balaji Steel Works",
@@ -402,7 +402,7 @@ export const projects = [
     category: "E-commerce & Retail",
     liveUrl: "https://apexsportsindia.in/",
     githubUrl: "#",
-    featured: true,
+    featured: false,
   },
   {
     title: "Diya Caterers & Events",
@@ -484,13 +484,13 @@ export const projects = [
   {
     title: "CogniHear",
     description:
-      "A healthcare and hearing solutions website featuring hearing aid products, audiological services, and patient resources. Designed with accessibility and user experience as top priorities.",
+      "CogniHear is a modern healthcare-focused website designed for speech, hearing, and mental health services. The project focuses on clean UI, accessibility, and responsive design to provide an informative and user-friendly experience.",
     image: "https://eshban.netlify.app/assets/img/projects/project-13.jpg",
-    technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
+    technologies: ["WordPress"],
     category: "Healthcare & Education",
     liveUrl: "https://cognihear.com/",
-    githubUrl: "#",
-    featured: false,
+    githubUrl: "https://github.com/Eshbanoliver/cognihear-speech-hearing-mental-health-wordpress-showcase",
+    featured: true,
   },
   {
     title: "Selections Interior",
@@ -702,15 +702,37 @@ export const projects = [
     featured: false,
   },
   {
-    title: "TG Salon Furniture",
+    title: "Tanishka Global Salon Furniture",
     description:
-      "A salon furniture and equipment supplier website featuring spa chairs, beauty equipment, and salon setup solutions. B2B focused design for salon owners.",
+      "Tanishka Global is a professional business website showcasing premium salon furniture products. The project features a clean layout, responsive design, and structured product presentation built using core frontend technologies.",
     image: "https://eshban.netlify.app/assets/img/projects/project-33.jpg",
-    technologies: ["WordPress", "WooCommerce", "JavaScript", "CSS3"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     category: "Spa, Salon & Wellness",
     liveUrl: "https://tgsalonfurniture.com/",
-    githubUrl: "#",
-    featured: false,
+    githubUrl: "https://github.com/Eshbanoliver",
+    featured: true,
+  },
+  {
+    title: "Neelmani Tiles and Granite",
+    description:
+      "Neelmani Tiles and Granite is a modern showcase website designed for a tiles and granite business. The site highlights product categories, business information, and a responsive layout using a React-based architecture.",
+    image: "https://eshban.netlify.app/assets/img/projects/project-27.jpg",
+    technologies: ["React"],
+    category: "Business & Corporate",
+    liveUrl: "https://neelmanitilesandgranite.in/",
+    githubUrl: "https://github.com/Eshbanoliver/Tiles-and-Granite--react-website-showcase",
+    featured: true,
+  },
+  {
+    title: "Nalwaya Sanitary Showroom",
+    description:
+      "Nalwaya Sanitary is a modern sanitary showroom website built using Next.js. The website focuses on fast performance, structured product showcasing, and a responsive UI optimized for both desktop and mobile users.",
+    image: "https://eshban.netlify.app/assets/img/projects/project-4.jpg",
+    technologies: ["Next.js"],
+    category: "Business & Corporate",
+    liveUrl: "https://www.nalwayasanitary.com/",
+    githubUrl: "https://github.com/Eshbanoliver/nalwayasanitary-website-showcase-next.js",
+    featured: true,
   },
   {
     title: "Shreeji Enterprises",

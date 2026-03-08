@@ -307,12 +307,12 @@ export default function HomePage() {
             title="Selected Projects"
             subtitle="A deep dive into complex web builds where performance meets pixel-perfect execution."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects
               .filter((p) => p.featured)
               .map((project, i) => (
-                <Card key={project.title} delay={i * 0.1} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100">
-                  <div className="relative h-60 overflow-hidden shrink-0">
+                <Card key={project.title} delay={i * 0.1} className="group overflow-hidden p-0 flex flex-col h-full bg-surface-100/50 backdrop-blur-sm border-white/5" accentColor={vibrantColors[i % vibrantColors.length]}>
+                  <div className="relative h-48 overflow-hidden shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -320,23 +320,31 @@ export default function HomePage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-site-bg via-transparent to-transparent opacity-90" />
-                    <span className="absolute top-4 left-4 px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full bg-teal-500/20 text-teal-400 border border-teal-500/20 backdrop-blur-md">
+                    <span className="absolute top-3 left-3 px-3 py-1 text-[9px] font-bold uppercase tracking-widest rounded-full bg-teal-500/20 text-teal-400 border border-teal-500/20 backdrop-blur-md">
                       {project.category}
                     </span>
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-site-text font-bold text-2xl mb-3 group-hover:text-teal-400 transition-colors">
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-site-text font-bold text-lg mb-2 group-hover:text-teal-400 transition-colors line-clamp-1">
                       {project.title}
                     </h3>
-                    <p className="text-site-text-muted text-sm leading-relaxed mb-6 line-clamp-3">
+                    <p className="text-site-text-muted text-xs leading-relaxed mb-4 line-clamp-3 h-12">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span key={tech} className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest rounded-md bg-surface-200 text-site-text-muted border border-surface-300">
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className="px-2 py-0.5 text-[9px] uppercase font-bold tracking-widest rounded-md bg-surface-200/50 text-site-text-muted border border-surface-300/30">
                           {tech}
                         </span>
                       ))}
+                    </div>
+                    <div className="grid grid-cols-1 gap-2 mt-auto">
+                      <Button href={project.liveUrl} variant="primary" size="sm" external className="w-full text-[11px] py-2">
+                        Live Preview
+                      </Button>
+                      <Button href={project.githubUrl} variant="secondary" size="sm" external icon={<FaGithub />} className="w-full text-[11px] py-2">
+                        View on GitHub
+                      </Button>
                     </div>
                   </div>
                 </Card>
