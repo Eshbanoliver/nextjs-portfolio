@@ -117,29 +117,31 @@ export default function ToolkitPage() {
             </section>
 
             {/* Strategic Consultation CTA */}
-            <section className="py-32 relative overflow-hidden bg-site-text text-site-bg">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 via-transparent to-rose-500/20 opacity-30" />
+            <section className="py-32 relative overflow-hidden bg-surface-50 border-y border-surface-300/30">
+                {/* Advanced Ambient Glows */}
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-[140px] animate-pulse-slow" />
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[140px] animate-pulse-slow" />
 
                 <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9]">
+                        <h2 className="text-4xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9] text-balance">
                             Architecture First. <br />
-                            <span className="text-teal-400">Code Second.</span>
+                            <span className="gradient-text italic">Code Second.</span>
                         </h2>
-                        <p className="text-site-bg/70 text-xl md:text-2xl mb-12 font-medium leading-relaxed">
-                            I help businesses navigate complex technical landscapes to build solutions that don't just work, but scale effortlessly.
+                        <p className="text-site-text-muted text-xl md:text-2xl mb-12 font-medium leading-relaxed max-w-3xl mx-auto">
+                            I help businesses navigate complex technical landscapes to build solutions that don't just work, but <span className="text-teal-400">scale effortlessly.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <Button href="/contact" size="lg" className="px-12 py-6 rounded-full bg-teal-500 text-site-bg border-none hover:bg-teal-400">
+                            <Button href="/contact" size="lg" className="px-12 py-6 rounded-full font-bold shadow-2xl shadow-teal-500/20">
                                 Start a Consultation
                             </Button>
-                            <Link href="/projects" className="text-sm font-black uppercase tracking-[0.2em] hover:text-teal-400 transition-colors">
-                                Browse Technical Case Studies
+                            <Link href="/projects" className="text-sm font-black uppercase tracking-[0.2em] text-site-text hover:text-teal-400 transition-colors flex items-center gap-2">
+                                Browse Technical Case Studies <HiOutlineArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
                     </motion.div>
