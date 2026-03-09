@@ -12,7 +12,8 @@ import {
     HiOutlineShieldCheck,
     HiOutlineDocumentText,
     HiOutlineShare,
-    HiOutlineArrowDownTray
+    HiOutlineArrowDownTray,
+    HiOutlineEye
 } from "react-icons/hi2";
 import { certifications, siteConfig } from "@/data/site";
 import PageTransition from "@/components/ui/PageTransition";
