@@ -151,7 +151,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-site-bg text-site-text antialiased overflow-x-hidden transition-colors duration-300">
+      <body
+        className="bg-site-bg text-site-text antialiased overflow-x-hidden transition-colors duration-300"
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           <TechBackground />
           <ScrollProgress />
