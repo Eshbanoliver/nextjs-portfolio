@@ -36,7 +36,7 @@ export default function ProjectsPage() {
                     <SectionHeading
                         label="Portfolio"
                         title="Selected Projects"
-                        subtitle="A showcase of technical expertise, creative problem-solving, and professional web development across diverse industries."
+                        subtitle="A showcase of technical expertise, creative problem-solving, and professional web development by the best Web Developer in Udaipur across diverse industries in Rajasthan."
                     />
 
                     {/* Filters & Search */}

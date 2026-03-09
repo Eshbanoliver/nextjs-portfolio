@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Eshban Oliver",
-  title: "Eshban Oliver — Web Developer in Udaipur | Frontend & WordPress Developer",
+  title: "Eshban Oliver — Best Web Developer in Udaipur | WordPress & Software Developer in Rajasthan",
   description:
-    "Eshban Oliver is a Web Developer in Udaipur, Rajasthan specializing in Responsive Website Design, WordPress Development, and Frontend Development. Freelance Web Developer offering high-performance, SEO-optimized websites and Digital Marketing solutions across Udaipur and Rajasthan.",
+    "Eshban Oliver is the best Web Developer in Udaipur, Rajasthan, specializing in WordPress Development, Frontend Development, and Responsive Website Design. As an experienced Software Developer and Freelance Web Developer in Udaipur, I provide high-performance, SEO-optimized digital marketing solutions for businesses across Rajasthan.",
   url: "https://eshban.netlify.app",
   email: "eshbanoliver@gmail.com",
   location: "Udaipur, Rajasthan, India",
@@ -65,7 +65,7 @@ export const futurePlans = [
   "Building scalable AI-integrated tools for developer productivity.",
 ];
 
-export const mission = "My mission is to engineer high-converting, SEO-optimized, and mobile-first digital solutions that transform standard business goals into exceptional digital results.";
+export const mission = "As the best Web Developer in Udaipur, my mission is to engineer high-converting, SEO-optimized, and Responsive Website Designs that transform standard business goals into exceptional digital results for clients across Rajasthan.";
 
 export const aboutHero = {
   title: "Meet Eshban Oliver — Best Web Developer in Udaipur 👋",
@@ -154,42 +154,42 @@ export const industries = [
     name: "Interior & Architecture",
     slug: "interior-architecture",
     icon: "HiOutlineHomeModern",
-    description: "Crafting digital portfolios for architects and interior designers, showcasing high-end finishes and architectural designs.",
+    description: "Crafting digital portfolios for architects and interior designers in Udaipur and across Rajasthan, showcasing high-end architectural designs.",
     solution: "Built architectural finishes portfolios like India Decor Plaster with interactive galleries.",
   },
   {
     name: "E-commerce",
     slug: "ecommerce",
     icon: "HiOutlineShoppingCart",
-    description: "Developing robust online sports portals and marketplaces with seamless checkout and inventory management.",
+    description: "Developing robust online sports portals and marketplaces for Rajasthan businesses with seamless checkout and inventory management.",
     solution: "Created Apex Sports India, a comprehensive e-commerce platform for sports equipment.",
   },
   {
     name: "Healthcare",
     slug: "healthcare",
     icon: "HiOutlineHeart",
-    description: "Modern healthcare portals focusing on patient management and medical resource accessibility.",
+    description: "Modern healthcare portals in Udaipur focusing on patient management and medical resource accessibility.",
     solution: "Developed interactive healthcare management interfaces for clinics and spas.",
   },
   {
     name: "Education",
     slug: "education",
     icon: "HiOutlineAcademicCap",
-    description: "Digital learning platforms and school portals for streamlined student-teacher interactions and resource sharing.",
+    description: "Digital learning platforms and school portals for educational institutions in Rajasthan, streamlining student-teacher interactions.",
     solution: "Built Blossom Buds School portal with student resources and notice boards.",
   },
   {
     name: "Business Marketing",
     slug: "business-marketing",
     icon: "HiOutlineBriefcase",
-    description: "Data-driven marketing platforms and business analytics dashboards for growth-focused companies.",
+    description: "Data-driven marketing platforms and business analytics dashboards for growth-focused companies in Udaipur.",
     solution: "Developed Cloudtail Marketing dashboard for business funnel analytics.",
   },
   {
     name: "Hospitality & Wellness",
     slug: "hospitality-wellness",
     icon: "HiOutlineStar",
-    description: "Booking platforms for luxury spas and wellness centers with intuitive scheduling and service menus.",
+    description: "Booking platforms for luxury spas and wellness centers in Rajasthan with intuitive scheduling and service menus.",
     solution: "Created Lifecare Ayurvedic Spa booking system with serene UI/UX.",
   },
 ];
@@ -201,7 +201,7 @@ export const toolkitServices = [
     shortDesc: "Professional websites built with HTML5, CSS3, and JavaScript to establish a strong brand presence.",
     icon: "HiOutlineGlobeAlt",
     color: "teal",
-    heroDesc: "Establish a powerful online presence with custom-coded informational websites that are fast, responsive, and SEO-ready.",
+    heroDesc: "Establish a powerful online presence with custom-coded informational websites that are fast, responsive, and SEO-ready. As a Freelance Web Developer in Udaipur, I build sites that represent your brand with perfection.",
     features: [
       "Custom responsive design (Mobile-First)",
       "High-performance loading speeds",
@@ -234,7 +234,7 @@ export const toolkitServices = [
     shortDesc: "Scalable online stores built on WooCommerce and React for high-volume sports and retail portals.",
     icon: "HiOutlineShoppingBag",
     color: "accent",
-    heroDesc: "Launch your retail empire with high-converting e-commerce solutions tailored for performance and scalability.",
+    heroDesc: "Launch your retail empire with high-converting e-commerce solutions tailored for performance and scalability. Expert WordPress Developer in Udaipur providing robust WooCommerce setups for Udaipur and Rajasthan businesses.",
     features: [
       "Secure payment gateway integration",
       "Inventory and order management",
@@ -298,7 +298,7 @@ export const toolkitServices = [
     shortDesc: "High-performance cross-platform mobile apps using React Native for iOS and Android.",
     icon: "HiOutlineDevicePhoneMobile",
     color: "teal",
-    heroDesc: "Bring your vision to mobile with native-feeling applications built for speed, responsiveness, and engagement.",
+    heroDesc: "Bring your vision to mobile with native-feeling applications built for speed, responsiveness, and engagement. Software Developer in Udaipur crafting high-end cross-platform apps.",
     features: [
       "Unified codebase for iOS & Android",
       "Offline data synchronization",
@@ -1160,27 +1160,27 @@ export const certifications = [
 export const expertise = [
   {
     title: "Frontend Development",
-    description: "Crafting responsive, pixel-perfect user interfaces as an HTML CSS JavaScript Developer with modern architecture and smooth animations.",
+    description: "Crafting responsive, pixel-perfect user interfaces as a leading Frontend Developer in Udaipur with modern architecture and smooth animations.",
   },
   {
     title: "Backend & API",
-    description: "Building robust REST APIs, secure authentication systems, and efficient data pipelines.",
+    description: "Building robust REST APIs and secure authentication systems as an experienced Software Developer in Rajasthan.",
   },
   {
     title: "Machine Learning",
-    description: "Developing intelligent models, data preprocessing pipelines, and AI-driven solutions.",
+    description: "Developing intelligent models and AI-driven solutions to automate business processes in Udaipur and beyond.",
   },
   {
     title: "WordPress Customization",
-    description: "Providing WordPress Website Development & Customization Services including Elementor Website Design.",
+    description: "Providing expert WordPress Developer services in Udaipur, including custom theme development and Elementor Website Design.",
   },
   {
     title: "UI/UX Design",
-    description: "Designing intuitive user journeys and visually stunning interfaces that delight users.",
+    description: "Designing intuitive user journeys and Responsive Website Designs that delight users across all devices.",
   },
   {
     title: "Website Optimization",
-    description: "Optimizing web applications for maximum speed, accessibility, and SEO performance as part of AI-powered Web Solutions.",
+    description: "Optimizing web applications for maximum speed and SEO performance as a recognized Digital Marketing Expert in Rajasthan.",
   },
 ];
 

@@ -70,8 +70,7 @@ export default function Footer() {
                             <Logo />
                         </Link>
                         <p className="text-site-text-muted text-sm leading-relaxed mb-6">
-                            Building digital masterpieces and modern web solutions.
-                            Turning ideas into high-performance applications.
+                            Freelance Web Developer in Udaipur, Rajasthan helping businesses build modern responsive websites and grow their digital presence.
                         </p>
                         <div className="flex items-center gap-3">
                             {socials.map((social) => (

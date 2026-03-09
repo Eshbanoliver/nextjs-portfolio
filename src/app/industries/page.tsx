@@ -43,7 +43,7 @@ export default function IndustriesPage() {
                     <SectionHeading
                         label="Expertise Verticals"
                         title="Industries Served"
-                        subtitle="Tailored digital strategies and technical architectures for diverse business ecosystems."
+                        subtitle="Tailored digital strategies and technical architectures for diverse business ecosystems across Udaipur and Rajasthan."
                     />
                 </div>
             </section>

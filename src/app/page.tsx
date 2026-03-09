@@ -175,10 +175,10 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
               className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-site-text mb-4 tracking-tighter leading-[1] md:leading-[0.9] text-balance"
             >
-              Building digital{" "}
-              <span className="gradient-text italic px-2">masterpieces</span>
+              Expert Freelance <br />
+              <span className="gradient-text italic px-2">Web Developer</span>
               <br />
-              for the modern web.
+              in Udaipur, Rajasthan.
             </motion.h1>
 
             <motion.h2
@@ -187,7 +187,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.15, ease: [0.23, 1, 0.32, 1] }}
               className="text-xl md:text-2xl font-bold text-teal-400 mb-8 tracking-wide"
             >
-              #1 Freelance Web Developer in Udaipur, Rajasthan
+              Specializing in WordPress, Frontend Development & Responsive Website Design
             </motion.h2>
 
 
@@ -197,7 +197,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className="text-site-text-muted text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium"
             >
-              {siteConfig.description}
+              Helping businesses in Udaipur and across Rajasthan grow online with high-performance Software Development and Digital Marketing solutions.
             </motion.p>
 
             <motion.div
@@ -389,7 +389,7 @@ export default function HomePage() {
                   <HiOutlineCodeBracket className="w-40 h-40" />
                 </div>
                 <p className="text-site-text-muted text-lg leading-relaxed mb-6 relative z-10">
-                  I&apos;m a passionate Frontend Web Developer specializing in HTML, CSS, JavaScript 👋 with a keen interest in React Native 📱. I believe in writing clean, maintainable code 🧼 and creating UI/UX Design for Responsive and User-Friendly Websites 😊. Additionally, as an experienced WordPress Developer in Udaipur and a certified Digital Marketing Expert in Udaipur, I help businesses scale through holistic, AI-enhanced Digital Solutions 🌍.
+                  I&apos;m Eshban Oliver, recognized as the best Web Developer in Udaipur specializing in Frontend Development and WordPress solutions. As a professional Software Developer in Udaipur, I focus on engineering Responsive Website Designs that are fast, secure, and user-friendly. Whether you need a Freelance Web Developer in Udaipur or a certified Digital Marketing Expert in Rajasthan, I help brands grow their digital footprint with cutting-edge technology.
                 </p>
                 <div className="flex flex-wrap gap-3 relative z-10">
                   <Button href="/about" variant="primary" size="md" icon={<HiOutlineArrowRight />}>
