@@ -26,7 +26,7 @@ Total Pages: 31
 
 ## 🛡️ Copyright & Usage
 
-**© [Current Year] Portfolio Project. All Rights Reserved.**
+**© 2026 Portfolio Project. All Rights Reserved.**
 
 This website and its content are the intellectual property of the owner. Unauthorized copying, distribution, or reproduction of the design, source code, or content is strictly prohibited. 
 
