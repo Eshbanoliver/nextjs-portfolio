@@ -106,7 +106,7 @@ export default function IndustriesPage() {
                         Need a Specialized Industry Solution?
                     </h2>
                     <p className="text-site-text-muted text-lg mb-10 font-medium">
-                        I specialize in deep industry research to build solutions that solve specific vertical pain points.
+                        I specialize in deep industry research to build solutions that solve specific vertical pain points. As a leading <Link href="/software-developer-in-rajasthan" className="text-teal-400 hover:underline">Software Developer in Rajasthan</Link>, I bring local expertise to global standards.
                     </p>
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <a href="/contact" className="px-10 py-4 rounded-full bg-teal-500 text-site-bg font-black uppercase tracking-widest text-xs hover:opacity-90 transition-all shadow-xl shadow-teal-500/20">

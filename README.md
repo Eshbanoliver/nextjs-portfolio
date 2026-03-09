@@ -11,21 +11,9 @@ A high-performance, responsive portfolio website built with a modern tech stack.
 - **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
 - **Deployment**: Optimized for production environments
 
-## 📄 Pages (Total: 20+)
+## 📄 Pages
 
-The website consists of multiple high-intent pages designed for conversion and search visibility:
-
-1. **Home**: Hero section, stats, featured work, and brand introduction.
-2. **About**: In-depth look at professional background and mission.
-3. **Experience**: Professional timeline and key responsibilities.
-4. **Industries**: Overview of sectors served (Interior, E-commerce, Healthcare, Education, Business, Hospitality).
-5. **Toolkit**: Detailed breakdown of technical stacks and services offered.
-6. **Education**: Academic background and qualifications.
-7. **Projects**: Full portfolio with filtering and project details.
-8. **Certifications**: Gallery of professional certifications and achievements.
-9. **Contact**: Lead generation and social connectivity.
-10. **Brand Identity**: Visual assets and brand guidelines.
-11. **Dynamic Routes**: Specialized sub-pages for specific Industries and Toolsets.
+Total Pages: 31
 
 ## ⚙️ Features
 

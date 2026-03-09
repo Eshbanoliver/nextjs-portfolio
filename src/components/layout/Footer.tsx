@@ -50,6 +50,17 @@ const socials = [
     { icon: FaDev, href: siteConfig.socials.devto, label: "Dev.to" },
 ];
 
+const udaipurServices = [
+    { label: "Web Developer in Udaipur", href: "/web-developer-in-udaipur" },
+    { label: "WordPress Developer in Udaipur", href: "/wordpress-developer-in-udaipur" },
+    { label: "Frontend Developer in Udaipur", href: "/frontend-developer-in-udaipur" },
+    { label: "Freelance Web Developer in Udaipur", href: "/freelance-web-developer-in-udaipur" },
+    { label: "Software Developer in Rajasthan", href: "/software-developer-in-rajasthan" },
+    { label: "Digital Marketing Expert in Udaipur", href: "/digital-marketing-expert-in-udaipur" },
+    { label: "Digital Marketing Expert in Rajasthan", href: "/digital-marketing-expert-in-rajasthan" },
+    { label: "Responsive Website Design Services", href: "/responsive-website-design-services" },
+];
+
 export default function Footer() {
     return (
         <footer className="relative border-t border-surface-300 bg-site-bg">
@@ -57,7 +68,7 @@ export default function Footer() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-12 mb-12">
                     {/* Brand */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -129,6 +140,31 @@ export default function Footer() {
                                     <Link
                                         href={link.href}
                                         className="text-site-text-muted hover:text-teal-400 text-sm transition-colors duration-300 flex items-center gap-2 group"
+                                    >
+                                        <span className="w-1 h-1 rounded-full bg-surface-300 group-hover:bg-teal-400 transition-colors" />
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+
+                    {/* Services in Udaipur */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.25 }}
+                    >
+                        <h3 className="text-site-text font-semibold text-sm mb-4 uppercase tracking-wider">
+                            Services in Udaipur
+                        </h3>
+                        <ul className="space-y-3">
+                            {udaipurServices.map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-site-text-muted hover:text-teal-400 text-xs transition-colors duration-300 flex items-center gap-2 group"
                                     >
                                         <span className="w-1 h-1 rounded-full bg-surface-300 group-hover:bg-teal-400 transition-colors" />
                                         {link.label}

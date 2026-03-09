@@ -389,7 +389,7 @@ export default function HomePage() {
                   <HiOutlineCodeBracket className="w-40 h-40" />
                 </div>
                 <p className="text-site-text-muted text-lg leading-relaxed mb-6 relative z-10">
-                  I&apos;m Eshban Oliver, recognized as the best Web Developer in Udaipur specializing in Frontend Development and WordPress solutions. As a professional Software Developer in Udaipur, I focus on engineering Responsive Website Designs that are fast, secure, and user-friendly. Whether you need a Freelance Web Developer in Udaipur or a certified Digital Marketing Expert in Rajasthan, I help brands grow their digital footprint with cutting-edge technology.
+                  I&apos;m Eshban Oliver, recognized as the best Web Developer in Udaipur specializing in Frontend Development and WordPress solutions. As a professional Software Developer in Udaipur, I focus on engineering Responsive Website Designs that are fast, secure, and user-friendly. Whether you need a <Link href="/freelance-web-developer-in-udaipur" className="text-teal-400 hover:underline">Freelance Web Developer in Udaipur</Link> or a certified Digital Marketing Expert in Rajasthan, I help brands grow their digital footprint with cutting-edge technology. Looking for a professional <Link href="/web-developer-in-udaipur" className="text-teal-400 hover:underline">Web Developer in Udaipur</Link>? Explore my full range of services.
                 </p>
                 <div className="flex flex-wrap gap-3 relative z-10">
                   <Button href="/about" variant="primary" size="md" icon={<HiOutlineArrowRight />}>

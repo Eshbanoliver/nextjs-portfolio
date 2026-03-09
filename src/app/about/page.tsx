@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -106,6 +107,7 @@ export default function AboutPage() {
                                 <h2 className="text-2xl font-black text-site-text tracking-tighter mb-6">{aboutStory.title}</h2>
                                 <p className="text-site-text-muted leading-relaxed font-medium">
                                     {aboutStory.description}
+                                    Looking for the <strong>best <Link href="/web-developer-in-udaipur" className="text-teal-400 hover:underline">Web Developer in Udaipur</Link></strong> to bring your vision to life? I am here to help.
                                 </p>
                             </Card>
                         </div>

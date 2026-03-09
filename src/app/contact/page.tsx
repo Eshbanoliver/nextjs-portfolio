@@ -5,12 +5,11 @@ import { motion } from "framer-motion";
 import {
     HiOutlineEnvelope,
     HiOutlineMapPin,
-    HiOutlinePhone,
     HiOutlinePaperAirplane,
     HiOutlineCheckCircle,
     HiOutlineSquares2X2,
 } from "react-icons/hi2";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaStackOverflow, FaMedium, FaDev, FaGoogle } from "react-icons/fa6";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
@@ -21,6 +20,10 @@ const socials = [
     { icon: FaGithub, href: siteConfig.socials.github, label: "GitHub", color: "hover:text-white" },
     { icon: FaLinkedinIn, href: siteConfig.socials.linkedin, label: "LinkedIn", color: "hover:text-blue-400" },
     { icon: HiOutlineSquares2X2, href: siteConfig.socials.uiverse, label: "Uiverse", color: "hover:text-teal-400" },
+    { icon: FaGoogle, href: siteConfig.socials.googleDev, label: "Google Devs", color: "hover:text-yellow-400" },
+    { icon: FaStackOverflow, href: siteConfig.socials.stackOverflow, label: "Stack Overflow", color: "hover:text-orange-400" },
+    { icon: FaMedium, href: siteConfig.socials.medium, label: "Medium", color: "hover:text-site-text" },
+    { icon: FaDev, href: siteConfig.socials.devto, label: "Dev.to", color: "hover:text-site-text" },
 ];
 
 export default function ContactPage() {
@@ -74,28 +77,11 @@ export default function ContactPage() {
                                             <HiOutlineEnvelope className="w-5 h-5" />
                                         </div>
                                         <div>
-                                            <p className="text-surface-400 text-xs uppercase tracking-wider font-medium mb-0.5">
+                                            <p className="text-site-text-muted text-xs uppercase tracking-wider font-medium mb-0.5">
                                                 Email
                                             </p>
                                             <p className="text-site-text text-sm group-hover:text-teal-400 transition-colors">
                                                 {siteConfig.email}
-                                            </p>
-                                        </div>
-                                    </a>
-
-                                    <a
-                                        href={`tel:${siteConfig.phone}`}
-                                        className="flex items-start gap-4 group"
-                                    >
-                                        <div className="w-10 h-10 shrink-0 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:bg-teal-500/20 transition-colors">
-                                            <HiOutlinePhone className="w-5 h-5" />
-                                        </div>
-                                        <div>
-                                            <p className="text-surface-400 text-xs uppercase tracking-wider font-medium mb-0.5">
-                                                Phone
-                                            </p>
-                                            <p className="text-site-text text-sm group-hover:text-teal-400 transition-colors">
-                                                {siteConfig.phone}
                                             </p>
                                         </div>
                                     </a>
@@ -105,7 +91,7 @@ export default function ContactPage() {
                                             <HiOutlineMapPin className="w-5 h-5" />
                                         </div>
                                         <div>
-                                            <p className="text-surface-400 text-xs uppercase tracking-wider font-medium mb-0.5">
+                                            <p className="text-site-text-muted text-xs uppercase tracking-wider font-medium mb-0.5">
                                                 Location
                                             </p>
                                             <p className="text-site-text text-sm">
@@ -127,7 +113,7 @@ export default function ContactPage() {
                                             href={social.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-surface-400 ${social.color} hover:border-surface-600 transition-all duration-300 group`}
+                                            className={`flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-200 border border-surface-300 text-site-text-muted ${social.color} hover:border-teal-500/30 hover:bg-teal-500/10 transition-all duration-300 group`}
                                         >
                                             <social.icon className="w-5 h-5" />
                                             <span className="text-sm font-medium">{social.label}</span>
@@ -149,10 +135,10 @@ export default function ContactPage() {
                                         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400">
                                             <HiOutlineCheckCircle className="w-8 h-8" />
                                         </div>
-                                        <h3 className="text-white font-semibold text-xl mb-2 font-heading">
+                                        <h3 className="text-site-text font-semibold text-xl mb-2 font-heading">
                                             Message Sent!
                                         </h3>
-                                        <p className="text-surface-400">
+                                        <p className="text-site-text-muted">
                                             Thank you for reaching out. I&apos;ll get back to you within 24 hours.
                                         </p>
                                     </motion.div>
@@ -161,7 +147,7 @@ export default function ContactPage() {
                                         <h3 className="text-site-text font-semibold text-xl mb-2 font-heading">
                                             Send a Message
                                         </h3>
-                                        <p className="text-surface-400 text-sm mb-6">
+                                        <p className="text-site-text-muted text-sm mb-6">
                                             Fill out the form below and I&apos;ll respond as soon as possible.
                                         </p>
 
@@ -169,7 +155,7 @@ export default function ContactPage() {
                                             <div>
                                                 <label
                                                     htmlFor="name"
-                                                    className="block text-surface-300 text-sm font-medium mb-2"
+                                                    className="block text-site-text-muted text-sm font-medium mb-2"
                                                 >
                                                     Name
                                                 </label>
@@ -181,14 +167,14 @@ export default function ContactPage() {
                                                     onChange={(e) =>
                                                         setFormState({ ...formState, name: e.target.value })
                                                     }
-                                                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
+                                                    className="w-full px-4 py-3 rounded-xl bg-surface-100 border border-surface-300 text-site-text placeholder-site-text-muted/50 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
                                                     placeholder="Your name"
                                                 />
                                             </div>
                                             <div>
                                                 <label
                                                     htmlFor="email"
-                                                    className="block text-surface-300 text-sm font-medium mb-2"
+                                                    className="block text-site-text-muted text-sm font-medium mb-2"
                                                 >
                                                     Email
                                                 </label>
@@ -200,7 +186,7 @@ export default function ContactPage() {
                                                     onChange={(e) =>
                                                         setFormState({ ...formState, email: e.target.value })
                                                     }
-                                                    className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
+                                                    className="w-full px-4 py-3 rounded-xl bg-surface-100 border border-surface-300 text-site-text placeholder-site-text-muted/50 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
                                                     placeholder="your@email.com"
                                                 />
                                             </div>
@@ -209,7 +195,7 @@ export default function ContactPage() {
                                         <div>
                                             <label
                                                 htmlFor="subject"
-                                                className="block text-surface-300 text-sm font-medium mb-2"
+                                                className="block text-site-text-muted text-sm font-medium mb-2"
                                             >
                                                 Subject
                                             </label>
@@ -221,7 +207,7 @@ export default function ContactPage() {
                                                 onChange={(e) =>
                                                     setFormState({ ...formState, subject: e.target.value })
                                                 }
-                                                className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
+                                                className="w-full px-4 py-3 rounded-xl bg-surface-100 border border-surface-300 text-site-text placeholder-site-text-muted/50 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm"
                                                 placeholder="Project inquiry"
                                             />
                                         </div>
@@ -229,7 +215,7 @@ export default function ContactPage() {
                                         <div>
                                             <label
                                                 htmlFor="message"
-                                                className="block text-surface-300 text-sm font-medium mb-2"
+                                                className="block text-site-text-muted text-sm font-medium mb-2"
                                             >
                                                 Message
                                             </label>
@@ -241,7 +227,7 @@ export default function ContactPage() {
                                                 onChange={(e) =>
                                                     setFormState({ ...formState, message: e.target.value })
                                                 }
-                                                className="w-full px-4 py-3 rounded-xl bg-surface-800/50 border border-surface-700/30 text-site-text placeholder-surface-500 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm resize-none"
+                                                className="w-full px-4 py-3 rounded-xl bg-surface-100 border border-surface-300 text-site-text placeholder-site-text-muted/50 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300 text-sm resize-none"
                                                 placeholder="Tell me about your project..."
                                             />
                                         </div>
